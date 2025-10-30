@@ -16,7 +16,7 @@ const projectsData = [
     description: "API escalable para plataforma de e-commerce con autenticación JWT y integración con pasarelas de pago",
     technologies: ["C#", "ASP.NET Core", "Entity Framework", "SQL Server"],
     status: "Completado",
-    github: "# https://github.com/tomiraspo/Sistema-Turnos",
+    github: "https://github.com/tomiraspo/Sistema-Turnos",
     demo: "#",
   },
   {
