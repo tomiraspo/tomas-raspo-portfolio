@@ -8,13 +8,13 @@ const About = () => {
         
         <div className="prose prose-invert max-w-none">
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            Analista de Sistemas con diplomado en Redes Informáticas, especializado en desarrollo Full Stack con fuerte énfasis en tecnologías .NET y Azure. 
-            Experiencia en diseño y desarrollo de aplicaciones web escalables utilizando C#, ASP.NET Core y Blazor, con sólido conocimiento en bases de datos SQL Server y MySQL.
+            Ingeniero de Software Full Stack especializado en la arquitectura .NET C#, ASP.NET Core y Blazor, con dominio del ecosistema Azure para soluciones escalables.
+          </p>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+            Experiencia internacional en Argentina, Italia y Portugal, impulsando la transformación digital y la optimización de procesos. Logros destacados incluyen el diseño e implementación de un sistema de gestión de turnos virtuales de alto rendimiento (web y API RESTful), mejorando significativamente la eficiencia operativa.
           </p>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Capacidad demostrada en implementación de arquitecturas modernas, desarrollo de APIs RESTful, y despliegue de aplicaciones en la nube con Azure. 
-            Experiencia práctica con Docker para containerización de aplicaciones y Bootstrap para desarrollo de interfaces responsivas. 
-            Comprometido con las mejores prácticas de desarrollo, clean code, y mejora continua de procesos.
+            Experiencia práctica con Docker para containerización, Bootstrap para interfaces responsivas, y herramientas como Visual Studio. Cuento con conocimientos en el manejo de bases de datos como SQL Server y MySQL. Comprometido con el Clean Code, las metodologías ágiles y la entrega de soluciones robustas y seguras.
           </p>
         </div>
       </div>

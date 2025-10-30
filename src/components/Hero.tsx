@@ -31,12 +31,12 @@ const Hero = () => {
 
         {/* Title */}
         <p className="text-xl md:text-2xl text-foreground/90 font-semibold mb-3">
-          Systems Analyst Technician - Diploma in Computer Networks
+          Técnico Analista de Sistemas - Diplomado en Redes Informáticas
         </p>
 
         {/* Subtitle */}
         <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
-          Full Stack Developer | Backend .NET & Azure | C#, ASP.NET Core, Blazor | SQL Server & MySQL | Visual Studio, Docker & Bootstrap
+          Remoto, Argentina
         </p>
 
         {/* CTA Buttons */}
