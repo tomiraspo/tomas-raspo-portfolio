@@ -2,7 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const skillsData = {
-  languages: ["C#", "SQL", "JavaScript", "TypeScript", "HTML/CSS, Java"],
+  languages: ["C#", "SQL", "JavaScript", "TypeScript", "HTML/CSS" , "Java"],
   frameworks: ["ASP.NET Core", "Blazor", "Entity Framework", ".NET MAUI", "Bootstrap"],
   databases: ["SQL Server", "MySQL", "PostgreSQL", "Azure SQL"],
   cloud: ["Azure", "Azure DevOps", "Azure Functions", "Azure App Service"],
