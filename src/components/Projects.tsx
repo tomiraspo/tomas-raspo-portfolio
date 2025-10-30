@@ -5,8 +5,8 @@ import { ExternalLink, Github } from "lucide-react";
 
 const projectsData = [
   {
-    title: "Sistema de Gestión Empresarial",
-    description: "Aplicación web completa para gestión de recursos empresariales con ASP.NET Core y Blazor",
+    title: "Sistema de Turnos Virtual",
+    description: "Agendamiento Oftalmológico Flexible con ASP.NET Core y Blazor.",
     technologies: ["ASP.NET Core", "Blazor", "SQL Server", "Azure"],
     status: "Completado",
     github: "#",
@@ -16,7 +16,7 @@ const projectsData = [
     description: "API escalable para plataforma de e-commerce con autenticación JWT y integración con pasarelas de pago",
     technologies: ["C#", "ASP.NET Core", "Entity Framework", "SQL Server"],
     status: "Completado",
-    github: "#",
+    github: "# https://github.com/tomiraspo/Sistema-Turnos",
     demo: "#",
   },
   {
