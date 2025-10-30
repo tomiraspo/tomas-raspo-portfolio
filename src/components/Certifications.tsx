@@ -5,10 +5,10 @@ import { ExternalLink } from "lucide-react";
 
 const certifications = [
   {
-    date: "Marzo 2025",
-    title: "Microsoft Certified: Azure Developer Associate",
-    organization: "Microsoft",
-    link: "#",
+    date: "Diciembre 2023",
+    title: "Tecnico Superior en Análisis de Sistemas",
+    organization: "Esba (Instituto Superior de Buenos Aires)",
+    link: "https://drive.google.com/file/d/1mx2H5mGKtQhDfCaV9dqOH127i2m53gNx/view?usp=sharing",
   },
   {
     date: "Enero 2025",
