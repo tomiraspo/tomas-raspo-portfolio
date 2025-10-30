@@ -9,7 +9,7 @@ const projectsData = [
     description: "Agendamiento Oftalmológico Flexible con ASP.NET Core y Blazor.",
     technologies: ["ASP.NET Core", "Blazor", "SQL Server", "Azure"],
     status: "Completado",
-    github: "#",
+    github: "https://github.com/tomiraspo/Sistema-Turnos",
   },
   {
     title: "API RESTful E-Commerce",
