@@ -20,6 +20,7 @@ import certCleanArch from "@/assets/certificates/cert-clean-arch.jpg";
 import certEfCore from "@/assets/certificates/cert-ef-core.jpg";
 import certSql from "@/assets/certificates/cert-sql.jpg";
 import EFCore from "@/assets/certificates/EF Core.png";
+import DiplomaturaEnRedesInformaticas from "@/assets/certificates/DiplomaturaEnRedesInformaticas.png";
 
 const certifications = [
   {
@@ -34,7 +35,7 @@ const certifications = [
     title: "Diplomatura en Redes Informáticas",
     organization: "Esep (Escuela Superior de Estudios Profesionales)",
     link: "https://drive.google.com/file/d/1YwLhDMPC9fUXpWkAPUnxrfWYLC_Mk0LH/view?usp=sharing",
-    image: certAspnet,
+    image: DiplomaturaEnRedesInformaticas,
   },
   {
     date: "May 2024",
