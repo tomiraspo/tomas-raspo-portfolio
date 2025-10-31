@@ -36,7 +36,7 @@ import MiPrimerEmpleo from "@/assets/certificates/MiPrimerEmpleo.png";
 import Italiano from "@/assets/certificates/Italiano.png";
 import AprendiendoAAprender from "@/assets/certificates/AprendiendoAAprender.png";
 import FinanzasPersonales from "@/assets/certificates/FinanzasPersonales.png";
-import educacionIT from "@/assets/certificates/educacionIT.png";
+import educacionIT from "@/assets/certificates/Java.png";
 import ProgramacionPython from "@/assets/certificates/ProgramacionPython.png";
 
 const certifications = [
