@@ -26,7 +26,7 @@ import LeadershipITALIA from "@/assets/certificates/LeadershipITALIA.png";
 import SpeakEnglish from "@/assets/certificates/SpeakEnglish.png";
 import ComunicacionLaboralXXI from "@/assets/certificates/ComunicacionLaboralXXI.png";
 import InicioYPlanificacionProyectos from "@/assets/certificates/InicioYPlanificacionProyectos.png";
-import InglesEmpresarial from "@/assets/certificates/InglesEmpresarial.png";
+import InglesEmpresarial from "@/assets/certificates/InglesEmpresarial.jpg";
 import HabilidadesHumanas from "@/assets/certificates/HabilidadesHumanas.png";
 import NegociosInternacionales from "@/assets/certificates/NegociosInternacionales.jpg";
 import TrabajarParaSerFeliz from "@/assets/certificates/TrabajarParaSerFeliz.png";
