@@ -70,6 +70,13 @@ const certifications = [
     link: "https://drive.google.com/file/d/1GXcw6mjqRLdUzz7Zzjavv24HdLt4zCfi/view?usp=sharing",
     image: certEfCore,
   },
+   {
+    date: "January 2021",
+    title: "La comunicación laboral en el siglo XXI",
+    organization: "Coursera",
+    link: "https://drive.google.com/file/d/1GXcw6mjqRLdUzz7Zzjavv24HdLt4zCfi/view?usp=sharing",
+    image: certEfCore,
+  },
   {
     date: "January 2021",
     title: "Finanzas personales",
