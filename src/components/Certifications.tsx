@@ -29,7 +29,7 @@ const certifications = [
     image: certEsba,
   },
   {
-    date: "Enero 2025",
+    date: "Enero 20025",
     title: "ASP.NET Core Web API Development",
     organization: "Udemy",
     link: "#",
