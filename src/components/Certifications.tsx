@@ -22,6 +22,11 @@ import certSql from "@/assets/certificates/cert-sql.jpg";
 import EFCore from "@/assets/certificates/EF Core.png";
 import DiplomaturaEnRedesInformaticas from "@/assets/certificates/DiplomaturaEnRedesInformaticas.png";
 import LeadershipPORTUGAL from "@/assets/certificates/LeadershipPORTUGAL.png";
+import LeadershipITALIA from "@/assets/certificates/LeadershipITALIA.png";
+import SpeakEnglish from "@/assets/certificates/SpeakEnglish.png";
+import ComunicacionLaboralXXI from "@/assets/certificates/ComunicacionLaboralXXI.png";
+import InicioYPlanificacionProyectos from "@/assets/certificates/InicioYPlanificacionProyectos.png";
+import InglesEmpresarial from "@/assets/certificates/InglesEmpresarial.png";
 
 const certifications = [
   {
@@ -50,7 +55,7 @@ const certifications = [
     title: "Leadership Development Italia",
     organization: "AIESEC",
     link: "https://drive.google.com/file/d/1tvRk9lBgdxtxt9NNoLizLNT8fo0PGEqb/view?usp=sharing",
-    image: certDocker,
+    image: LeadershipITALIA,
   },
   {
     date: "July 2025",
@@ -64,21 +69,21 @@ const certifications = [
     title: "Speak English Professionally: In Person, Online and on the Phone",
     organization: "Coursera",
     link: "https://drive.google.com/file/d/1SKy3A_S-Q1AyCq2XWOhBj08zm-vowESo/view?usp=sharing",
-    image: certCleanArch,
+    image: SpeakEnglish,
   },
   {
     date: "January 2021",
     title: "La comunicación laboral en el siglo XXI",
     organization: "Coursera",
     link: "https://drive.google.com/file/d/1GXcw6mjqRLdUzz7Zzjavv24HdLt4zCfi/view?usp=sharing",
-    image: certEfCore,
+    image: ComunicacionLaboralXXI,
   },
   {
     date: "January 2021",
     title: "Iniciación y Planificación de Proyectos",
     organization: "Coursera",
     link: "https://drive.google.com/file/d/1cGes4AjKdGoXNpWjnNajwgsWqcTxeaSF/view?usp=sharing",
-    image: certEfCore,
+    image: InicioYPlanificacionProyectos,
   },
   {
     date: "November 2020",
