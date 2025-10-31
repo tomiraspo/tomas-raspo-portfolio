@@ -34,6 +34,18 @@ const Hero = () => {
           Técnico Analista de Sistemas - Diplomado en Redes Informáticas
         </p>
 
+        {/* Skills Badges */}
+        <div className="flex flex-wrap gap-2 justify-center mb-6 max-w-3xl mx-auto">
+          {['Blazor', 'ASP.NET Core', 'C#', 'SQL Server', 'Backend Development', 'Full Stack Development', 'REST API', 'Git', 'Agile Methodologies'].map((skill) => (
+            <span
+              key={skill}
+              className="px-3 py-1 text-sm font-medium bg-primary/10 text-primary border border-primary/20 rounded-full"
+            >
+              {skill}
+            </span>
+          ))}
+        </div>
+
         {/* Subtitle */}
         <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
           Remoto, Argentina
