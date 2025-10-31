@@ -21,6 +21,7 @@ import certEfCore from "@/assets/certificates/cert-ef-core.jpg";
 import certSql from "@/assets/certificates/cert-sql.jpg";
 import EFCore from "@/assets/certificates/EF Core.png";
 import DiplomaturaEnRedesInformaticas from "@/assets/certificates/DiplomaturaEnRedesInformaticas.png";
+import LeadershipPORTUGAL from "@/assets/certificates/LeadershipPORTUGAL.png";
 
 const certifications = [
   {
@@ -42,7 +43,7 @@ const certifications = [
     title: "Leadership Development Portugal",
     organization: "AIESEC",
     link: "https://drive.google.com/file/d/1Of84sTg-LWigKpQpynb8h4-Gf6OFHtHE/view?usp=sharing",
-    image: certAzure,
+    image: LeadershipPORTUGAL,
   },
   {
     date: "June 2025",
