@@ -19,6 +19,7 @@ import certBlazo from "@/assets/certificates/cert-blazor.jpg";
 import certCleanArch from "@/assets/certificates/cert-clean-arch.jpg";
 import certEfCore from "@/assets/certificates/cert-ef-core.jpg";
 import certSql from "@/assets/certificates/cert-sql.jpg";
+import EFCore from "@/assets/certificates/EF Core.png";
 
 const certifications = [
   {
@@ -54,7 +55,7 @@ const certifications = [
     title: "EF SET English Certificate",
     organization: "EF SET",
     link: "https://drive.google.com/file/d/1SGRniIEP56btSBC6vCl6nom5nxwxoVEU/view?usp=sharing",
-    image: certBlazo,
+    image: EFCore,
   },
   {
     date: "January 2021",
