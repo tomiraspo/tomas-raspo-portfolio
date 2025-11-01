@@ -8,7 +8,7 @@ const About = () => {
         
         <div className="prose prose-invert max-w-none">
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            Ingeniero de Software Full Stack especializado en la arquitectura .NET C#, ASP.NET Core y Blazor, con dominio del ecosistema Azure para soluciones escalables.
+            Dessarollador Software Full Stack especializado en la arquitectura .NET C#, ASP.NET Core y Blazor, con dominio del ecosistema Azure para soluciones escalables.
           </p>
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
             Experiencia internacional en Argentina, Italia y Portugal, impulsando la transformación digital y la optimización de procesos. Logros destacados incluyen el diseño e implementación de un sistema de gestión de turnos virtuales de alto rendimiento (web y API RESTful), mejorando significativamente la eficiencia operativa.

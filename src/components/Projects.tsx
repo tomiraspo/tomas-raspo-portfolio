@@ -11,44 +11,6 @@ const projectsData = [
     status: "Completado",
     github: "https://github.com/tomiraspo/Sistema-Turnos",
   },
-  {
-    title: "API RESTful E-Commerce",
-    description: "API escalable para plataforma de e-commerce con autenticación JWT y integración con pasarelas de pago",
-    technologies: ["C#", "ASP.NET Core", "Entity Framework", "SQL Server"],
-    status: "Completado",
-    github: "https://github.com/tomiraspo/Sistema-Turnos",
-    demo: "#",
-  },
-  {
-    title: "Sistema de Gestión de Inventario",
-    description: "Aplicación desktop multiplataforma para control de inventario y facturación",
-    technologies: [".NET MAUI", "SQLite", "Azure Functions"],
-    status: "En Progreso",
-    github: "#",
-  },
-  {
-    title: "Portal Web Corporativo",
-    description: "Portal web responsive con panel de administración y sistema de autenticación",
-    technologies: ["Blazor", "Bootstrap", "Azure App Service"],
-    status: "Completado",
-    github: "#",
-    demo: "#",
-  },
-  {
-    title: "Microservicios con Docker",
-    description: "Arquitectura de microservicios containerizada con Docker y comunicación mediante RabbitMQ",
-    technologies: ["Docker", "ASP.NET Core", "RabbitMQ", "Azure"],
-    status: "En Progreso",
-    github: "#",
-  },
-  {
-    title: "Dashboard Analítico",
-    description: "Dashboard interactivo para visualización de métricas y KPIs en tiempo real",
-    technologies: ["Blazor", "SignalR", "Azure SQL", "Chart.js"],
-    status: "Completado",
-    github: "#",
-    demo: "#",
-  },
 ];
 
 const Projects = () => {
