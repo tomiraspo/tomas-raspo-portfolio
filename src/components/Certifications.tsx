@@ -11,14 +11,7 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
-import CertESBA from "@/assets/certificates/CertESBA.png";
-import certAspnet from "@/assets/certificates/cert-aspnet.jpg";
-import certAzure from "@/assets/certificates/cert-azure.jpg";
-import certDocker from "@/assets/certificates/cert-docker.jpg";
-import certBlazo from "@/assets/certificates/cert-blazor.jpg";
-import certCleanArch from "@/assets/certificates/cert-clean-arch.jpg";
-import certEfCore from "@/assets/certificates/cert-ef-core.jpg";
-import certSql from "@/assets/certificates/cert-sql.jpg";
+import CertESBA from "@/assets/certificates/TecnicoAnalista.png";
 import EFCore from "@/assets/certificates/EF Core.png";
 import DiplomaturaEnRedesInformaticas from "@/assets/certificates/DiplomaturaEnRedesInformaticas.png";
 import LeadershipPORTUGAL from "@/assets/certificates/LeadershipPORTUGAL.png";
