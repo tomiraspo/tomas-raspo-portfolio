@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
-import certEsba from "@/assets/certificates/cert-esba.jpg";
+import CertESBA from "@/assets/certificates/CertESBA.png";
 import certAspnet from "@/assets/certificates/cert-aspnet.jpg";
 import certAzure from "@/assets/certificates/cert-azure.jpg";
 import certDocker from "@/assets/certificates/cert-docker.jpg";
@@ -24,7 +24,7 @@ import DiplomaturaEnRedesInformaticas from "@/assets/certificates/DiplomaturaEnR
 import LeadershipPORTUGAL from "@/assets/certificates/LeadershipPORTUGAL.png";
 import LeadershipITALIA from "@/assets/certificates/LeadershipITALIA.png";
 import SpeakEnglish from "@/assets/certificates/SpeakEnglish.png";
-import ComunicacionLaboralXXI from "@/assets/certificates/ComunicacionLaboralXXI.png";
+import ComunicacionLaboralXXI from "@/assets/certificates/ComunicacionLaboral.png";
 import InicioYPlanificacionProyectos from "@/assets/certificates/InicioYPlanificacionProyectos.png";
 import InglesEmpresarial from "@/assets/certificates/InglesEmpresarial.jpg";
 import HabilidadesHumanas from "@/assets/certificates/HabilidadesHumanas.png";
@@ -45,7 +45,7 @@ const certifications = [
     title: "Tecnico Superior en Análisis de Sistemas",
     organization: "Esba (Instituto Superior de Buenos Aires)",
     link: "https://drive.google.com/file/d/1mx2H5mGKtQhDfCaV9dqOH127i2m53gNx/view?usp=sharing",
-    image: certEsba,
+    image: CertESBA,
   },
   {
     date: "Julio 2023",
