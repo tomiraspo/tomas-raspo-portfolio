@@ -34,14 +34,14 @@ import ProgramacionPython from "@/assets/certificates/ProgramacionPython.png";
 
 const certifications = [
   {
-    date: "Diciembre 2023",
+    date: "December 2023",
     title: "Tecnico Superior en Análisis de Sistemas",
     organization: "Esba (Instituto Superior de Buenos Aires)",
     link: "https://drive.google.com/file/d/1mx2H5mGKtQhDfCaV9dqOH127i2m53gNx/view?usp=sharing",
     image: CertESBA,
   },
   {
-    date: "Julio 2023",
+    date: "July 2023",
     title: "Diplomatura en Redes Informáticas",
     organization: "Esep (Escuela Superior de Estudios Profesionales)",
     link: "https://drive.google.com/file/d/1YwLhDMPC9fUXpWkAPUnxrfWYLC_Mk0LH/view?usp=sharing",
@@ -153,7 +153,7 @@ const certifications = [
     image: Italiano,
   },
   {
-    date: "Abril 2023",
+    date: "April 2023",
     title: "Programación en Python",
     organization: "Argentina Programa 4.0 de la Secretaría de Economía de la Nación",
     link: "https://drive.google.com/file/d/1NMybonIJ6L6l2d1NOefTTUfvLDLtZ2S5/view?usp=sharing",
