@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
 const Contact = () => {
+  // El código está limpio: Se eliminó la función handleSubmit.
 
   return (
     <section id="contact" className="py-20 px-4 md:px-8 bg-card/30">
@@ -69,16 +70,17 @@ const Contact = () => {
                 <CardDescription>Conoce más sobre mi experiencia y habilidades</CardDescription>
               </CardHeader>
               <CardContent>
-                <Button className="w-full bg-primary hover:bg-primary/90"
-                asChild
-                   >
+                <Button 
+                    className="w-full bg-primary hover:bg-primary/90"
+                    asChild
+                >
                     <a
-                   href="/__CV Tomas Raspo Argentina .pdf" 
-                    download="Tomas_Raspo_CV.pdf"
-                    target="_blank"
+                        href="/__CV Tomas Raspo Argentina .pdf" 
+                        download="Tomas_Raspo_CV.pdf"
+                        target="_blank"
                     >
-                      Descargar CV (PDF)
-                      </a>
+                        Descargar CV (PDF)
+                    </a>
                 </Button>
               </CardContent>
             </Card>
@@ -91,13 +93,15 @@ const Contact = () => {
             </CardHeader>
             <CardContent>
               <form 
-              action="https://formspree.io/f/mgvpjowq" 
-              method="POST"
-                className="space-y-4">
+                  action="https://formspree.io/f/mgvpjowq" // Endpoint de Formspree
+                  method="POST"
+                  className="space-y-4"
+              >
                 <div className="space-y-2">
                   <Label htmlFor="name">Nombre *</Label>
                   <Input
                     id="name"
+                    name="name" // Agregado el atributo 'name' para Formspree
                     placeholder="Tu nombre"
                     required
                     className="bg-background/50 border-primary/20 focus:border-primary"
@@ -107,6 +111,7 @@ const Contact = () => {
                   <Label htmlFor="email">Email *</Label>
                   <Input
                     id="email"
+                    name="email" // Agregado el atributo 'name' para Formspree
                     type="email"
                     placeholder="tu@email.com"
                     required
@@ -117,6 +122,7 @@ const Contact = () => {
                   <Label htmlFor="subject">Asunto *</Label>
                   <Input
                     id="subject"
+                    name="subject" // Agregado el atributo 'name' para Formspree
                     placeholder="Asunto del mensaje"
                     required
                     className="bg-background/50 border-primary/20 focus:border-primary"
@@ -126,6 +132,7 @@ const Contact = () => {
                   <Label htmlFor="message">Mensaje *</Label>
                   <Textarea
                     id="message"
+                    name="message" // Agregado el atributo 'name' para Formspree
                     placeholder="Escribe tu mensaje aquí..."
                     required
                     rows={5}
@@ -145,6 +152,6 @@ const Contact = () => {
       </div>
     </section>
   );
-
+};
 
 export default Contact;
