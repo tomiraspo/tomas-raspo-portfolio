@@ -105,7 +105,7 @@ const Experience = () => {
 
                 {/* Company Logo Placeholder */}
                 <div className="md:w-24 md:h-24 w-full h-20 flex items-center justify-center bg-muted rounded-lg group-hover:bg-primary/10 transition-colors">
-                  <Building2 size={32} className="text-muted-foreground group-hover:text-primary transition-colors" />
+                <Building2 size={32} className="text-muted-foreground group-hover:text-primary transition-colors" />
                 </div>
               </div>
             </Card>
