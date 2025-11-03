@@ -51,7 +51,7 @@ const Experience = () => {
   </p>
         </div>
 
-        <div className="max-w-4xl space-y-6">
+        <div className="space-y-6">
           {experiences.map((exp, index) => (
             <Card
               key={index}
