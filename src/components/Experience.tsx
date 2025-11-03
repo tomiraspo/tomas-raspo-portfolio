@@ -42,16 +42,16 @@ const Experience = () => {
   return (
     <section id="experiencia" className="py-20 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Experiencia
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Mi trayectoria profesional en desarrollo de software y transformación digital
-          </p>
+        <div className="mb-12"> 
+  <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+    Experiencia
+  </h2>
+  <p className="text-muted-foreground text-lg max-w-2xl">
+    Mi trayectoria profesional en desarrollo de software y transformación digital
+  </p>
         </div>
 
-        <div className="max-w-4xl mx-auto space-y-6">
+        <div className="space-y-6">
           {experiences.map((exp, index) => (
             <Card
               key={index}
