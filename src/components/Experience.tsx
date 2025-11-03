@@ -104,9 +104,18 @@ const Experience = () => {
                 </div>
 
                 {/* Company Logo Placeholder */}
-                <div className="md:w-24 md:h-24 w-full h-20 flex items-center justify-center bg-muted rounded-lg group-hover:bg-primary/10 transition-colors">
-                <Building2 size={32} className="text-muted-foreground group-hover:text-primary transition-colors" />
-                </div>
+               <div className="md:w-24 md:h-24 w-full h-20 flex items-center justify-center bg-muted rounded-lg group-hover:bg-primary/10 transition-colors">
+  {exp.logo ? (
+    <img
+      src={exp.logo}
+      alt={`${exp.company} Logo`}
+      className="h-full w-full object-contain p-2"
+    />
+  ) : (
+    // Si el campo 'logo' está vacío, muestra el icono genérico
+    <Building2 size={32} className="text-muted-foreground group-hover:text-primary transition-colors" />
+  )}
+</div>
               </div>
             </Card>
           ))}
