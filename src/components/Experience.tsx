@@ -19,6 +19,7 @@ const experiences: ExperienceItem[] = [
     location: "Mantova, Italia",
     description: "Representante Argentino de clases impartidas sobre Prompts, Sustentabilidad y cultura en escuela económica con integración de Programación.",
     website: "https://www.pitentino.edu.it/",
+    logo: "/EscuelaItalia.jpg",
   },
   {
     title: "Software Developer",
