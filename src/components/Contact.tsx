@@ -5,9 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
-const Contact = () => {
-  
-  };
+const Contact = () =>
 
   return (
     <section id="contact" className="py-20 px-4 md:px-8 bg-card/30">
