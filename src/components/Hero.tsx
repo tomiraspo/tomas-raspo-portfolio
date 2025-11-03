@@ -76,13 +76,20 @@ const Hero = () => {
             </a>
           </Button>
           <Button
-            variant="outline"
-            size="lg"
-            className="border-primary/50 text-foreground hover:bg-primary/10 transition-all hover:border-primary"
-          >
-            <FileDown className="mr-2 h-5 w-5" />
-            Download CV
-          </Button>
+            variant="outline"
+            size="lg"
+            className="border-primary/50 text-foreground hover:bg-primary/10 transition-all hover:border-primary"
+            asChild 
+          >
+            <a 
+                href="/__CV Tomas Raspo Argentina .pdf" 
+                download="Tomas_Raspo_CV.pdf" 
+                target="_blank" 
+            >
+              <FileDown className="mr-2 h-5 w-5" />
+              Download CV
+            </a>
+          </Button>
         </div>
       </div>
     </section>
