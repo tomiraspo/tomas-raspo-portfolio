@@ -77,7 +77,7 @@ const Contact = () => {
                 asChild
                    >
                     <a
-                   href="/_CV TomasRaspo Argentina.pdf" 
+                   href="/__CV Tomas Raspo Argentina .pdf" 
                     download="Tomas_Raspo_CV.pdf"
                     target="_blank"
                     >
