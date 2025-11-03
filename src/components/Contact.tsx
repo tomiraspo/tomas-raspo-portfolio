@@ -6,9 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
 const Contact = () => {
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission
+  
   };
 
   return (
@@ -94,7 +92,10 @@ const Contact = () => {
               <CardTitle className="text-foreground">Envíame un Mensaje</CardTitle>
             </CardHeader>
             <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form 
+              action="https://formspree.io/f/mgvpjowq" 
+              method="POST"
+                className="space-y-4">
                 <div className="space-y-2">
                   <Label htmlFor="name">Nombre *</Label>
                   <Input
