@@ -7,6 +7,13 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-muted-foreground text-sm">
             © 2025 Creado por Tomás Raspo. Todos los derechos reservados.
+              <span className="mx-2">|</span> 
+            <a 
+            href="tel:+543492656199" // Usar formato sin guiones para el tel:
+            className="hover:text-primary transition-colors"
+            >
+            +54 3492 656199
+            </a>        
           </p>
           
           <div className="flex items-center gap-4">
