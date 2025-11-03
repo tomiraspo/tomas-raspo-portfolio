@@ -37,6 +37,7 @@ const experiences: ExperienceItem[] = [
     location: "Banfield, Argentina",
     description: "Desarrollo y creación de Sistema de Turnos virtuales utilizado como base",
     website: "https://www.institutoioba.com/",
+    logo: "/IOBAfoto.png",
   },
   {
     title: "Prácticas Profesionalizantes",
@@ -45,6 +46,7 @@ const experiences: ExperienceItem[] = [
     location: "Buenos Aires, Argentina",
     description: "Integracion de Sistemas y Programacion de Servidores",
     website: "https://esba.edu.ar/",
+    logo: "/ESBAfoto.png",
   },
 ];
 
