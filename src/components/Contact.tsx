@@ -74,14 +74,15 @@ const Contact = () => {
               </CardHeader>
               <CardContent>
                 <Button className="w-full bg-primary hover:bg-primary/90"
-      asChild
-    >
-      <a
-        href="/_CV TomasRaspo Argentina.pdf" 
-        download="Tomas_Raspo_CV.pdf"
-        target="_blank"
-      >
-                  Descargar CV (PDF)
+                asChild
+                   >
+                    <a
+                   href="/_CV TomasRaspo Argentina.pdf" 
+                    download="Tomas_Raspo_CV.pdf"
+                    target="_blank"
+                    >
+                      Descargar CV (PDF)
+                      </a>
                 </Button>
               </CardContent>
             </Card>
