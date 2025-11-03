@@ -46,7 +46,7 @@ const experiences: ExperienceItem[] = [
     location: "Buenos Aires, Argentina",
     description: "Integracion de Sistemas y Programacion de Servidores",
     website: "https://esba.edu.ar/",
-    logo: "/ESBAfoto.png",
+    logo: "/Esbafoto.png",
   },
 ];
 
