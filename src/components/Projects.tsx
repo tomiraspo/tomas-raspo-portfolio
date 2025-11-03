@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, Linkedin } from "lucide-react";
 
 const projectsData = [
   {
@@ -10,6 +10,7 @@ const projectsData = [
     technologies: ["ASP.NET Core", "Blazor", "SQL Server", "Azure"],
     status: "Completado",
     github: "https://github.com/tomiraspo/Sistema-Turnos",
+    linkedin: "https://www.linkedin.com/feed/update/urn:li:activity:7384221305383936000/",
   },
 ];
 
@@ -52,31 +53,50 @@ const Projects = () => {
                 </Badge>
               </CardContent>
               <CardFooter className="gap-2">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="border-primary/50 hover:bg-primary/10"
-                  asChild
-                >
-                  <a href={project.github} target="_blank" rel="noopener noreferrer">
-                    <Github className="mr-2 h-4 w-4" />
-                    GitHub
-                  </a>
-                </Button>
-                {project.demo && (
-                  <Button
-                    variant="default"
-                    size="sm"
-                    className="bg-primary hover:bg-primary/90"
-                    asChild
-                  >
-                    <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="mr-2 h-4 w-4" />
-                      Demo
-                    </a>
-                  </Button>
-                )}
-              </CardFooter>
+                
+                {/* 1. Botón de GitHub */}
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-primary/50 hover:bg-primary/10"
+                  asChild
+                >
+                  <a href={project.github} target="_blank" rel="noopener noreferrer">
+                    <Github className="mr-2 h-4 w-4" />
+                    GitHub
+                  </a>
+                </Button>
+                
+                {/* 2. Botón de LinkedIn (Nuevo) */}
+                {project.linkedin && (
+                    <Button
+                      variant="default" // Utiliza el estilo primario para que resalte
+                      size="sm"
+                      className="bg-primary/90 hover:bg-primary"
+                      asChild
+                    >
+                        <a href={project.linkedin} target="_blank" rel="noopener noreferrer">
+                            <Linkedin className="mr-2 h-4 w-4" />
+                            Ver Demo (Video)
+                        </a>
+                    </Button>
+                )}
+                
+                {/* 3. Botón de Demo (Existente) */}
+                {project.demo && (
+                  <Button
+                    variant="default"
+                    size="sm"
+                    className="bg-primary hover:bg-primary/90"
+                    asChild
+                  >
+                    <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Demo
+                    </a>
+                  </Button>
+                )}
+              </CardFooter>
             </Card>
           ))}
         </div>
