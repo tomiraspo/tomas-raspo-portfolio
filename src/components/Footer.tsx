@@ -9,7 +9,9 @@ const Footer = () => {
             © 2025 Creado por Tomás Raspo. Todos los derechos reservados.
               <span className="mx-2">|</span> 
             <a 
-            href="tel:+543492656199" // Usar formato sin guiones para el tel:
+            href="https://wa.me/543492656199" // Usar formato sin guiones para el tel:
+            target="_blank"
+            rel="noopener noreferrer"
             className="hover:text-primary transition-colors"
             >
             +54 3492 656199
