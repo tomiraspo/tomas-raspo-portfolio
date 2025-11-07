@@ -45,7 +45,7 @@ const experiences: ExperienceItem[] = [
     period: "2021 - 2023",
     location: "Buenos Aires, Argentina",
     description: "Integracion de Sistemas y Programacion de Servidores",
-    website: "https://esbavirtual.com.ar/la-institucion/",
+    website: "https://esba.edu.ar/tecnicaturas/analisis-de-sistemas-a-distancia/",
     logo: "/Esbafoto.png",
   },
 ];
