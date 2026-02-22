@@ -8,13 +8,13 @@ const About = () => {
         
         <div className="prose prose-invert max-w-none">
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            Dessarollador Software Full Stack especializado en la arquitectura .NET C#, ASP.NET Core y Blazor, con dominio del ecosistema Azure para soluciones escalables.
+            Full Stack Developer specialized in .NET, C# and TypeScript, with real experience building complex systems including a high-performance virtual appointment management system.
           </p>
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            Experiencia internacional en Argentina, Italia y Portugal, impulsando la transformación digital y la optimización de procesos. Logros destacados incluyen el diseño e implementación de un sistema de gestión de turnos virtuales de alto rendimiento (web y API RESTful), mejorando significativamente la eficiencia operativa.
+            Currently transitioning into Data Analytics, combining my solid technical background in software development with data analysis to generate insights that support business decisions.
           </p>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Experiencia práctica con Docker para containerización, Bootstrap para interfaces responsivas, y herramientas como Visual Studio. Cuento con conocimientos en el manejo de bases de datos como SQL Server y MySQL. Comprometido con el Clean Code, las metodologías ágiles y la entrega de soluciones robustas y seguras.
+            International experience across Argentina, Italy and Portugal. Committed to Clean Code, agile methodologies and delivering robust, scalable solutions.
           </p>
         </div>
       </div>

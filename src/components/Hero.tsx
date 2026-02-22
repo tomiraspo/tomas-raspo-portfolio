@@ -31,7 +31,7 @@ const Hero = () => {
 
         {/* Title */}
         <p className="text-xl md:text-2xl text-foreground/90 font-semibold mb-3">
-          Técnico Analista de Sistemas - Diplomado en Redes Informáticas
+          Systems Analyst & Data Analytics Specialist
         </p>
 
         {/* Skills Badges */}

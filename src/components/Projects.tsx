@@ -83,19 +83,19 @@ const Projects = () => {
                 )}
                 
                 {/* 3. Botón de Demo (Existente) */}
-                {project.demo && (
-                  <Button
-                    variant="default"
-                    size="sm"
-                    className="bg-primary hover:bg-primary/90"
-                    asChild
-                  >
-                    <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="mr-2 h-4 w-4" />
-                      Demo
-                    </a>
-                  </Button>
-                )}
+                {(project as any).demo && (
+                  <Button
+                    variant="default"
+                    size="sm"
+                    className="bg-primary hover:bg-primary/90"
+                    asChild
+                  >
+                    <a href={(project as any).demo} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Demo
+                    </a>
+                  </Button>
+                )}
               </CardFooter>
             </Card>
           ))}
