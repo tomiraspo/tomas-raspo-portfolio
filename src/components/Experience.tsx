@@ -33,7 +33,7 @@ const experiences: ExperienceItem[] = [
   {
     title: "Analista en Sistemas - Backend",
     company: "IOBA",
-    period: "2022 - 2023",
+    period: "2021 - 2023",
     location: "Banfield, Argentina",
     description: "Desarrollo y creación de Sistema de Turnos virtuales utilizado como base",
     website: "https://www.institutoioba.com/",
