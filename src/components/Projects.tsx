@@ -12,6 +12,14 @@ const projectsData = [
     github: "https://github.com/tomiraspo/Sistema-Turnos",
     linkedin: "https://www.linkedin.com/feed/update/urn:li:activity:7384221305383936000/",
   },
+  {
+    title: "ClarVision BI",
+    description: "Sistema de inteligencia operacional para clínica oftalmológica. Pipeline completo de datos con alertas automáticas de ausentismo crítico y reportes semanales vía Slack.",
+    technologies: ["MySQL", "Power BI", "n8n", "Slack", "Excel", "Git"],
+    status: "Completado",
+    github: "https://github.com/tomiraspo/ClarVision-BI",
+    linkedin: "",
+  },
 ];
 
 const Projects = () => {
@@ -53,36 +61,30 @@ const Projects = () => {
                 </Badge>
               </CardContent>
               <CardFooter className="gap-2">
-                
-                {/* 1. Botón de GitHub */}
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="border-primary/50 hover:bg-primary/10"
-                  asChild
-                >
-                  <a href={project.github} target="_blank" rel="noopener noreferrer">
-                    <Github className="mr-2 h-4 w-4" />
-                    GitHub
-                  </a>
-                </Button>
-                
-                {/* 2. Botón de LinkedIn (Nuevo) */}
-                {project.linkedin && (
-                    <Button
-                      variant="default" // Utiliza el estilo primario para que resalte
-                      size="sm"
-                      className="bg-primary/90 hover:bg-primary"
-                      asChild
-                    >
-                        <a href={project.linkedin} target="_blank" rel="noopener noreferrer">
-                            <Linkedin className="mr-2 h-4 w-4" />
-                            Ver Demo (Video)
-                        </a>
-                    </Button>
-                )}
-                
-                {/* 3. Botón de Demo (Existente) */}
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border-primary/50 hover:bg-primary/10"
+                  asChild
+                >
+                  <a href={project.github} target="_blank" rel="noopener noreferrer">
+                    <Github className="mr-2 h-4 w-4" />
+                    GitHub
+                  </a>
+                </Button>
+                {project.linkedin && (
+                  <Button
+                    variant="default"
+                    size="sm"
+                    className="bg-primary/90 hover:bg-primary"
+                    asChild
+                  >
+                    <a href={project.linkedin} target="_blank" rel="noopener noreferrer">
+                      <Linkedin className="mr-2 h-4 w-4" />
+                      Ver Demo (Video)
+                    </a>
+                  </Button>
+                )}
                 {(project as any).demo && (
                   <Button
                     variant="default"
@@ -96,7 +98,7 @@ const Projects = () => {
                     </a>
                   </Button>
                 )}
-              </CardFooter>
+              </CardFooter>
             </Card>
           ))}
         </div>
