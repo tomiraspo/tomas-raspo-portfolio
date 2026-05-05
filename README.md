@@ -13,5 +13,4 @@ proyectos y stack tecnológico.
 - shadcn/ui
 
 ## 📌 Sobre este proyecto
-Portfolio desarrollado para presentar mi transición profesional 
-hacia Data Analytics, con base en desarrollo .NET y TypeScript.
+Portafolio: Analista Funcional y Desarrollador Full Stack
