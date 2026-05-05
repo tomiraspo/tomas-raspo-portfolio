@@ -24,7 +24,7 @@ const experiences: ExperienceItem[] = [
   {
     title: "Software Developer",
     company: "Wildsmile",
-    period: "2024 - 2025",
+    period: "2023 - 2025",
     location: "Portugal / Portalegre",
     description: "Trabajo en proyectos en sector DevOps, conocimiento interno de una empresa, Java con Spring y utilización de git con despliegue.",
     website: "https://wildsmile.com/pt/pt-PT?_gl=1*1shswgx*_up*MQ..*_ga*NjU3NjEzOTk1LjE3NjIxMzAyNDc.*_ga_FZVN1D8Y4J*czE3NjIxMzAyNDYkbzEkZzEkdDE3NjIxMzAyNjEkajQ1JGwwJGgw",
