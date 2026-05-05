@@ -13,7 +13,7 @@ interface ExperienceItem {
 
 const experiences: ExperienceItem[] = [
   {
-    title: "Voluntario y Ayudante de maestros",
+    title: "Ayudante de maestros",
     company: "ITES Alberto Pitentino",
     period: "2025",
     location: "Mantova, Italia",
