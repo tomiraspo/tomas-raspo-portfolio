@@ -8,19 +8,19 @@ const About = () => {
         
         <div className="prose prose-invert max-w-none">
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            <strong>Analista Funcional y Desarrollador Full Stack</strong> con sólida experiencia técnica en <strong>.NET, C# y TypeScript</strong>. Mi perfil combina la capacidad de construir sistemas complejos con una visión estratégica para relevar requerimientos y transformarlos en soluciones tecnológicas escalables.
+            Soy <strong>Desarrollador Full Stack (.NET / C# / TypeScript)</strong> y estoy cursando la carrera de <strong>Administración y Gestión de la Información</strong>. Mi enfoque hoy es el Análisis Funcional: me ocupo de que lo que se programa tenga sentido real para el negocio.
           </p>
           
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            Me especializo en optimizar la dinámica entre el negocio y el desarrollo. Cuento con experiencia real gestionando sistemas de alta criticidad, como plataformas de gestión de turnos virtuales, donde mi enfoque fue <strong>alinear los procesos operativos con la arquitectura del software</strong> para maximizar el rendimiento.
+            Tengo experiencia práctica en el desarrollo de sistemas complejos, como una plataforma de gestión de turnos virtuales de alto rendimiento. Ese proyecto me enseñó que un buen software no solo necesita código limpio, sino una arquitectura que resuelva procesos operativos reales sin vueltas.
           </p>
 
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            Actualmente integro el <strong>Análisis de Datos</strong> como pieza clave de mi metodología, permitiéndome no solo proponer funcionalidades, sino también validar su impacto mediante métricas reales que apoyan la toma de decisiones empresariales.
+            Actualmente combino mi base técnica con el Análisis de Datos y la gestión de la información. Mi objetivo es claro: <strong>ser el puente que traduce las necesidades de la empresa en requerimientos técnicos precisos</strong>, evitando errores de comunicación entre el cliente y el equipo de desarrollo.
           </p>
           
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Con trayectoria internacional en Argentina, Italia y Portugal, aplico metodologías ágiles y principios de Clean Code para asegurar que cada proyecto sea robusto, funcional y fácil de evolucionar.
+            He trabajado en proyectos de Argentina, Italia y Portugal, lo que me dio flexibilidad para adaptarme a distintos equipos y metodologías ágiles. Busco soluciones que sean escalables, fáciles de mantener y, sobre todo, útiles para quien las usa.
           </p>
         </div>
       </div>
