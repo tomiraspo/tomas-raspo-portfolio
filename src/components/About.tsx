@@ -8,19 +8,19 @@ const About = () => {
         
         <div className="prose prose-invert max-w-none">
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            Soy <strong>Desarrollador Full Stack (.NET / C# / TypeScript)</strong> y estoy cursando la carrera de <strong>Administración y Gestión de la Información</strong>. Mi enfoque hoy es el Análisis Funcional: me ocupo de que lo que se programa tenga sentido real para el negocio.
+            Soy <strong>Analista Funcional y Desarrollador Full Stack</strong>, con especialización en el ecosistema <strong>.NET (C#) y TypeScript</strong>. Mi perfil se define por la intersección entre el desarrollo técnico y la gestión de la información, carrera que curso actualmente para optimizar la estructura y el flujo de datos en las organizaciones.
           </p>
           
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            Tengo experiencia práctica en el desarrollo de sistemas complejos, como una plataforma de gestión de turnos virtuales de alto rendimiento. Ese proyecto me enseñó que un buen software no solo necesita código limpio, sino una arquitectura que resuelva procesos operativos reales sin vueltas.
+            Cuento con experiencia en el diseño e implementación de soluciones de software de alta disponibilidad, destacando el desarrollo de un sistema de gestión de turnos virtuales. Mi rol en estos proyectos no solo ha sido técnico, sino también de <strong>análisis y traducción de procesos de negocio</strong> en arquitecturas escalables y eficientes.
           </p>
 
           <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-            Actualmente combino mi base técnica con el Análisis de Datos y la gestión de la información. Mi objetivo es claro: <strong>ser el puente que traduce las necesidades de la empresa en requerimientos técnicos precisos</strong>, evitando errores de comunicación entre el cliente y el equipo de desarrollo.
+            Mi enfoque actual integra el <strong>Análisis de Datos</strong> para fundamentar la toma de decisiones. Me especializo en asegurar que el ciclo de vida del desarrollo esté alineado con los objetivos estratégicos, garantizando que cada funcionalidad responda a una necesidad real del negocio y del usuario final.
           </p>
           
           <p className="text-lg text-muted-foreground leading-relaxed">
-            He trabajado en proyectos de Argentina, Italia y Portugal, lo que me dio flexibilidad para adaptarme a distintos equipos y metodologías ágiles. Busco soluciones que sean escalables, fáciles de mantener y, sobre todo, útiles para quien las usa.
+            A lo largo de mi trayectoria en Argentina, Italia y Portugal, he trabajado bajo metodologías ágiles y estándares de Clean Code, priorizando siempre la entrega de software mantenible y de impacto directo en la operativa de la empresa.
           </p>
         </div>
       </div>
