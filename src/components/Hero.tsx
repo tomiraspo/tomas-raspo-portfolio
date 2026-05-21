@@ -18,7 +18,7 @@ const Hero = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-full blur-xl opacity-50 animate-pulse-glow" />
             <img
               src={profileImage}
-              alt="Tomás Raspo"
+              alt="Tomas Raspo"
               className="relative w-40 h-40 rounded-full object-cover border-4 border-primary/50 shadow-2xl"
             />
           </div>
@@ -26,7 +26,7 @@ const Hero = () => {
 
         {/* Name */}
         <h1 className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-          Tomás Raspo
+          Tomas Raspo
         </h1>
 
         {/* Title */}
@@ -36,7 +36,7 @@ const Hero = () => {
 
         {/* Skills Badges */}
         <div className="flex flex-wrap gap-2 justify-center mb-6 max-w-3xl mx-auto">
-          {['Blazor', 'ASP.NET Core', 'C#', 'SQL Server', 'Backend Development', 'Full Stack Development', 'REST API', 'Git', 'Agile Methodologies'].map((skill) => (
+          {['Blazor', 'C#', '.NET Core', 'Blazor', 'Java', 'MVC', 'Clean Arquitecture', 'SQL Server', 'Power BI', 'MySQL', 'n8n', 'Agile Methodologies'].map((skill) => (
             <span
               key={skill}
               className="px-3 py-1 text-sm font-medium bg-primary/10 text-primary border border-primary/20 rounded-full"
