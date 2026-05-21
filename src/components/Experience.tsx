@@ -35,7 +35,7 @@ const experiences: ExperienceItem[] = [
     company: "IOBA",
     period: "2021 - 2023",
     location: "Banfield, Argentina",
-    description: "Desarrollo y creación de Sistema de Turnos virtuales utilizado como base",
+    description: "Co-diseño y desarrollo en equipo de un sistema integral de turnos virtuales enfocado en clínicas oftalmológicas, aplicando Clean Architecture y DDD para optimizar los procesos de agendamiento.",
     website: "https://www.institutoioba.com/",
     logo: "/IOBAfoto.png",
   },
