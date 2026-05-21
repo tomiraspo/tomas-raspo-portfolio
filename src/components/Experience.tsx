@@ -26,7 +26,7 @@ const experiences: ExperienceItem[] = [
     company: "Wildsmile",
     period: "2023 - 2025",
     location: "Portugal / Portalegre",
-    description: "Trabajo en proyectos en sector DevOps, conocimiento interno de una empresa, Java con Spring y utilización de git con despliegue.",
+    description: "Análisis y soporte de sistemas empresariales en el mercado europeo utilizando Java (Play Framework / MVC). Participación activa en el relevamiento funcional de lógica comercial y en la transición tecnológica de control de versiones desde TortoiseSVN hacia Git con flujos de CI/CD.",
     website: "https://wildsmile.com/pt/pt-PT?_gl=1*1shswgx*_up*MQ..*_ga*NjU3NjEzOTk1LjE3NjIxMzAyNDc.*_ga_FZVN1D8Y4J*czE3NjIxMzAyNDYkbzEkZzEkdDE3NjIxMzAyNjEkajQ1JGwwJGgw",
     logo: "/Empresa.png",
   },
