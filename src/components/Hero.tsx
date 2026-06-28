@@ -31,7 +31,7 @@ const Hero = () => {
 
         {/* Title */}
         <p className="text-xl md:text-2xl text-foreground/90 font-semibold mb-3">
-          Analista Funcional y Desarrollador Full Stack
+          Functional Analyst & Systems Developer
         </p>
 
         {/* Skills Badges */}
