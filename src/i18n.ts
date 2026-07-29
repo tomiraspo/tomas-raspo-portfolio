@@ -17,7 +17,8 @@ const resources = {
       hero: {
         title: "Analista Funcional y Desarrollador Full Stack",
         subtitle: "Bienvenido a mi portafolio personal",
-        cta: "Ver proyectos"
+        cta: "Ver proyectos",
+        contact: "Contactar"
       }
     }
   },
@@ -35,7 +36,8 @@ const resources = {
       hero: {
         title: "Functional Analyst & Full Stack Developer",
         subtitle: "Welcome to my personal portfolio",
-        cta: "View projects"
+        cta: "View projects",
+        contact: "Contact me"
       }
     }
   }
