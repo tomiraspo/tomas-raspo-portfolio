@@ -1,72 +1,87 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
+import LanguageDetector from "i18next-browser-languagedetector";
 
 const resources = {
   es: {
     translation: {
       nav: {
+        home: "Inicio",
         about: "Sobre Mí",
-        experience: "Experiencia",
+        skills: "Habilidades",
         projects: "Proyectos",
+        experience: "Experiencia",
         certifications: "Certificaciones",
         contact: "Contacto",
       },
       hero: {
-        title: "Analista de Sistemas & Desarrollador Web",
-        subtitle: "Especializado en crear aplicaciones web modernas, funcionales y adaptadas a las necesidades del cliente.",
-        viewWork: "Ver Mi Trabajo",
-        contactMe: "Contáctame",
+        role: "Analista Funcional y Desarrollador de Sistemas",
+        location: "Remoto, Argentina",
+        downloadCv: "Descargar CV",
       },
       about: {
         title: "Sobre Mí",
         subtitle: "Conoce más sobre mi trayectoria y habilidades",
-        description1: "Soy un apasionado Analista de Sistemas con sólida formación en desarrollo web y gestión de proyectos tecnológicos.",
-        description2: "Mi objetivo es aportar soluciones innovadoras que optimicen procesos y generen un impacto positivo en las organizaciones.",
-        skills: "Habilidades Técnicas",
+        p1_1: "Soy ",
+        p1_bold: "Analista Funcional y Desarrollador Full Stack",
+        p1_2: ", con especialización en el ecosistema ",
+        p1_bold2: ".NET (C#) y TypeScript",
+        p1_3: ". Mi perfil se define por la intersección entre el desarrollo técnico y la gestión de la información.",
+        p2_1: "Cuento con experiencia en el diseño e implementación de soluciones de software de alta disponibilidad, destacando el desarrollo de un sistema de gestión de turnos virtuales. Mi rol ha sido de ",
+        p2_bold: "análisis y traducción de procesos de negocio",
+        p2_2: " en arquitecturas escalables y eficientes.",
+        p3_1: "Mi enfoque actual integra el ",
+        p3_bold: "Análisis de Datos",
+        p3_2: " para fundamentar la toma de decisiones. Me especializo en asegurar que el ciclo de vida del desarrollo esté alineado con los objetivos estratégicos.",
+        p4: "A lo largo de mi trayectoria en Argentina, Italia y Portugal, he trabajado bajo metodologías ágiles y estándares de Clean Code, priorizando la entrega de software mantenible.",
       },
-      experience: {
-        title: "Experiencia Laboral",
-        subtitle: "Mi trayectoria profesional y proyectos previos",
-        items: [
-          {
-            period: "2024 - Presente",
-            role: "Administrador / Recepcionista",
-            company: "Ostello Bello Mantova - Italia",
-            description: "Atención al cliente multilingüe, gestión de reservas, control de caja y resolución de incidencias en un entorno dinámico e internacional.",
-          },
-          {
-            period: "2023 - 2024",
-            role: "Atención al Cliente y Logística",
-            company: "Pizzería e Restaurante 'Doce Peixe' - Portugal",
-            description: "Atención al cliente en mesa y caja, gestión de pedidos y apoyo en tareas logísticas del establecimiento.",
-          },
-          {
-            period: "2021 - 2023",
-            role: "Técnico de Soporte e Infraestructura",
-            company: "Servicios Informáticos Independientes",
-            description: "Mantenimiento preventivo y correctivo de hardware/software, configuración de redes y asistencia técnica personalizada a clientes.",
-          },
-        ],
+      skills: {
+        title: "Habilidades Técnicas",
+        languages: "Lenguajes",
+        frameworks: "Frameworks & Librerías",
+        databases: "Bases de Datos",
+        cloud: "Cloud & DevOps",
+        tools: "Herramientas",
+        versionControl: "Control de Versiones",
       },
       projects: {
         title: "Proyectos Destacados",
         subtitle: "Algunos de los trabajos más relevantes que he desarrollado",
-        demoBtn: "Ver Demo",
-        githubBtn: "Código Fuente",
-        items: [
-          {
-            title: "Página Web para Psicóloga y Profesora de Yoga",
-            description: "Sitio web completo desarrollado para conectar servicios de psicología y yoga con clientes. Incluye secciones sobre la profesional, detalles de servicios, recursos, blog y formulario de contacto. Totalmente responsivo y optimizado.",
+        statusCompleted: "Completado",
+        viewDemo: "Ver Demo (Video)",
+        items: {
+          turnos: {
+            title: "Sistema de Turnos Virtual",
+            description: "Agendamiento Oftalmológico Flexible con ASP.NET Core y Blazor.",
           },
-          {
-            title: "Controlador de Pedidos para Gastronomía",
-            description: "Sistema web enfocado en la gestión eficiente de comandas y pedidos para locales gastronómicos. Permite registrar, actualizar y visualizar en tiempo real el estado de cada pedido, mejorando la organización del personal.",
+          clarvision: {
+            title: "ClarVision BI",
+            description: "Sistema de inteligencia operacional para clínica oftalmológica. Pipeline completo de datos con alertas automáticas de ausentismo crítico y reportes semanales vía Slack.",
           },
-          {
-            title: "Página Web para Complejo de Departamentos de Alquiler",
-            description: "Plataforma web diseñada para exhibir departamentos en alquiler temporario. Ofrece galerías de fotos por unidad, detalle de comodidades, ubicación y un canal de contacto directo para consultas y reservas.",
+        },
+      },
+      experience: {
+        title: "Experiencia Laboral",
+        subtitle: "Mi trayectoria profesional y proyectos previos",
+        visitWebsite: "Visitar sitio web",
+        items: {
+          pitentino: {
+            title: "Ayudante de maestros",
+            description: "Representante Argentino de clases impartidas sobre Prompts, Sustentabilidad y cultura en escuela económica con integración de Programación.",
           },
-        ],
+          wildsmile: {
+            title: "Software Developer",
+            description: "Análisis y soporte de sistemas empresariales en el mercado europeo utilizando Java (Play Framework / MVC). Participación activa en el relevamiento funcional de lógica comercial y migración SVN a Git.",
+          },
+          ioba: {
+            title: "Analista en Sistemas - Backend",
+            description: "Co-diseño y desarrollo en equipo de un sistema integral de turnos virtuales enfocado en clínicas oftalmológicas, aplicando Clean Architecture y DDD.",
+          },
+          esba: {
+            title: "Prácticas Profesionalizantes",
+            description: "Integración de Sistemas y Programación de Servidores.",
+          },
+        },
       },
       certifications: {
         title: "Certificaciones y Cursos",
@@ -104,68 +119,82 @@ const resources = {
   en: {
     translation: {
       nav: {
+        home: "Home",
         about: "About Me",
-        experience: "Experience",
+        skills: "Skills",
         projects: "Projects",
+        experience: "Experience",
         certifications: "Certifications",
         contact: "Contact",
       },
       hero: {
-        title: "Systems Analyst & Web Developer",
-        subtitle: "Specialized in creating modern, functional web applications tailored to client needs.",
-        viewWork: "View My Work",
-        contactMe: "Contact Me",
+        role: "Functional Analyst & Systems Developer",
+        location: "Remote, Argentina",
+        downloadCv: "Download CV",
       },
       about: {
         title: "About Me",
         subtitle: "Learn more about my background and skills",
-        description1: "I am a passionate Systems Analyst with a solid background in web development and tech project management.",
-        description2: "My goal is to provide innovative solutions that optimize processes and deliver a positive impact on organizations.",
-        skills: "Technical Skills",
+        p1_1: "I am a ",
+        p1_bold: "Functional Analyst & Full Stack Developer",
+        p1_2: ", specializing in the ",
+        p1_bold2: ".NET (C#) and TypeScript",
+        p1_3: " ecosystem. My profile is defined by the intersection of technical development and information management.",
+        p2_1: "I have experience in designing and implementing high-availability software solutions, highlighted by a virtual queue management system. My role was focused on ",
+        p2_bold: "analyzing and translating business processes",
+        p2_2: " into scalable and efficient architectures.",
+        p3_1: "My current approach integrates ",
+        p3_bold: "Data Analysis",
+        p3_2: " to support decision-making. I specialize in ensuring the development lifecycle aligns with strategic goals.",
+        p4: "Throughout my career in Argentina, Italy, and Portugal, I have worked under agile methodologies and Clean Code standards, always prioritizing deliverable, maintainable software.",
       },
-      experience: {
-        title: "Work Experience",
-        subtitle: "My professional journey and previous roles",
-        items: [
-          {
-            period: "2024 - Present",
-            role: "Administrator / Front Desk",
-            company: "Ostello Bello Mantova - Italy",
-            description: "Multilingual customer support, reservation management, cash flow handling, and issue resolution in a dynamic international environment.",
-          },
-          {
-            period: "2023 - 2024",
-            role: "Customer Service & Logistics",
-            company: "Pizzeria & Restaurant 'Doce Peixe' - Portugal",
-            description: "Dine-in and checkout customer service, order management, and logistical support for daily restaurant operations.",
-          },
-          {
-            period: "2021 - 2023",
-            role: "IT Support & Infrastructure Specialist",
-            company: "Freelance IT Services",
-            description: "Preventive and corrective hardware/software maintenance, network configuration, and personalized technical assistance for clients.",
-          },
-        ],
+      skills: {
+        title: "Technical Skills",
+        languages: "Languages",
+        frameworks: "Frameworks & Libraries",
+        databases: "Databases",
+        cloud: "Cloud & DevOps",
+        tools: "Tools",
+        versionControl: "Version Control",
       },
       projects: {
         title: "Featured Projects",
         subtitle: "Some of the most relevant projects I've built",
-        demoBtn: "Live Demo",
-        githubBtn: "Source Code",
-        items: [
-          {
-            title: "Psychologist & Yoga Instructor Website",
-            description: "Complete website created to connect psychology and yoga services with clients. Features professional background, service details, resources, blog, and contact form. Fully responsive and optimized.",
+        statusCompleted: "Completed",
+        viewDemo: "Watch Demo (Video)",
+        items: {
+          turnos: {
+            title: "Virtual Appointment System",
+            description: "Flexible Ophthalmological Scheduling with ASP.NET Core and Blazor.",
           },
-          {
-            title: "Gastronomy Order Management System",
-            description: "Web system designed for efficient order tracking in restaurants and food venues. Enables real-time order status updates, streamlining staff coordination and service flow.",
+          clarvision: {
+            title: "ClarVision BI",
+            description: "Operational intelligence system for ophthalmology clinic. Full data pipeline with automatic alerts for critical absenteeism and weekly reports via Slack.",
           },
-          {
-            title: "Apartment Rental Complex Website",
-            description: "Web platform designed to showcase temporary rental apartments. Features photo galleries for each unit, amenities list, location details, and direct contact options for inquiries and bookings.",
+        },
+      },
+      experience: {
+        title: "Work Experience",
+        subtitle: "My professional journey and previous roles",
+        visitWebsite: "Visit website",
+        items: {
+          pitentino: {
+            title: "Teacher Assistant",
+            description: "Argentine representative teaching classes on Prompts, Sustainability, and culture in an economics school with programming integration.",
           },
-        ],
+          wildsmile: {
+            title: "Software Developer",
+            description: "Analysis and support of enterprise systems in the European market using Java (Play Framework / MVC). Active participation in functional requirements gathering and SVN to Git migration.",
+          },
+          ioba: {
+            title: "Systems Analyst - Backend",
+            description: "Co-design and team development of a comprehensive virtual appointment system focused on ophthalmology clinics, applying Clean Architecture and DDD.",
+          },
+          esba: {
+            title: "Professional Internship",
+            description: "Systems Integration and Server Programming.",
+          },
+        },
       },
       certifications: {
         title: "Certifications & Courses",
@@ -202,13 +231,15 @@ const resources = {
   },
 };
 
-i18n.use(initReactI18next).init({
-  resources,
-  lng: "es",
-  fallbackLng: "es",
-  interpolation: {
-    escapeValue: false,
-  },
-});
+i18n
+  .use(LanguageDetector)
+  .use(initReactI18next)
+  .init({
+    resources,
+    fallbackLng: "es",
+    interpolation: {
+      escapeValue: false,
+    },
+  });
 
 export default i18n;
