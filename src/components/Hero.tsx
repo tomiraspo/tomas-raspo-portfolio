@@ -1,8 +1,11 @@
+import { useTranslation } from "react-i18next";
 import { Mail, Linkedin, FileDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import profileImage from "@/assets/FotoPortafolio.png";
 
 const Hero = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden px-4">
       {/* Animated background elements */}
@@ -31,7 +34,7 @@ const Hero = () => {
 
         {/* Title */}
         <p className="text-xl md:text-2xl text-foreground/90 font-semibold mb-3">
-          Functional Analyst & Systems Developer
+          {t("hero.role", "Functional Analyst & Systems Developer")}
         </p>
 
         {/* Skills Badges */}
@@ -46,9 +49,9 @@ const Hero = () => {
           ))}
         </div>
 
-        {/* Subtitle */}
+        {/* Subtitle / Location */}
         <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
-          Remoto, Argentina
+          {t("hero.location", "Remoto, Argentina")}
         </p>
 
         {/* CTA Buttons */}
@@ -76,20 +79,20 @@ const Hero = () => {
             </a>
           </Button>
           <Button
-            variant="outline"
-            size="lg"
-            className="border-primary/50 text-foreground hover:bg-primary/10 transition-all hover:border-primary"
-            asChild 
-          >
-            <a 
+            variant="outline"
+            size="lg"
+            className="border-primary/50 text-foreground hover:bg-primary/10 transition-all hover:border-primary"
+            asChild 
+          >
+            <a 
                 href="/__CV Tomas Raspo Argentina .pdf" 
                 download="Tomas_Raspo_CV.pdf" 
                 target="_blank" 
             >
-              <FileDown className="mr-2 h-5 w-5" />
-              Download CV
-            </a>
-          </Button>
+              <FileDown className="mr-2 h-5 w-5" />
+              {t("hero.downloadCv", "Download CV")}
+            </a>
+          </Button>
         </div>
       </div>
     </section>
