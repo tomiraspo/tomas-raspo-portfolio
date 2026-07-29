@@ -2,11 +2,14 @@ import { useState, useEffect } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "next-themes";
+import { useTranslation } from "react-i18next";
+import { LanguageToggle } from "./LanguageToggle"; // Importamos el botón de idioma
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { theme, setTheme } = useTheme();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,13 +20,13 @@ const Navbar = () => {
   }, []);
 
   const navItems = [
-    { label: "Inicio", href: "#" },
-    { label: "Sobre Mí", href: "#about" },
-    { label: "Habilidades", href: "#skills" },
-    { label: "Proyectos", href: "#projects" },
-    { label: "Experiencia", href: "#experiencia" },
-    { label: "Certificaciones", href: "#certifications" },
-    { label: "Contacto", href: "#contact" },
+    { label: t("nav.home", "Inicio"), href: "#" },
+    { label: t("nav.about", "Sobre Mí"), href: "#about" },
+    { label: t("nav.skills", "Habilidades"), href: "#skills" },
+    { label: t("nav.projects", "Proyectos"), href: "#projects" },
+    { label: t("nav.experience", "Experiencia"), href: "#experiencia" },
+    { label: t("nav.certifications", "Certificaciones"), href: "#certifications" },
+    { label: t("nav.contact", "Contacto"), href: "#contact" },
   ];
 
   return (
@@ -43,7 +46,7 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-1">
             {navItems.map((item) => (
               <a
-                key={item.label}
+                key={item.href}
                 href={item.href}
                 className="px-3 py-2 rounded-md text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
               >
@@ -51,19 +54,24 @@ const Navbar = () => {
               </a>
             ))}
             
+            {/* Language Toggle */}
+            <LanguageToggle />
+
             {/* Theme Toggle */}
             <Button
               variant="ghost"
               size="icon"
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="ml-2 text-muted-foreground hover:text-primary"
+              className="ml-1 text-muted-foreground hover:text-primary"
             >
               {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </Button>
           </div>
 
-          {/* Mobile Menu Button & Theme Toggle */}
-          <div className="md:hidden flex items-center space-x-2">
+          {/* Mobile Menu Button & Theme/Language Toggle */}
+          <div className="md:hidden flex items-center space-x-1">
+            <LanguageToggle />
+
             <Button
               variant="ghost"
               size="icon"
@@ -72,6 +80,7 @@ const Navbar = () => {
             >
               {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </Button>
+            
             <Button
               variant="ghost"
               size="icon"
@@ -90,7 +99,7 @@ const Navbar = () => {
           <div className="px-2 pt-2 pb-3 space-y-1">
             {navItems.map((item) => (
               <a
-                key={item.label}
+                key={item.href}
                 href={item.href}
                 className="block px-3 py-2 rounded-md text-base font-medium text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
