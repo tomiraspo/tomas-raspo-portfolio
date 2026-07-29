@@ -6,9 +6,12 @@ const resources = {
   es: {
     translation: {
       nav: {
-        about: "Sobre mí",
-        projects: "Proyectos",
+        home: "Inicio",
+        about: "Sobre Mí",
         skills: "Habilidades",
+        projects: "Proyectos",
+        experience: "Experiencia",
+        certifications: "Certificaciones",
         contact: "Contacto"
       },
       hero: {
@@ -16,15 +19,17 @@ const resources = {
         subtitle: "Bienvenido a mi portafolio personal",
         cta: "Ver proyectos"
       }
-      // Agrega aquí el resto de tus textos en español
     }
   },
   en: {
     translation: {
       nav: {
-        about: "About me",
-        projects: "Projects",
+        home: "Home",
+        about: "About Me",
         skills: "Skills",
+        projects: "Projects",
+        experience: "Experience",
+        certifications: "Certifications",
         contact: "Contact"
       },
       hero: {
@@ -32,17 +37,16 @@ const resources = {
         subtitle: "Welcome to my personal portfolio",
         cta: "View projects"
       }
-      // Agrega aquí las traducciones al inglés
     }
   }
 };
 
 i18n
-  .use(LanguageDetector) // Detecta el idioma del navegador automáticamente
+  .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     resources,
-    fallbackLng: 'es', // Idioma por defecto si no detecta otro
+    fallbackLng: 'es',
     interpolation: {
       escapeValue: false
     }
