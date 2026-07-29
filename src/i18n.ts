@@ -34,6 +34,15 @@ const resources = {
         p3_2: " para fundamentar la toma de decisiones. Me especializo en asegurar que el ciclo de vida del desarrollo esté alineado con los objetivos estratégicos, garantizando que cada funcionalidad responda a una necesidad real del negocio y del usuario final.",
         p4: "A lo largo de mi trayectoria en Argentina, Italia y Portugal, he trabajado bajo metodologías ágiles y estándares de Clean Code, priorizando siempre la entrega de software mantenible y de impacto directo en la operativa de la empresa."
       },
+      skills: {
+        title: "Habilidades Técnicas",
+        languages: "Lenguajes",
+        frameworks: "Frameworks & Librerías",
+        databases: "Bases de Datos",
+        cloud: "Cloud & DevOps",
+        tools: "Herramientas",
+        versionControl: "Control de Versiones"
+      },
       certifications: {
         title: "Certificaciones",
         subtitle: "Credenciales profesionales que validan mi experiencia y conocimientos técnicos"
@@ -135,6 +144,15 @@ const resources = {
         p3_bold: "Data Analysis",
         p3_2: " to support decision-making. I specialize in ensuring that the development lifecycle aligns with strategic goals, guaranteeing that every feature responds to a real business and end-user need.",
         p4: "Throughout my career in Argentina, Italy, and Portugal, I have worked under agile methodologies and Clean Code standards, always prioritizing the delivery of maintainable software with a direct impact on business operations."
+      },
+      skills: {
+        title: "Technical Skills",
+        languages: "Languages",
+        frameworks: "Frameworks & Libraries",
+        databases: "Databases",
+        cloud: "Cloud & DevOps",
+        tools: "Tools",
+        versionControl: "Version Control"
       },
       certifications: {
         title: "Certifications",
