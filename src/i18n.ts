@@ -15,10 +15,9 @@ const resources = {
         contact: "Contacto"
       },
       hero: {
-        title: "Analista Funcional y Desarrollador Full Stack",
-        subtitle: "Bienvenido a mi portafolio personal",
-        cta: "Ver proyectos",
-        contact: "Contactar"
+        role: "Analista Funcional y Desarrollador de Sistemas",
+        location: "Remoto, Argentina",
+        downloadCv: "Descargar CV"
       }
     }
   },
@@ -34,10 +33,9 @@ const resources = {
         contact: "Contact"
       },
       hero: {
-        title: "Functional Analyst & Full Stack Developer",
-        subtitle: "Welcome to my personal portfolio",
-        cta: "View projects",
-        contact: "Contact me"
+        role: "Functional Analyst & Systems Developer",
+        location: "Remote, Argentina",
+        downloadCv: "Download CV"
       }
     }
   }
