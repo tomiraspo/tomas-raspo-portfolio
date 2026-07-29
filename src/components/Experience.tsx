@@ -1,66 +1,69 @@
+import { useTranslation } from "react-i18next";
 import { Building2, ExternalLink } from "lucide-react";
 import { Card } from "./ui/card";
 
 interface ExperienceItem {
-  title: string;
+  titleKey: string;
   company: string;
   period: string;
   location: string;
-  description: string;
+  descriptionKey: string;
   logo?: string;
   website: string;
 }
 
-const experiences: ExperienceItem[] = [
-  {
-    title: "Ayudante de maestros",
-    company: "ITES Alberto Pitentino",
-    period: "2025",
-    location: "Mantova, Italia",
-    description: "Representante Argentino de clases impartidas sobre Prompts, Sustentabilidad y cultura en escuela económica con integración de Programación.",
-    website: "https://www.pitentino.edu.it/",
-    logo: "/EscuelaItalia.jpg",
-  },
-  {
-    title: "Software Developer",
-    company: "Wildsmile",
-    period: "2023 - 2025",
-    location: "Portugal / Portalegre",
-    description: "Análisis y soporte de sistemas empresariales en el mercado europeo utilizando Java (Play Framework / MVC). Participación activa en el relevamiento funcional de lógica comercial y en la transición tecnológica de control de versiones desde TortoiseSVN hacia Git con flujos de CI/CD.",
-    website: "https://wildsmile.com/pt/pt-PT?_gl=1*1shswgx*_up*MQ..*_ga*NjU3NjEzOTk1LjE3NjIxMzAyNDc.*_ga_FZVN1D8Y4J*czE3NjIxMzAyNDYkbzEkZzEkdDE3NjIxMzAyNjEkajQ1JGwwJGgw",
-    logo: "/Empresa.png",
-  },
-  {
-    title: "Analista en Sistemas - Backend",
-    company: "IOBA",
-    period: "2021 - 2023",
-    location: "Banfield, Argentina",
-    description: "Co-diseño y desarrollo en equipo de un sistema integral de turnos virtuales enfocado en clínicas oftalmológicas, aplicando Clean Architecture y DDD para optimizar los procesos de agendamiento.",
-    website: "https://www.institutoioba.com/",
-    logo: "/IOBAfoto.png",
-  },
-  {
-    title: "Prácticas Profesionalizantes",
-    company: "ESBA",
-    period: "2021 - 2023",
-    location: "Buenos Aires, Argentina",
-    description: "Integracion de Sistemas y Programacion de Servidores",
-    website: "https://esba.edu.ar/tecnicaturas/analisis-de-sistemas-a-distancia/",
-    logo: "/Esbafoto.png",
-  },
-];
-
 const Experience = () => {
+  const { t } = useTranslation();
+
+  const experiences: ExperienceItem[] = [
+    {
+      titleKey: "experience.items.pitentino.title",
+      company: "ITES Alberto Pitentino",
+      period: "2025",
+      location: "Mantova, Italia",
+      descriptionKey: "experience.items.pitentino.description",
+      website: "https://www.pitentino.edu.it/",
+      logo: "/EscuelaItalia.jpg",
+    },
+    {
+      titleKey: "experience.items.wildsmile.title",
+      company: "Wildsmile",
+      period: "2023 - 2025",
+      location: "Portugal / Portalegre",
+      descriptionKey: "experience.items.wildsmile.description",
+      website: "https://wildsmile.com/pt/pt-PT?_gl=1*1shswgx*_up*MQ..*_ga*NjU3NjEzOTk1LjE3NjIxMzAyNDc.*_ga_FZVN1D8Y4J*czE3NjIxMzAyNDYkbzEkZzEkdDE3NjIxMzAyNjEkajQ1JGwwJGgw",
+      logo: "/Empresa.png",
+    },
+    {
+      titleKey: "experience.items.ioba.title",
+      company: "IOBA",
+      period: "2021 - 2023",
+      location: "Banfield, Argentina",
+      descriptionKey: "experience.items.ioba.description",
+      website: "https://www.institutoioba.com/",
+      logo: "/IOBAfoto.png",
+    },
+    {
+      titleKey: "experience.items.esba.title",
+      company: "ESBA",
+      period: "2021 - 2023",
+      location: "Buenos Aires, Argentina",
+      descriptionKey: "experience.items.esba.description",
+      website: "https://esba.edu.ar/tecnicaturas/analisis-de-sistemas-a-distancia/",
+      logo: "/Esbafoto.png",
+    },
+  ];
+
   return (
     <section id="experiencia" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12"> 
-  <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-    Experiencia
-  </h2>
-  <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-    Mi trayectoria profesional en desarrollo de software y transformación digital
-  </p>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            {t("experience.title")}
+          </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            {t("experience.subtitle")}
+          </p>
         </div>
 
         <div className="space-y-6">
@@ -75,7 +78,7 @@ const Experience = () => {
                   <div className="flex items-start justify-between gap-4 mb-2">
                     <div>
                       <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
-                        {exp.title}
+                        {t(exp.titleKey)}
                       </h3>
                       <p className="text-lg text-primary font-semibold">
                         {exp.company}
@@ -93,7 +96,7 @@ const Experience = () => {
                   </div>
 
                   <p className="text-foreground mb-4">
-                    {exp.description}
+                    {t(exp.descriptionKey)}
                   </p>
 
                   <a
@@ -102,24 +105,22 @@ const Experience = () => {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 group-hover:gap-3"
                   >
-                    <span>Visitar sitio web</span>
+                    <span>{t("experience.visitWebsite")}</span>
                     <ExternalLink size={16} />
                   </a>
                 </div>
 
-                {/* Company Logo Placeholder */}
-               <div className="md:w-24 md:h-24 w-full h-20 flex items-center justify-center bg-muted rounded-lg group-hover:bg-primary/10 transition-colors">
-  {exp.logo ? (
-    <img
-      src={exp.logo}
-      alt={`${exp.company} Logo`}
-      className="h-full w-full object-contain p-2"
-    />
-  ) : (
-    // Si el campo 'logo' está vacío, muestra el icono genérico
-    <Building2 size={32} className="text-muted-foreground group-hover:text-primary transition-colors" />
-  )}
-</div>
+                <div className="md:w-24 md:h-24 w-full h-20 flex items-center justify-center bg-muted rounded-lg group-hover:bg-primary/10 transition-colors">
+                  {exp.logo ? (
+                    <img
+                      src={exp.logo}
+                      alt={`${exp.company} Logo`}
+                      className="h-full w-full object-contain p-2"
+                    />
+                  ) : (
+                    <Building2 size={32} className="text-muted-foreground group-hover:text-primary transition-colors" />
+                  )}
+                </div>
               </div>
             </Card>
           ))}
