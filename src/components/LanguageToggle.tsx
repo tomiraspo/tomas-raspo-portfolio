@@ -6,7 +6,7 @@ export function LanguageToggle() {
 
   // Función para alternar entre español e inglés
   const toggleLanguage = () => {
-    const nextLang = i18n.language.startsWith("es") ? "en" : "es";
+    const nextLang = i18n.language?.startsWith("es") ? "en" : "es";
     i18n.changeLanguage(nextLang);
   };
 
@@ -18,7 +18,7 @@ export function LanguageToggle() {
       className="font-semibold transition-colors"
       title="Cambiar idioma / Change language"
     >
-      {i18n.language.startsWith("es") ? "EN" : "ES"}
+      {i18n.language?.startsWith("es") ? "EN" : "ES"}
     </Button>
   );
 }
