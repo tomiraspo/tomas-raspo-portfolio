@@ -1,241 +1,214 @@
-import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
 
 const resources = {
   es: {
     translation: {
       nav: {
-        home: "Inicio",
         about: "Sobre Mí",
-        skills: "Habilidades",
-        projects: "Proyectos",
         experience: "Experiencia",
+        projects: "Proyectos",
         certifications: "Certificaciones",
-        contact: "Contacto"
+        contact: "Contacto",
       },
       hero: {
-        role: "Analista Funcional y Desarrollador de Sistemas",
-        location: "Remoto, Argentina",
-        downloadCv: "Descargar CV"
+        title: "Analista de Sistemas & Desarrollador Web",
+        subtitle: "Especializado en crear aplicaciones web modernas, funcionales y adaptadas a las necesidades del cliente.",
+        viewWork: "Ver Mi Trabajo",
+        contactMe: "Contáctame",
       },
       about: {
         title: "Sobre Mí",
-        p1_1: "Soy ",
-        p1_bold: "Analista Funcional y Desarrollador Full Stack",
-        p1_2: ", con especialización en el ecosistema ",
-        p1_bold2: ".NET (C#) y TypeScript",
-        p1_3: ". Mi perfil se define por la intersección entre el desarrollo técnico y la gestión de la información, carrera que curso actualmente para optimizar la estructura y el flujo de datos en las organizaciones.",
-        p2_1: "Cuento con experiencia en el diseño e implementación de soluciones de software de alta disponibilidad, destacando el desarrollo de un sistema de gestión de turnos virtuales. Mi rol en estos proyectos no solo ha sido técnico, sino también de ",
-        p2_bold: "análisis y traducción de procesos de negocio",
-        p2_2: " en arquitecturas escalables y eficientes.",
-        p3_1: "Mi enfoque actual integra el ",
-        p3_bold: "Análisis de Datos",
-        p3_2: " para fundamentar la toma de decisiones. Me especializo en asegurar que el ciclo de vida del desarrollo esté aligned con los objetivos estratégicos, garantizando que cada funcionalidad responda a una necesidad real del negocio y del usuario final.",
-        p4: "A lo largo de mi trayectoria en Argentina, Italia y Portugal, he trabajado bajo metodologías ágiles y estándares de Clean Code, priorizando siempre la entrega de software mantenible y de impacto directo en la operativa de la empresa."
-      },
-      skills: {
-        title: "Habilidades Técnicas",
-        languages: "Lenguajes",
-        frameworks: "Frameworks & Librerías",
-        databases: "Bases de Datos",
-        cloud: "Cloud & DevOps",
-        tools: "Herramientas",
-        versionControl: "Control de Versiones"
-      },
-      projects: {
-        title: "Mis Proyectos",
-        subtitle: "Explora una selección de proyectos que demuestran mis habilidades en desarrollo Full Stack con .NET, Azure y tecnologías modernas",
-        statusCompleted: "Completado",
-        viewDemo: "Ver Demo (Video)",
-        items: {
-          turnos: {
-            title: "Sistema de Turnos Virtual",
-            description: "Agendamiento Oftalmológico Flexible con ASP.NET Core y Blazor."
-          },
-          clarvision: {
-            title: "ClarVision BI",
-            description: "Sistema de inteligencia operacional para clínica oftalmológica. Pipeline completo de datos con alertas automáticas de ausentismo crítico y reportes semanales vía Slack."
-          }
-        }
+        subtitle: "Conoce más sobre mi trayectoria y habilidades",
+        description1: "Soy un apasionado Analista de Sistemas con sólida formación en desarrollo web y gestión de proyectos tecnológicos.",
+        description2: "Mi objetivo es aportar soluciones innovadoras que optimicen procesos y generen un impacto positivo en las organizaciones.",
+        skills: "Habilidades Técnicas",
       },
       experience: {
-        title: "Experiencia",
-        subtitle: "Mi trayectoria profesional en desarrollo de software y transformación digital",
-        visitWebsite: "Visitar sitio web",
-        items: {
-          pitentino: {
-            title: "Ayudante de maestros",
-            description: "Representante Argentino de clases impartidas sobre Prompts, Sustentabilidad y cultura en escuela económica con integración de Programación."
+        title: "Experiencia Laboral",
+        subtitle: "Mi trayectoria profesional y proyectos previos",
+        items: [
+          {
+            period: "2024 - Presente",
+            role: "Administrador / Recepcionista",
+            company: "Ostello Bello Mantova - Italia",
+            description: "Atención al cliente multilingüe, gestión de reservas, control de caja y resolución de incidencias en un entorno dinámico e internacional.",
           },
-          wildsmile: {
-            title: "Software Developer",
-            description: "Análisis y soporte de sistemas empresariales en el mercado europeo utilizando Java (Play Framework / MVC). Participación activa en el relevamiento funcional de lógica comercial y en la transición tecnológica de control de versiones desde TortoiseSVN hacia Git con flujos de CI/CD."
+          {
+            period: "2023 - 2024",
+            role: "Atención al Cliente y Logística",
+            company: "Pizzería e Restaurante 'Doce Peixe' - Portugal",
+            description: "Atención al cliente en mesa y caja, gestión de pedidos y apoyo en tareas logísticas del establecimiento.",
           },
-          ioba: {
-            title: "Analista en Sistemas - Backend",
-            description: "Co-diseño y desarrollo en equipo de un sistema integral de turnos virtuales enfocado en clínicas oftalmológicas, aplicando Clean Architecture y DDD para optimizar los procesos de agendamiento."
+          {
+            period: "2021 - 2023",
+            role: "Técnico de Soporte e Infraestructura",
+            company: "Servicios Informáticos Independientes",
+            description: "Mantenimiento preventivo y correctivo de hardware/software, configuración de redes y asistencia técnica personalizada a clientes.",
           },
-          esba: {
-            title: "Prácticas Profesionalizantes",
-            description: "Integracion de Sistemas y Programacion de Servidores"
-          }
-        }
+        ],
+      },
+      projects: {
+        title: "Proyectos Destacados",
+        subtitle: "Algunos de los trabajos más relevantes que he desarrollado",
+        demoBtn: "Ver Demo",
+        githubBtn: "Código Fuente",
+        items: [
+          {
+            title: "Página Web para Psicóloga y Profesora de Yoga",
+            description: "Sitio web completo desarrollado para conectar servicios de psicología y yoga con clientes. Incluye secciones sobre la profesional, detalles de servicios, recursos, blog y formulario de contacto. Totalmente responsivo y optimizado.",
+          },
+          {
+            title: "Controlador de Pedidos para Gastronomía",
+            description: "Sistema web enfocado en la gestión eficiente de comandas y pedidos para locales gastronómicos. Permite registrar, actualizar y visualizar en tiempo real el estado de cada pedido, mejorando la organización del personal.",
+          },
+          {
+            title: "Página Web para Complejo de Departamentos de Alquiler",
+            description: "Plataforma web diseñada para exhibir departamentos en alquiler temporario. Ofrece galerías de fotos por unidad, detalle de comodidades, ubicación y un canal de contacto directo para consultas y reservas.",
+          },
+        ],
       },
       certifications: {
-        title: "Certificaciones",
-        subtitle: "Credenciales profesionales que validan mi experiencia y conocimientos técnicos"
+        title: "Certificaciones y Cursos",
+        subtitle: "Formación continua y certificaciones obtenidas a lo largo de mi carrera",
       },
       contact: {
         title: "Contacto",
-        subtitle: "¿Tienes un proyecto en mente o quieres colaborar? ¡Me encantaría escuchar de ti! Envíame un mensaje y te responderé pronto.",
+        subtitle: "¿Tienes algún proyecto en mente o consulta? No dudes en escribirme",
         infoTitle: "Información de Contacto",
-        email: "Email",
+        email: "Correo Electrónico",
         location: "Ubicación",
-        locationValue: "Remoto, Argentina",
+        locationValue: "Santa Fe, Argentina",
         availability: "Disponibilidad",
-        availabilityValue: "Proyectos freelance, oportunidades de colaboración y contratación directa",
-        downloadCvTitle: "Descarga mi CV",
-        downloadCvDesc: "Conoce más sobre mi experiencia y habilidades",
-        downloadCvBtn: "Descargar CV (PDF)",
+        availabilityValue: "Disponible para proyectos freelance y oportunidades laborales",
+        downloadCvTitle: "Currículum Vitae",
+        downloadCvDesc: "Descarga mi CV en formato PDF",
+        downloadCvBtn: "Descargar CV",
         formTitle: "Envíame un Mensaje",
-        nameLabel: "Nombre *",
+        nameLabel: "Nombre",
         namePlaceholder: "Tu nombre",
-        emailLabel: "Email *",
+        emailLabel: "Correo Electrónico",
         emailPlaceholder: "tu@email.com",
-        subjectLabel: "Asunto *",
+        subjectLabel: "Asunto",
         subjectPlaceholder: "Asunto del mensaje",
-        messageLabel: "Mensaje *",
+        messageLabel: "Mensaje",
         messagePlaceholder: "Escribe tu mensaje aquí...",
-        sendBtn: "Enviar Mensaje"
+        sendBtn: "Enviar Mensaje",
       },
       footer: {
-        rights: "© 2025 Creado por Tomás Raspo. Todos los derechos reservados."
-      }
-    }
+        createdBy: "Creado por Tomás Raspo.",
+        rights: "Todos los derechos reservados.",
+      },
+    },
   },
   en: {
     translation: {
       nav: {
-        home: "Home",
         about: "About Me",
-        skills: "Skills",
-        projects: "Projects",
         experience: "Experience",
+        projects: "Projects",
         certifications: "Certifications",
-        contact: "Contact"
+        contact: "Contact",
       },
       hero: {
-        role: "Functional Analyst & Systems Developer",
-        location: "Remote, Argentina",
-        downloadCv: "Download CV"
+        title: "Systems Analyst & Web Developer",
+        subtitle: "Specialized in creating modern, functional web applications tailored to client needs.",
+        viewWork: "View My Work",
+        contactMe: "Contact Me",
       },
       about: {
         title: "About Me",
-        p1_1: "I am a ",
-        p1_bold: "Functional Analyst & Full Stack Developer",
-        p1_2: ", specializing in the ",
-        p1_bold2: ".NET (C#) and TypeScript",
-        p1_3: " ecosystem. My profile is defined by the intersection of technical development and information management, a degree I am currently pursuing to optimize data structure and flow in organizations.",
-        p2_1: "I have experience in designing and implementing high-availability software solutions, highlighted by the development of a virtual queue management system. My role in these projects has been not only technical, but also focused on ",
-        p2_bold: "analyzing and translating business processes",
-        p2_2: " into scalable and efficient architectures.",
-        p3_1: "My current approach integrates ",
-        p3_bold: "Data Analysis",
-        p3_2: " to support decision-making. I specialize in ensuring that the development lifecycle aligns with strategic goals, guaranteeing that every feature responds to a real business and end-user need.",
-        p4: "Throughout my career in Argentina, Italy, and Portugal, I have worked under agile methodologies and Clean Code standards, always prioritizing the delivery of maintainable software with a direct impact on business operations."
-      },
-      skills: {
-        title: "Technical Skills",
-        languages: "Languages",
-        frameworks: "Frameworks & Libraries",
-        databases: "Databases",
-        cloud: "Cloud & DevOps",
-        tools: "Tools",
-        versionControl: "Version Control"
-      },
-      projects: {
-        title: "My Projects",
-        subtitle: "Explore a selection of projects showcasing my Full Stack development skills with .NET, Azure, and modern technologies",
-        statusCompleted: "Completed",
-        viewDemo: "Watch Demo (Video)",
-        items: {
-          turnos: {
-            title: "Virtual Appointment System",
-            description: "Flexible Ophthalmological Scheduling with ASP.NET Core and Blazor."
-          },
-          clarvision: {
-            title: "ClarVision BI",
-            description: "Operational intelligence system for ophthalmology clinic. Full data pipeline with automatic alerts for critical absenteeism and weekly reports via Slack."
-          }
-        }
+        subtitle: "Learn more about my background and skills",
+        description1: "I am a passionate Systems Analyst with a solid background in web development and tech project management.",
+        description2: "My goal is to provide innovative solutions that optimize processes and deliver a positive impact on organizations.",
+        skills: "Technical Skills",
       },
       experience: {
-        title: "Experience",
-        subtitle: "My professional journey in software development and digital transformation",
-        visitWebsite: "Visit website",
-        items: {
-          pitentino: {
-            title: "Teacher Assistant",
-            description: "Argentine representative teaching classes on Prompts, Sustainability, and culture in an economics school with programming integration."
+        title: "Work Experience",
+        subtitle: "My professional journey and previous roles",
+        items: [
+          {
+            period: "2024 - Present",
+            role: "Administrator / Front Desk",
+            company: "Ostello Bello Mantova - Italy",
+            description: "Multilingual customer support, reservation management, cash flow handling, and issue resolution in a dynamic international environment.",
           },
-          wildsmile: {
-            title: "Software Developer",
-            description: "Analysis and support of enterprise systems in the European market using Java (Play Framework / MVC). Active participation in functional requirements gathering for commercial logic and tech transition from TortoiseSVN to Git with CI/CD pipelines."
+          {
+            period: "2023 - 2024",
+            role: "Customer Service & Logistics",
+            company: "Pizzeria & Restaurant 'Doce Peixe' - Portugal",
+            description: "Dine-in and checkout customer service, order management, and logistical support for daily restaurant operations.",
           },
-          ioba: {
-            title: "Systems Analyst - Backend",
-            description: "Co-design and team development of a comprehensive virtual appointment system focused on ophthalmology clinics, applying Clean Architecture and DDD to optimize scheduling processes."
+          {
+            period: "2021 - 2023",
+            role: "IT Support & Infrastructure Specialist",
+            company: "Freelance IT Services",
+            description: "Preventive and corrective hardware/software maintenance, network configuration, and personalized technical assistance for clients.",
           },
-          esba: {
-            title: "Professional Internship",
-            description: "Systems Integration and Server Programming"
-          }
-        }
+        ],
+      },
+      projects: {
+        title: "Featured Projects",
+        subtitle: "Some of the most relevant projects I've built",
+        demoBtn: "Live Demo",
+        githubBtn: "Source Code",
+        items: [
+          {
+            title: "Psychologist & Yoga Instructor Website",
+            description: "Complete website created to connect psychology and yoga services with clients. Features professional background, service details, resources, blog, and contact form. Fully responsive and optimized.",
+          },
+          {
+            title: "Gastronomy Order Management System",
+            description: "Web system designed for efficient order tracking in restaurants and food venues. Enables real-time order status updates, streamlining staff coordination and service flow.",
+          },
+          {
+            title: "Apartment Rental Complex Website",
+            description: "Web platform designed to showcase temporary rental apartments. Features photo galleries for each unit, amenities list, location details, and direct contact options for inquiries and bookings.",
+          },
+        ],
       },
       certifications: {
-        title: "Certifications",
-        subtitle: "Professional credentials validating my technical expertise and skills"
+        title: "Certifications & Courses",
+        subtitle: "Continuous learning and certifications achieved throughout my career",
       },
       contact: {
         title: "Contact",
-        subtitle: "Have a project in mind or want to collaborate? I'd love to hear from you! Send me a message and I'll reply soon.",
+        subtitle: "Have a project in mind or a question? Feel free to reach out",
         infoTitle: "Contact Information",
         email: "Email",
         location: "Location",
-        locationValue: "Remote, Argentina",
+        locationValue: "Santa Fe, Argentina",
         availability: "Availability",
-        availabilityValue: "Freelance projects, collaboration opportunities, and direct hiring",
-        downloadCvTitle: "Download my CV",
-        downloadCvDesc: "Learn more about my experience and skills",
-        downloadCvBtn: "Download CV (PDF)",
+        availabilityValue: "Available for freelance projects and job opportunities",
+        downloadCvTitle: "Curriculum Vitae",
+        downloadCvDesc: "Download my CV in PDF format",
+        downloadCvBtn: "Download CV",
         formTitle: "Send Me a Message",
-        nameLabel: "Name *",
+        nameLabel: "Name",
         namePlaceholder: "Your name",
-        emailLabel: "Email *",
+        emailLabel: "Email",
         emailPlaceholder: "your@email.com",
-        subjectLabel: "Subject *",
+        subjectLabel: "Subject",
         subjectPlaceholder: "Message subject",
-        messageLabel: "Message *",
+        messageLabel: "Message",
         messagePlaceholder: "Write your message here...",
-        sendBtn: "Send Message"
+        sendBtn: "Send Message",
       },
       footer: {
-        rights: "© 2025 Created by Tomás Raspo. All rights reserved."
-      }
-    }
-  }
+        createdBy: "Created by Tomás Raspo.",
+        rights: "All rights reserved.",
+      },
+    },
+  },
 };
 
-i18n
-  .use(LanguageDetector)
-  .use(initReactI18next)
-  .init({
-    resources,
-    fallbackLng: 'es',
-    interpolation: {
-      escapeValue: false
-    }
-  });
+i18n.use(initReactI18next).init({
+  resources,
+  lng: "es",
+  fallbackLng: "es",
+  interpolation: {
+    escapeValue: false,
+  },
+});
 
 export default i18n;
