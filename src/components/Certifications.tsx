@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -176,14 +177,16 @@ const certifications = [
 ];
 
 const Certifications = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="certifications" className="py-20 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold mb-6 text-center bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-          Certificaciones
+          {t("certifications.title")}
         </h2>
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Credenciales profesionales que validan mi experiencia y conocimientos técnicos
+          {t("certifications.subtitle")}
         </p>
 
         <Carousel
