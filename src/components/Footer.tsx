@@ -32,7 +32,7 @@ const Footer = () => {
               <Github className="h-5 w-5" />
             </a>
             <a
-              href="https://ar.linkedin.com/in/tomás-raspo-b03028214"
+              href="https://www.linkedin.com/in/tomas-raspo/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-colors"
