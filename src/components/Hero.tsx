@@ -73,7 +73,7 @@ const Hero = () => {
             className="border-primary/50 text-foreground hover:bg-primary/10 transition-all hover:border-primary"
             asChild
           >
-            <a href="https://ar.linkedin.com/in/tomás-raspo-b03028214" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/tomas-raspo/" target="_blank" rel="noopener noreferrer">
               <Linkedin className="mr-2 h-5 w-5" />
               LinkedIn
             </a>
