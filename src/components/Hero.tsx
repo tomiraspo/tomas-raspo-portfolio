@@ -85,7 +85,7 @@ const Hero = () => {
             asChild 
           >
             <a 
-                href="/__CV Tomas Raspo Argentina .pdf" 
+                href="Tomas_Raspo_Analista_Funcional.pdf" 
                 download="Tomas_Raspo_CV.pdf" 
                 target="_blank" 
             >
