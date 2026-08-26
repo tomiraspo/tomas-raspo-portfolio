@@ -14,7 +14,7 @@ const Projects = () => {
       technologies: ["ASP.NET Core", "Blazor", "SQL Server", "Azure"],
       statusKey: "projects.statusCompleted",
       github: "https://github.com/tomiraspo/Sistema-Turnos",
-      linkedin: "https://www.linkedin.com/in/tomas-raspo/",
+      linkedin: "https://www.linkedin.com/feed/update/urn:li:activity:7384221305383936000/",
     },
     {
       titleKey: "projects.items.clarvision.title",
