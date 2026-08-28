@@ -17,6 +17,15 @@ const Experience = () => {
 
   const experiences: ExperienceItem[] = [
     {
+      titleKey: "experience.items.odesur.title",
+      company: "Organización Deportiva Suramericana (ODESUR)",
+      period: "ago. 2026 - actualidad",
+      location: "Rafaela, Santa Fe, Argentina",
+      descriptionKey: "experience.items.odesur.description",
+      website: "https://odesur.org/",
+      logo: "/Odesur.png",
+    },
+    {
       titleKey: "experience.items.pitentino.title",
       company: "ITES Alberto Pitentino",
       period: "2025",
