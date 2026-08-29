@@ -64,7 +64,11 @@ const resources = {
         title: "Experiencia Laboral",
         subtitle: "Mi trayectoria profesional y proyectos previos",
         visitWebsite: "Visitar sitio web",
-        items: {
+        items: {  
+          odesur: {
+           title: "Auxiliar Informático",
+           description: "Brindar soporte logístico y operativo para garantizar que la infraestructura tecnológica y los contratistas se desplieguen sin contratiempos. Colaboración en el plan de montaje de cableados, canalizaciones, switches, puntos de acceso y estaciones de trabajo según las planimetrías definidas para la sede. Gestión de inventario: recepción, registro, custodia y entrega formal de insumos y consumibles tecnológicos. Acompañamiento a proveedores en campo, facilitando su movilidad y verificando accesos y acreditaciones. Seguimiento continuo al estado de las incidencias reportadas.",
+          },
           pitentino: {
             title: "Ayudante de maestros",
             description: "Representante Argentino de clases impartidas sobre Prompts, Sustentabilidad y cultura en escuela económica con integración de Programación.",
