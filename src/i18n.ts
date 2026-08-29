@@ -64,6 +64,7 @@ const resources = {
         title: "Experiencia Laboral",
         subtitle: "Mi trayectoria profesional y proyectos previos",
         visitWebsite: "Visitar sitio web",
+        viewReference: "Ver constancia",
         items: {  
           odesur: {
            title: "Auxiliar Informático",
