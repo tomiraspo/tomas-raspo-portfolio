@@ -182,6 +182,10 @@ const resources = {
         subtitle: "My professional journey and previous roles",
         visitWebsite: "Visit website",
         items: {
+          odesur: {
+            title: "IT Assistant",
+            description: "Provide logistical and operational support to ensure the smooth deployment of technological infrastructure and contractors. Collaboration on the assembly plan for cabling, conduits, switches, access points, and workstations according to the venue's blueprints and operational schemas. Inventory management: receiving, logging, custody, and formal handover of technological supplies and consumables. On-site support for suppliers, facilitating mobility within the venue and assisting with access verification, accreditation, and attendance. Ongoing follow-up on the status of reported incidents.",
+          },
           pitentino: {
             title: "Teacher Assistant",
             description: "Argentine representative teaching classes on Prompts, Sustainability, and culture in an economics school with programming integration.",
