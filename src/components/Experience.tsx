@@ -34,7 +34,7 @@ const Experience = () => {
       descriptionKey: "experience.items.pitentino.description",
       website: "https://www.pitentino.edu.it/",
       logo: "/EscuelaItalia.jpg",
-      referenceDoc: "/ReferenciaPitentino.pdf",
+      referenceDoc: "/annotazione_AIESEC_2BTomas_2BRaspo_ITA.pdf",
     },
     {
       titleKey: "experience.items.wildsmile.title",
