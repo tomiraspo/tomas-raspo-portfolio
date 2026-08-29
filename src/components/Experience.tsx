@@ -111,7 +111,7 @@ const Experience = () => {
                   </p>
 
                   <div className="flex flex-wrap gap-3">
-                    
+                    <a
                       href={exp.website}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -122,7 +122,7 @@ const Experience = () => {
                     </a>
 
                     {exp.referenceDoc && (
-                      
+                      <a
                         href={exp.referenceDoc}
                         target="_blank"
                         rel="noopener noreferrer"
