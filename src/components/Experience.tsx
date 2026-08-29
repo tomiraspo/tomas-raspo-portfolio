@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { Building2, ExternalLink } from "lucide-react";
+import { Building2, ExternalLink, FileText } from "lucide-react";
 import { Card } from "./ui/card";
 
 interface ExperienceItem {
@@ -10,6 +10,7 @@ interface ExperienceItem {
   descriptionKey: string;
   logo?: string;
   website: string;
+  referenceDoc?: string;
 }
 
 const Experience = () => {
@@ -33,6 +34,7 @@ const Experience = () => {
       descriptionKey: "experience.items.pitentino.description",
       website: "https://www.pitentino.edu.it/",
       logo: "/EscuelaItalia.jpg",
+      referenceDoc: "/ReferenciaPitentino.pdf",
     },
     {
       titleKey: "experience.items.wildsmile.title",
@@ -108,15 +110,29 @@ const Experience = () => {
                     {t(exp.descriptionKey)}
                   </p>
 
-                  <a
-                    href={exp.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 group-hover:gap-3"
-                  >
-                    <span>{t("experience.visitWebsite")}</span>
-                    <ExternalLink size={16} />
-                  </a>
+                  <div className="flex flex-wrap gap-3">
+                    
+                      href={exp.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-300 group-hover:gap-3"
+                    >
+                      <span>{t("experience.visitWebsite")}</span>
+                      <ExternalLink size={16} />
+                    </a>
+
+                    {exp.referenceDoc && (
+                      
+                        href={exp.referenceDoc}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 border border-primary text-primary rounded-lg hover:bg-primary/10 transition-all duration-300"
+                      >
+                        <span>{t("experience.viewReference")}</span>
+                        <FileText size={16} />
+                      </a>
+                    )}
+                  </div>
                 </div>
 
                 <div className="md:w-24 md:h-24 w-full h-20 flex items-center justify-center bg-muted rounded-lg group-hover:bg-primary/10 transition-colors">
