@@ -23,7 +23,7 @@ const Experience = () => {
       location: "Rafaela, Santa Fe, Argentina",
       descriptionKey: "experience.items.odesur.description",
       website: "https://odesur.org/",
-      logo: "/odesur.jpeg",
+      logo: "/odesur.png",
     },
     {
       titleKey: "experience.items.pitentino.title",
