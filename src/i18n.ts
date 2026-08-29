@@ -182,6 +182,7 @@ const resources = {
         title: "Work Experience",
         subtitle: "My professional journey and previous roles",
         visitWebsite: "Visit website",
+        viewReference: "View reference",
         items: {
           odesur: {
             title: "IT Assistant",
