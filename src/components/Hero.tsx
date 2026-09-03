@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { Mail, Linkedin, FileDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import profileImage from "@/assets/FotoPortafolio.png";
+import profileImage from "@/assets/foto.jpeg";
 
 const Hero = () => {
   const { t } = useTranslation();
