@@ -26,10 +26,8 @@ const resources = {
         p1_bold: "Analista Funcional y Desarrollador Full Stack",
         p1_2: ", con especialización en el ecosistema ",
         p1_bold2: ".NET (C#) y TypeScript",
-        p1_3: ". Mi perfil se define por la intersección entre el desarrollo técnico y la gestión de la información.",
-        p2_1: "Cuento con experiencia en el diseño e implementación de soluciones de software de alta disponibilidad, destacando el desarrollo de un sistema de gestión de turnos virtuales. Mi rol ha sido de ",
-        p2_bold: "análisis y traducción de procesos de negocio",
-        p2_2: " en arquitecturas escalables y eficientes.",
+        p1_3: ".Soy un profesional que crea sistemas, que puede mejorarlos a partir de su creación e implementación.",
+        p2_1: "Luego del estudio, utilizo métricas para resolver problemáticas internas y mejorar el rendimiento de la empresa o institución.",
         p3_1: "Mi enfoque actual integra el ",
         p3_bold: "Análisis de Datos",
         p3_2: " para fundamentar la toma de decisiones. Me especializo en asegurar que el ciclo de vida del desarrollo esté alineado con los objetivos estratégicos.",
@@ -67,19 +65,19 @@ const resources = {
         viewReference: "Ver constancia",
         items: {  
           odesur: {
-           title: "Auxiliar Informático",
-           description: "Brindar soporte logístico y operativo para garantizar que la infraestructura tecnológica y los contratistas se desplieguen sin contratiempos. Colaboración en el plan de montaje de cableados, canalizaciones, switches, puntos de acceso y estaciones de trabajo según las planimetrías definidas para la sede. Gestión de inventario: recepción, registro, custodia y entrega formal de insumos y consumibles tecnológicos. Acompañamiento a proveedores en campo, facilitando su movilidad y verificando accesos y acreditaciones. Seguimiento continuo al estado de las incidencias reportadas.",
+            title: "Auxiliar Informático",
+            description: "Brindar soporte logístico y operativo para garantizar que la infraestructura tecnológica y los contratistas se desplieguen sin contratiempos. Colaboración en el plan de montaje de cableados, canalizaciones, switches, puntos de acceso y estaciones de trabajo según las planimetrías definidas para la sede. Gestión de inventario: recepción, registro, custodia y entrega formal de insumos y consumibles tecnológicos. Acompañamiento a proveedores en campo, facilitando su movilidad y verificando accesos y acreditaciones. Seguimiento continuo al estado de las incidencias reportadas.",
           },
           pitentino: {
-            title: "Ayudante de maestros",
+            title: "IT Educador",
             description: "Representante Argentino de clases impartidas sobre Prompts, Sustentabilidad y cultura en escuela económica con integración de Programación.",
           },
           wildsmile: {
-            title: "Software Developer",
+            title: "Systems & Functional Analyst",
             description: "Análisis y soporte de sistemas empresariales en el mercado europeo utilizando Java (Play Framework / MVC). Participación activa en el relevamiento funcional de lógica comercial y migración SVN a Git.",
           },
           ioba: {
-            title: "Analista en Sistemas - Backend",
+            title: "Systems Anlyst",
             description: "Co-diseño y desarrollo en equipo de un sistema integral de turnos virtuales enfocado en clínicas oftalmológicas, aplicando Clean Architecture y DDD.",
           },
           esba: {
@@ -144,14 +142,12 @@ const resources = {
         p1_bold: "Functional Analyst & Full Stack Developer",
         p1_2: ", specializing in the ",
         p1_bold2: ".NET (C#) and TypeScript",
-        p1_3: " ecosystem. My profile is defined by the intersection of technical development and information management.",
-        p2_1: "I have experience in designing and implementing high-availability software solutions, highlighted by a virtual queue management system. My role was focused on ",
-        p2_bold: "analyzing and translating business processes",
-        p2_2: " into scalable and efficient architectures.",
+        p1_3: " ecosystem. I am a professional who builds systems and enhances them through their creation and implementation.",
+        p2_1: "Following analysis, I use metrics to resolve internal problems and improve company or organizational performance.",
         p3_1: "My current approach integrates ",
         p3_bold: "Data Analysis",
-        p3_2: " to support decision-making. I specialize in ensuring the development lifecycle aligns with strategic goals.",
-        p4: "Throughout my career in Argentina, Italy, and Portugal, I have worked under agile methodologies and Clean Code standards, always prioritizing deliverable, maintainable software.",
+        p3_2: " to support decision-making. I specialize in ensuring that the development lifecycle is aligned with strategic objectives.",
+        p4: "Throughout my career in Argentina, Italy, and Portugal, I have worked under agile methodologies and Clean Code standards, prioritizing the delivery of maintainable software.",
       },
       skills: {
         title: "Technical Skills",
@@ -164,7 +160,7 @@ const resources = {
       },
       projects: {
         title: "Featured Projects",
-        subtitle: "Some of the most relevant projects I've built",
+        subtitle: "Some of the most relevant projects I have developed",
         statusCompleted: "Completed",
         viewDemo: "Watch Demo (Video)",
         items: {
@@ -174,30 +170,30 @@ const resources = {
           },
           clarvision: {
             title: "ClarVision BI",
-            description: "Operational intelligence system for ophthalmology clinic. Full data pipeline with automatic alerts for critical absenteeism and weekly reports via Slack.",
+            description: "Operational intelligence system for an ophthalmology clinic. Full data pipeline with automatic alerts for critical absenteeism and weekly reports via Slack.",
           },
         },
       },
       experience: {
         title: "Work Experience",
-        subtitle: "My professional journey and previous roles",
+        subtitle: "My professional journey and previous projects",
         visitWebsite: "Visit website",
-        viewReference: "View reference",
+        viewReference: "View certificate",
         items: {
           odesur: {
             title: "IT Assistant",
-            description: "Provide logistical and operational support to ensure the smooth deployment of technological infrastructure and contractors. Collaboration on the assembly plan for cabling, conduits, switches, access points, and workstations according to the venue's blueprints and operational schemas. Inventory management: receiving, logging, custody, and formal handover of technological supplies and consumables. On-site support for suppliers, facilitating mobility within the venue and assisting with access verification, accreditation, and attendance. Ongoing follow-up on the status of reported incidents.",
+            description: "Provide logistical and operational support to ensure technological infrastructure and contractors deploy smoothly. Collaboration on the installation plan for cabling, conduits, switches, access points, and workstations according to venue planimetries. Inventory management: receiving, recording, custody, and formal delivery of tech supplies and consumables. On-site vendor support, facilitating mobility and verifying access credentials. Continuous tracking of reported incident statuses.",
           },
           pitentino: {
-            title: "Teacher Assistant",
+            title: "IT Educator",
             description: "Argentine representative teaching classes on Prompts, Sustainability, and culture in an economics school with programming integration.",
           },
           wildsmile: {
-            title: "Software Developer",
-            description: "Analysis and support of enterprise systems in the European market using Java (Play Framework / MVC). Active participation in functional requirements gathering and SVN to Git migration.",
+            title: "Systems & Functional Analyst",
+            description: "Enterprise systems analysis and support for the European market using Java (Play Framework / MVC). Active participation in functional requirements gathering for business logic and SVN to Git migration.",
           },
           ioba: {
-            title: "Systems Analyst - Backend",
+            title: "Systems Analyst",
             description: "Co-design and team development of a comprehensive virtual appointment system focused on ophthalmology clinics, applying Clean Architecture and DDD.",
           },
           esba: {
@@ -208,11 +204,11 @@ const resources = {
       },
       certifications: {
         title: "Certifications & Courses",
-        subtitle: "Continuous learning and certifications achieved throughout my career",
+        subtitle: "Continuous training and certifications earned throughout my career",
       },
       contact: {
         title: "Contact",
-        subtitle: "Have a project in mind or a question? Feel free to reach out",
+        subtitle: "Have a project in mind or a question? Feel free to write to me",
         infoTitle: "Contact Information",
         email: "Email",
         location: "Location",
