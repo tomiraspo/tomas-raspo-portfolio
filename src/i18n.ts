@@ -25,8 +25,8 @@ const resources = {
         p1_1: "Soy ",
         p1_bold: "Analista Funcional y Desarrollador Full Stack",
         p1_2: ", con especialización en el ecosistema ",
-        p1_bold2: ".NET (C#) y TypeScript",
-        p1_3: ".Soy un profesional que crea sistemas, que puede mejorarlos a partir de su creación e implementación.",
+        p1_bold2: ".NET (C#) y TypeScript.",
+        p1_3: " Soy un profesional que crea sistemas, que puede mejorarlos a partir de su creación e implementación.",
         p2_1: "Luego del estudio, utilizo métricas para resolver problemáticas internas y mejorar el rendimiento de la empresa o institución.",
         p2_bold: "",
         p2_2: "",
@@ -75,11 +75,11 @@ const resources = {
             description: "Representante Argentino de clases impartidas sobre Prompts, Sustentabilidad y cultura en escuela económica con integración de Programación.",
           },
           wildsmile: {
-            title: "Systems & Functional Analyst",
+            title: "Analista Funcional y de sistemas",
             description: "Análisis y soporte de sistemas empresariales en el mercado europeo utilizando Java (Play Framework / MVC). Participación activa en el relevamiento funcional de lógica comercial y migración SVN a Git.",
           },
           ioba: {
-            title: "Systems Analyst",
+            title: "Analista de Sistemas",
             description: "Co-diseño y desarrollo en equipo de un sistema integral de turnos virtuales enfocado en clínicas oftalmológicas, aplicando Clean Architecture y DDD.",
           },
           esba: {
