@@ -77,7 +77,7 @@ const resources = {
             description: "Análisis y soporte de sistemas empresariales en el mercado europeo utilizando Java (Play Framework / MVC). Participación activa en el relevamiento funcional de lógica comercial y migración SVN a Git.",
           },
           ioba: {
-            title: "Systems Anlyst",
+            title: "Systems Analyst",
             description: "Co-diseño y desarrollo en equipo de un sistema integral de turnos virtuales enfocado en clínicas oftalmológicas, aplicando Clean Architecture y DDD.",
           },
           esba: {
