@@ -15,7 +15,7 @@ const resources = {
         contact: "Contacto",
       },
       hero: {
-        role: "Tecnico en Sistemas y Gestor de la Admin y de la nformación",
+        role: "Tecnico en Sistemas y Gestor de la Admin y de la Información",
         location: "Remoto, Argentina",
         downloadCv: "Descargar CV",
       },
