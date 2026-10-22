@@ -39,7 +39,7 @@ const Hero = () => {
 
         {/* Skills Badges */}
         <div className="flex flex-wrap gap-2 justify-center mb-6 max-w-3xl mx-auto">
-          {['C#', '.NET Core','Power BI', 'MySQL', 'n8n', 'excel', 'Odoo', 'Agile Methodologies'].map((skill) => (
+          {['C#', '.NET','Power BI', 'MySQL', 'N8N', 'Excel', 'Odoo', 'Agile Methodologies'].map((skill) => (
             <span
               key={skill}
               className="px-3 py-1 text-sm font-medium bg-primary/10 text-primary border border-primary/20 rounded-full"
