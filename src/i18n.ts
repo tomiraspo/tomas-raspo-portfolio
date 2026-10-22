@@ -15,7 +15,7 @@ const resources = {
         contact: "Contacto",
       },
       hero: {
-        role: "Analista Funcional y Desarrollador de Sistemas",
+        role: "Tecnico en Sistemas y Gestor de la Admin y de la nformación",
         location: "Remoto, Argentina",
         downloadCv: "Descargar CV",
       },
@@ -23,7 +23,7 @@ const resources = {
         title: "Sobre Mí",
         subtitle: "Conoce más sobre mi trayectoria y habilidades",
         p1_1: "Soy ",
-        p1_bold: "Analista Funcional y Desarrollador Full Stack",
+        p1_bold: "Analista Funcional y Desarrollador",
         p1_2: ", con especialización en el ecosistema ",
         p1_bold2: ".NET (C#) y TypeScript.",
         p1_3: " Soy un profesional que crea sistemas, que puede mejorarlos a partir de su creación e implementación.",
