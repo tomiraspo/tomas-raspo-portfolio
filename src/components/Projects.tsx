@@ -47,7 +47,7 @@ const Projects = () => {
       statusKey: "projects.statusCompleted",
       github: "",
       linkedin: "",
-      demo: "https://mochila-y-codigo.vercel.app/",
+      site: "https://mochila-y-codigo.vercel.app/",
     },
   ];
 
