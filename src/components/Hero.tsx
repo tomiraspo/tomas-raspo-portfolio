@@ -4,7 +4,13 @@ import { Button } from "@/components/ui/button";
 import profileImage from "@/assets/foto.jpeg";
 
 const Hero = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
+  const lang = i18n.language?.slice(0, 2) === "es" ? "es" : "en";
+  const valueProp = {
+    es: "Conecto la operación del negocio con la tecnología: analizo procesos, automatizo tareas y construyo sistemas y dashboards que ayudan a decidir mejor.",
+    en: "I connect business operations with technology: I analyze processes, automate tasks and build systems and dashboards that support better decisions.",
+  }[lang];
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden px-4">
@@ -37,9 +43,14 @@ const Hero = () => {
           {t("hero.role", "Functional Analyst & Systems Developer")}
         </p>
 
+        {/* Value proposition */}
+        <p className="text-base md:text-lg text-foreground/80 max-w-2xl mx-auto mb-6 leading-relaxed">
+          {valueProp}
+        </p>
+
         {/* Skills Badges */}
         <div className="flex flex-wrap gap-2 justify-center mb-6 max-w-3xl mx-auto">
-          {['C#', '.NET','Power BI', 'MySQL', 'N8N', 'Excel', 'Odoo', 'Agile Methodologies'].map((skill) => (
+          {['Power BI', 'MySQL', 'n8n', 'Odoo', 'C# / .NET', 'Agile'].map((skill) => (
             <span
               key={skill}
               className="px-3 py-1 text-sm font-medium bg-primary/10 text-primary border border-primary/20 rounded-full"
