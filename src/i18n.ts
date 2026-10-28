@@ -68,7 +68,7 @@ const resources = {
         items: {  
           odesur: {
             title: "Auxiliar Informático",
-            description: "Brindar soporte logístico y operativo para garantizar que la infraestructura tecnológica y los contratistas se desplieguen sin contratiempos. Colaboración en el plan de montaje de cableados, canalizaciones, switches, puntos de acceso y estaciones de trabajo según las planimetrías definidas para la sede. Gestión de inventario: recepción, registro, custodia y entrega formal de insumos y consumibles tecnológicos. Acompañamiento a proveedores en campo, facilitando su movilidad y verificando accesos y acreditaciones. Seguimiento continuo al estado de las incidencias reportadas.",
+            description: "Gestión logística de infraestructura IT, control de inventarios, coordinación de proveedores y seguimiento de incidencias.",
           },
           pitentino: {
             title: "IT Educador",
@@ -186,7 +186,7 @@ const resources = {
         items: {
           odesur: {
             title: "IT Assistant",
-            description: "Provide logistical and operational support to ensure technological infrastructure and contractors deploy smoothly. Collaboration on the installation plan for cabling, conduits, switches, access points, and workstations according to venue planimetries. Inventory management: receiving, recording, custody, and formal delivery of tech supplies and consumables. On-site vendor support, facilitating mobility and verifying access credentials. Continuous tracking of reported incident statuses.",
+            description: "Logistics management of IT infrastructure, inventory tracking, vendor coordination, and incident resolution.",
           },
           pitentino: {
             title: "IT Educator",
