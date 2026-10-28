@@ -27,6 +27,7 @@ const Projects = () => {
       descKey: "projects.items.turnos.description",
       technologies: ["ASP.NET Core", "Blazor", "SQL Server", "Docker", "DigitalOcean"],
       statusKey: "projects.statusCompleted",
+      github: "",
       linkedin: "https://www.linkedin.com/feed/update/urn:li:activity:7384221305383936000/",
     },
     {
