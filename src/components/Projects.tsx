@@ -4,10 +4,24 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { ExternalLink, Github, Linkedin } from "lucide-react";
 
+type Project = {
+  titleKey?: string;
+  descKey?: string;
+  title?: string;
+  description?: { es: string; en: string };
+  technologies: string[];
+  statusKey: string;
+  github: string;
+  linkedin: string;
+  demo?: string;
+};
+
 const Projects = () => {
   const { t, i18n } = useTranslation();
 
-  const projectsData = [
+  const lang = i18n.language?.slice(0, 2) === "es" ? "es" : "en";
+
+  const projectsData: Project[] = [
     {
       titleKey: "projects.items.turnos.title",
       descKey: "projects.items.turnos.description",
@@ -24,10 +38,21 @@ const Projects = () => {
       github: "https://github.com/tomiraspo/ClarVision-BI",
       linkedin: "",
     },
+    {
+      title: "Mochila y Código",
+      description: {
+        es: "Sitio personal con historias de viaje por España, Argentina e Italia, donde combino mi experiencia mochilera con mi trabajo como desarrollador.",
+        en: "Personal website with travel stories from Spain, Argentina and Italy, blending my backpacking experience with my work as a developer.",
+      },
+      technologies: ["React", "TypeScript", "Vite", "Vercel"],
+      statusKey: "projects.statusCompleted",
+      github: "",
+      linkedin: "",
+      demo: "https://mochila-y-codigo.vercel.app/",
+    },
   ];
 
-  // Textos del bloque nuevo (no toca tus archivos de traducción)
-  const lang = i18n.language?.slice(0, 2) === "es" ? "es" : "en";
+  // Textos del bloque Sistema / Métricas (no toca tus archivos de traducción)
   const copy = {
     es: {
       system: "Sistema",
@@ -81,9 +106,11 @@ const Projects = () => {
               className="bg-card/50 border-primary/20 hover:border-primary/50 transition-all hover:shadow-[0_0_20px_hsl(180,80%,50%,0.2)] flex flex-col"
             >
               <CardHeader>
-                <CardTitle className="text-foreground">{t(project.titleKey)}</CardTitle>
+                <CardTitle className="text-foreground">
+                  {project.titleKey ? t(project.titleKey) : project.title}
+                </CardTitle>
                 <CardDescription className="text-muted-foreground">
-                  {t(project.descKey)}
+                  {project.descKey ? t(project.descKey) : project.description?.[lang]}
                 </CardDescription>
               </CardHeader>
               <CardContent className="flex-grow">
@@ -102,17 +129,19 @@ const Projects = () => {
                 </Badge>
               </CardContent>
               <CardFooter className="gap-2">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="border-primary/50 hover:bg-primary/10"
-                  asChild
-                >
-                  <a href={project.github} target="_blank" rel="noopener noreferrer">
-                    <Github className="mr-2 h-4 w-4" />
-                    GitHub
-                  </a>
-                </Button>
+                {project.github && (
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="border-primary/50 hover:bg-primary/10"
+                    asChild
+                  >
+                    <a href={project.github} target="_blank" rel="noopener noreferrer">
+                      <Github className="mr-2 h-4 w-4" />
+                      GitHub
+                    </a>
+                  </Button>
+                )}
                 {project.linkedin && (
                   <Button
                     variant="default"
@@ -126,14 +155,14 @@ const Projects = () => {
                     </a>
                   </Button>
                 )}
-                {(project as any).demo && (
+                {project.demo && (
                   <Button
                     variant="default"
                     size="sm"
                     className="bg-primary hover:bg-primary/90"
                     asChild
                   >
-                    <a href={(project as any).demo} target="_blank" rel="noopener noreferrer">
+                    <a href={project.demo} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="mr-2 h-4 w-4" />
                       Demo
                     </a>
@@ -144,7 +173,7 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* NUEVO: pantalla dividida en dos mitades iguales */}
+        {/* Pantalla dividida en dos mitades iguales */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
           {showcase.map((item) => (
             <div
