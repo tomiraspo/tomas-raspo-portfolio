@@ -41,8 +41,8 @@ const Projects = () => {
     {
       title: "Mochila y Código",
       description: {
-        es: "Sitio personal con historias de viaje por España, Argentina e Italia, donde combino mi experiencia mochilera con mi trabajo como desarrollador.",
-        en: "Personal website with travel stories from Spain, Argentina and Italy, blending my backpacking experience with my work as a developer.",
+                es: "Sitio web personal desarrollado en React y TypeScript, con diseño propio y contenido sobre mis experiencias viviendo y viajando por España, Argentina e Italia.",
+        en: "Personal website built with React and TypeScript, with a custom design and content about my experiences living and traveling across Spain, Argentina and Italy.",
       },
       technologies: ["React", "TypeScript", "Vite", "Vercel"],
       statusKey: "projects.statusCompleted",
