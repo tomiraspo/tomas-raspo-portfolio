@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { ExternalLink, Github, Linkedin } from "lucide-react";
 
 const Projects = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const projectsData = [
     {
@@ -23,6 +23,42 @@ const Projects = () => {
       statusKey: "projects.statusCompleted",
       github: "https://github.com/tomiraspo/ClarVision-BI",
       linkedin: "",
+    },
+  ];
+
+  // Textos del bloque nuevo (no toca tus archivos de traducción)
+  const lang = i18n.language?.slice(0, 2) === "es" ? "es" : "en";
+  const copy = {
+    es: {
+      system: "Sistema",
+      systemHint: "Sistema de turnos virtual funcionando en producción",
+      metrics: "Métricas",
+      metricsHint: "Indicadores y análisis de ClarVision BI",
+      cta: "Ver proyecto",
+    },
+    en: {
+      system: "System",
+      systemHint: "Virtual appointment system running in production",
+      metrics: "Metrics",
+      metricsHint: "KPIs and analytics from ClarVision BI",
+      cta: "View project",
+    },
+  }[lang];
+
+  const showcase = [
+    {
+      title: copy.system,
+      hint: copy.systemHint,
+      href: "https://161-35-93-46.sslip.io", // link del sistema en DigitalOcean
+      img: "/turnos.png", // archivo en la carpeta public/
+      alt: copy.system,
+    },
+    {
+      title: copy.metrics,
+      hint: copy.metricsHint,
+      href: "https://github.com/tomiraspo/ClarVision-BI", // link de métricas
+      img: "/metricas.png", // archivo en la carpeta public/
+      alt: copy.metrics,
     },
   ];
 
@@ -103,6 +139,37 @@ const Projects = () => {
                 )}
               </CardFooter>
             </Card>
+          ))}
+        </div>
+
+        {/* NUEVO: pantalla dividida en dos mitades iguales */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+          {showcase.map((item) => (
+            <a
+              key={item.title}
+              href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block overflow-hidden rounded-xl border border-primary/20 bg-card/50 transition-all hover:border-primary/50 hover:shadow-[0_0_20px_hsl(180,80%,50%,0.2)]"
+            >
+              <div className="p-5 pb-3">
+                <h3 className="text-2xl font-bold text-foreground">{item.title}</h3>
+                <p className="text-sm text-muted-foreground">{item.hint}</p>
+              </div>
+              <div className="relative aspect-[16/10] overflow-hidden bg-background/40">
+                <img
+                  src={item.img}
+                  alt={item.alt}
+                  loading="lazy"
+                  className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
+                <span className="absolute bottom-3 right-3 inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-lg transition-transform group-hover:translate-x-[-2px]">
+                  {copy.cta}
+                  <ExternalLink className="h-4 w-4" />
+                </span>
+              </div>
+            </a>
           ))}
         </div>
       </div>
