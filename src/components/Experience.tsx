@@ -25,6 +25,7 @@ const Experience = () => {
       descriptionKey: "experience.items.odesur.description",
       website: "https://odesur.org/",
       logo: "/odesur.png",
+      referenceDoc: "/_TOMÁS_RASPO_ODESUR.pdf",
     },
     {
       titleKey: "experience.items.pitentino.title",
