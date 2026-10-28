@@ -164,7 +164,7 @@ const Projects = () => {
                   >
                     <a href={project.demo} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="mr-2 h-4 w-4" />
-                      Demo
+                      {lang === "es" ? "Sitio web" : "Website"}
                     </a>
                   </Button>
                 )}
