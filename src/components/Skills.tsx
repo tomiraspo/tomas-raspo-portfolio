@@ -4,10 +4,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const skillsData = {
   languages: ["C#", "SQL", "JavaScript", "TypeScript", "HTML/CSS", "Java"],
-  frameworks: ["ASP.NET Core", "Blazor", "React", "Entity Framework", ".NET MAUI", "Bootstrap"],
-  databases: ["SQL Server", "MySQL", "PostgreSQL", "Azure SQL"],
+  frameworks: ["ASP.NET Core", "Blazor", "React", "Entity Framework", "Bootstrap"],
+  databases: ["SQL Server", "MySQL", "PostgreSQL"],
   cloud: ["Azure", "Azure DevOps", "Azure Functions", "Azure App Service", "DigitalOcean"],
-  tools: ["Visual Studio", "VS Code", "Docker", "Kubernetes", "Power BI", "n8n"],
+  tools: ["Visual Studio", "VS Code", "Docker", "Power BI", "n8n"],
   versionControl: ["Git", "GitHub", "Azure Repos", "CI/CD"],
 };
 
