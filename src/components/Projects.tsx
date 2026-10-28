@@ -27,7 +27,6 @@ const Projects = () => {
       descKey: "projects.items.turnos.description",
       technologies: ["ASP.NET Core", "Blazor", "SQL Server", "Docker", "DigitalOcean"],
       statusKey: "projects.statusCompleted",
-      github: "https://github.com/tomiraspo/Sistema-Turnos",
       linkedin: "https://www.linkedin.com/feed/update/urn:li:activity:7384221305383936000/",
     },
     {
