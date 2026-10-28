@@ -11,7 +11,7 @@ const Projects = () => {
     {
       titleKey: "projects.items.turnos.title",
       descKey: "projects.items.turnos.description",
-      technologies: ["ASP.NET Core", "Blazor", "SQL Server", "Azure"],
+      technologies: ["ASP.NET Core", "Blazor", "SQL Server", "Docker", "DigitalOcean"],
       statusKey: "projects.statusCompleted",
       github: "https://github.com/tomiraspo/Sistema-Turnos",
       linkedin: "https://www.linkedin.com/feed/update/urn:li:activity:7384221305383936000/",
@@ -49,15 +49,17 @@ const Projects = () => {
     {
       title: copy.system,
       hint: copy.systemHint,
-      href: "https://161-35-93-46.sslip.io", // link del sistema en DigitalOcean
-      img: "/turnos.png", // archivo en la carpeta public/
+      href: "https://161-35-93-46.sslip.io",
+      demo: "https://www.linkedin.com/feed/update/urn:li:activity:7384221305383936000/",
+      img: "/turnos.png",
       alt: copy.system,
     },
     {
       title: copy.metrics,
       hint: copy.metricsHint,
-      href: "https://github.com/tomiraspo/ClarVision-BI", // link de métricas
-      img: "/metricas.png", // archivo en la carpeta public/
+      href: "https://github.com/tomiraspo/ClarVision-BI",
+      demo: "",
+      img: "/metricas.png",
       alt: copy.metrics,
     },
   ];
@@ -145,31 +147,45 @@ const Projects = () => {
         {/* NUEVO: pantalla dividida en dos mitades iguales */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
           {showcase.map((item) => (
-            <a
+            <div
               key={item.title}
-              href={item.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group block overflow-hidden rounded-xl border border-primary/20 bg-card/50 transition-all hover:border-primary/50 hover:shadow-[0_0_20px_hsl(180,80%,50%,0.2)]"
+              className="group overflow-hidden rounded-xl border border-primary/20 bg-card/50 transition-all hover:border-primary/50 hover:shadow-[0_0_20px_hsl(180,80%,50%,0.2)]"
             >
               <div className="p-5 pb-3">
                 <h3 className="text-2xl font-bold text-foreground">{item.title}</h3>
                 <p className="text-sm text-muted-foreground">{item.hint}</p>
               </div>
-              <div className="relative aspect-[16/10] overflow-hidden bg-background/40">
+              <a
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative block aspect-[16/10] overflow-hidden bg-background/40"
+              >
                 <img
                   src={item.img}
                   alt={item.alt}
                   loading="lazy"
-                  className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
-                <span className="absolute bottom-3 right-3 inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-lg transition-transform group-hover:translate-x-[-2px]">
-                  {copy.cta}
-                  <ExternalLink className="h-4 w-4" />
-                </span>
+                <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+              </a>
+              <div className="flex flex-wrap gap-3 p-4">
+                <Button size="sm" className="bg-primary hover:bg-primary/90" asChild>
+                  <a href={item.href} target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="mr-2 h-4 w-4" />
+                    {copy.cta}
+                  </a>
+                </Button>
+                {item.demo && (
+                  <Button size="sm" variant="outline" className="border-primary/50 hover:bg-primary/10" asChild>
+                    <a href={item.demo} target="_blank" rel="noopener noreferrer">
+                      <Linkedin className="mr-2 h-4 w-4" />
+                      {t("projects.viewDemo")}
+                    </a>
+                  </Button>
+                )}
               </div>
-            </a>
+            </div>
           ))}
         </div>
       </div>
