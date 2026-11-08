@@ -3,12 +3,12 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const skillsData = {
-  languages: ["C#", "SQL", "JavaScript", "TypeScript", "HTML/CSS", "Java"],
-  frameworks: ["ASP.NET Core", "Blazor", "React", "Entity Framework", "Bootstrap"],
-  databases: ["SQL Server", "MySQL", "PostgreSQL"],
-  cloud: ["Azure", "Azure DevOps", "Azure Functions", "Azure App Service", "DigitalOcean"],
-  tools: ["Visual Studio", "VS Code", "Docker", "Power BI", "n8n"],
-  versionControl: ["Git", "GitHub", "Azure Repos", "CI/CD"],
+  BusinessAnalysisBI: ["C#", "SQL", "JavaScript", "TypeScript", "HTML/CSS", "Java"],
+  Databases: ["ASP.NET Core", "Blazor", "React", "Entity Framework", "Bootstrap"],
+  Languages: ["SQL Server", "MySQL", "PostgreSQL"],
+  FrameworkandLibraries: ["Azure", "Azure DevOps", "Azure Functions", "Azure App Service", "DigitalOcean"],
+  CloudandDevOps: ["Visual Studio", "VS Code", "Docker", "Power BI", "n8n"],
+  Tools: ["Git", "GitHub", "Azure Repos", "CI/CD"],
 };
 
 const Skills = () => {
