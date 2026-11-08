@@ -3,12 +3,12 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const skillsData = {
-  BusinessAnalysisBI: ["Power BI", "Excel", "Odoo", "n8n"],
-  Databases: ["MySQL", "SQL Server", "PostgreSQL"],
-  Languages: ["SQL", "C#", "TypeScript", "JavaScript", "Java", "HTML/CSS"],
-  FrameworkandLibraries: ["ASP.NET Core", "Blazor", "React", "Entity Framework", "Bootstrap"],
-  CloudandDevOps: ["Azure", "Azure DevOps", "Azure Functions", "Azure App Service", "DigitalOcean", "Docker"],
-  Tools: ["Visual Studio", "VS Code", "Git"],
+  businessBI: ["Power BI", "Excel", "Odoo", "n8n"],
+  databases: ["MySQL", "SQL Server", "PostgreSQL"],
+  languages: ["SQL", "C#", "TypeScript", "JavaScript", "Java", "HTML/CSS"],
+  frameworks: ["ASP.NET Core", "Blazor", "React", "Entity Framework", "Bootstrap"],
+  cloud: ["Azure", "Azure DevOps", "Azure Functions", "Azure App Service", "DigitalOcean", "Docker"],
+  tools: ["Visual Studio", "VS Code", "Git"],
 };
 
 const Skills = () => {
@@ -22,6 +22,32 @@ const Skills = () => {
         </h2>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <Card className="bg-card/50 border-primary/20 hover:border-primary/50 transition-all hover:shadow-[0_0_20px_hsl(180,80%,50%,0.2)]">
+            <CardHeader>
+              <CardTitle className="text-primary">{t("skills.businessBI")}</CardTitle>
+            </CardHeader>
+            <CardContent className="flex flex-wrap gap-2">
+              {skillsData.businessBI.map((skill) => (
+                <Badge key={skill} variant="secondary" className="bg-secondary/50">
+                  {skill}
+                </Badge>
+              ))}
+            </CardContent>
+          </Card>
+
+          <Card className="bg-card/50 border-primary/20 hover:border-primary/50 transition-all hover:shadow-[0_0_20px_hsl(180,80%,50%,0.2)]">
+            <CardHeader>
+              <CardTitle className="text-primary">{t("skills.databases")}</CardTitle>
+            </CardHeader>
+            <CardContent className="flex flex-wrap gap-2">
+              {skillsData.databases.map((skill) => (
+                <Badge key={skill} variant="secondary" className="bg-secondary/50">
+                  {skill}
+                </Badge>
+              ))}
+            </CardContent>
+          </Card>
+
           <Card className="bg-card/50 border-primary/20 hover:border-primary/50 transition-all hover:shadow-[0_0_20px_hsl(180,80%,50%,0.2)]">
             <CardHeader>
               <CardTitle className="text-primary">{t("skills.languages")}</CardTitle>
@@ -50,19 +76,6 @@ const Skills = () => {
 
           <Card className="bg-card/50 border-primary/20 hover:border-primary/50 transition-all hover:shadow-[0_0_20px_hsl(180,80%,50%,0.2)]">
             <CardHeader>
-              <CardTitle className="text-primary">{t("skills.databases")}</CardTitle>
-            </CardHeader>
-            <CardContent className="flex flex-wrap gap-2">
-              {skillsData.databases.map((skill) => (
-                <Badge key={skill} variant="secondary" className="bg-secondary/50">
-                  {skill}
-                </Badge>
-              ))}
-            </CardContent>
-          </Card>
-
-          <Card className="bg-card/50 border-primary/20 hover:border-primary/50 transition-all hover:shadow-[0_0_20px_hsl(180,80%,50%,0.2)]">
-            <CardHeader>
               <CardTitle className="text-primary">{t("skills.cloud")}</CardTitle>
             </CardHeader>
             <CardContent className="flex flex-wrap gap-2">
@@ -80,19 +93,6 @@ const Skills = () => {
             </CardHeader>
             <CardContent className="flex flex-wrap gap-2">
               {skillsData.tools.map((skill) => (
-                <Badge key={skill} variant="secondary" className="bg-secondary/50">
-                  {skill}
-                </Badge>
-              ))}
-            </CardContent>
-          </Card>
-
-          <Card className="bg-card/50 border-primary/20 hover:border-primary/50 transition-all hover:shadow-[0_0_20px_hsl(180,80%,50%,0.2)]">
-            <CardHeader>
-              <CardTitle className="text-primary">{t("skills.versionControl")}</CardTitle>
-            </CardHeader>
-            <CardContent className="flex flex-wrap gap-2">
-              {skillsData.versionControl.map((skill) => (
                 <Badge key={skill} variant="secondary" className="bg-secondary/50">
                   {skill}
                 </Badge>
