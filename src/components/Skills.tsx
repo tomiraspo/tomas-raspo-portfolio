@@ -24,7 +24,7 @@ const Skills = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           <Card className="bg-card/50 border-primary/20 hover:border-primary/50 transition-all hover:shadow-[0_0_20px_hsl(180,80%,50%,0.2)]">
             <CardHeader>
-              <CardTitle className="text-primary">{t("skills.businessBI")}</CardTitle>
+              <CardTitle className="text-primary">Análisis de Negocio y BI</CardTitle>
             </CardHeader>
             <CardContent className="flex flex-wrap gap-2">
               {skillsData.businessBI.map((skill) => (
