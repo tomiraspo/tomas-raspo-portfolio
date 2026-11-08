@@ -1,0 +1,228 @@
+From 379c2d283acca8a9757a01c6c1e4dad974e420c8 Mon Sep 17 00:00:00 2001
+From: Tomas Juan Raspo <121737284+tomiraspo@users.noreply.github.com>
+Date: Sun, 30 Aug 2026 22:44:06 +0000
+Subject: [PATCH 2/3] feat(hero): efecto terminal + animaciones de entrada
+
+- Nuevo hook useTypewriter: simula texto escribiendose para el rol
+  profesional (Analista Funcional y Desarrollador de Sistemas).
+- Grid pattern sutil de fondo estilo 'blueprint' tecnico, con mascara
+  radial para que no compita con el contenido.
+- Badge superior estilo codigo: <AnalistaFuncional />.
+- Las skill badges ahora entran en cascada (stagger) en vez de todas
+  juntas.
+- Nombre, foto y botones sin cambios funcionales, solo se envolvieron
+  en motion.div para fade-in + slide-up al cargar.
+
+No rompe ningun link, href ni traduccion existente.
+---
+ src/components/Hero.tsx     | 105 ++++++++++++++++++++++++++++--------
+ src/hooks/use-typewriter.ts |  38 +++++++++++++
+ 2 files changed, 121 insertions(+), 22 deletions(-)
+ create mode 100644 src/hooks/use-typewriter.ts
+
+diff --git a/src/components/Hero.tsx b/src/components/Hero.tsx
+index b7b32ce..3a952fb 100644
+--- a/src/components/Hero.tsx
++++ b/src/components/Hero.tsx
+@@ -1,20 +1,57 @@
+ import { useTranslation } from "react-i18next";
+-import { Mail, Linkedin, FileDown } from "lucide-react";
++import { Mail, Linkedin, FileDown, Code2 } from "lucide-react";
++import { motion } from "framer-motion";
+ import { Button } from "@/components/ui/button";
++import { useTypewriter } from "@/hooks/use-typewriter";
+ import profileImage from "@/assets/FotoPortafolio.png";
+ 
++const skillsList = [
++  'Blazor', 'C#', '.NET Core', 'Java', 'MVC', 'Clean Arquitecture',
++  'SQL Server', 'Power BI', 'MySQL', 'n8n', 'Agile Methodologies',
++];
++
+ const Hero = () => {
+   const { t } = useTranslation();
++  const roleText = t("hero.role", "Functional Analyst & Systems Developer");
++  const { displayedText, isDone } = useTypewriter(roleText, 35, 400);
+ 
+   return (
+     <section className="min-h-screen flex items-center justify-center relative overflow-hidden px-4">
+-      {/* Animated background elements */}
++      {/* Grid pattern de fondo, estilo "blueprint" tecnico */}
++      <div
++        className="absolute inset-0 opacity-[0.07] dark:opacity-[0.12]"
++        style={{
++          backgroundImage:
++            "linear-gradient(hsl(var(--primary)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)",
++          backgroundSize: "48px 48px",
++          maskImage: "radial-gradient(ellipse 80% 60% at 50% 40%, black 40%, transparent 100%)",
++          WebkitMaskImage: "radial-gradient(ellipse 80% 60% at 50% 40%, black 40%, transparent 100%)",
++        }}
++      />
++
++      {/* Animated background glow elements */}
+       <div className="absolute inset-0 overflow-hidden">
+         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-float" />
+         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
+       </div>
+ 
+-      <div className="relative z-10 text-center max-w-4xl animate-fade-in">
++      <motion.div
++        initial={{ opacity: 0, y: 16 }}
++        animate={{ opacity: 1, y: 0 }}
++        transition={{ duration: 0.6, ease: "easeOut" }}
++        className="relative z-10 text-center max-w-4xl"
++      >
++        {/* Code-style label */}
++        <motion.div
++          initial={{ opacity: 0 }}
++          animate={{ opacity: 1 }}
++          transition={{ duration: 0.5, delay: 0.1 }}
++          className="inline-flex items-center gap-2 mb-5 px-3 py-1 rounded-full border border-primary/30 bg-primary/5 font-mono text-xs md:text-sm text-primary"
++        >
++          <Code2 className="h-3.5 w-3.5" />
++          <span>&lt;AnalistaFuncional /&gt;</span>
++        </motion.div>
++
+         {/* Profile Image */}
+         <div className="mb-8 inline-block">
+           <div className="relative">
+@@ -32,30 +69,54 @@ const Hero = () => {
+           Tomas Raspo
+         </h1>
+ 
+-        {/* Title */}
+-        <p className="text-xl md:text-2xl text-foreground/90 font-semibold mb-3">
+-          {t("hero.role", "Functional Analyst & Systems Developer")}
++        {/* Title - typewriter effect */}
++        <p className="text-xl md:text-2xl text-foreground/90 font-semibold mb-3 font-mono min-h-[2rem]">
++          {displayedText}
++          <span className={`inline-block w-[2px] h-5 md:h-6 bg-primary ml-1 align-middle ${isDone ? 'animate-pulse' : ''}`} />
+         </p>
+ 
+-        {/* Skills Badges */}
+-        <div className="flex flex-wrap gap-2 justify-center mb-6 max-w-3xl mx-auto">
+-          {['Blazor', 'C#', '.NET Core', 'Java', 'MVC', 'Clean Arquitecture', 'SQL Server', 'Power BI', 'MySQL', 'n8n', 'Agile Methodologies'].map((skill) => (
+-            <span
++        {/* Skills Badges - staggered entrance */}
++        <motion.div
++          initial="hidden"
++          animate="visible"
++          variants={{
++            hidden: {},
++            visible: { transition: { staggerChildren: 0.05, delayChildren: 0.9 } },
++          }}
++          className="flex flex-wrap gap-2 justify-center mb-6 max-w-3xl mx-auto"
++        >
++          {skillsList.map((skill) => (
++            <motion.span
+               key={skill}
++              variants={{
++                hidden: { opacity: 0, y: 8, scale: 0.9 },
++                visible: { opacity: 1, y: 0, scale: 1 },
++              }}
++              transition={{ duration: 0.3 }}
+               className="px-3 py-1 text-sm font-medium bg-primary/10 text-primary border border-primary/20 rounded-full"
+             >
+               {skill}
+-            </span>
++            </motion.span>
+           ))}
+-        </div>
++        </motion.div>
+ 
+         {/* Subtitle / Location */}
+-        <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
++        <motion.p
++          initial={{ opacity: 0 }}
++          animate={{ opacity: 1 }}
++          transition={{ duration: 0.5, delay: 1.5 }}
++          className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed"
++        >
+           {t("hero.location", "Remoto, Argentina")}
+-        </p>
++        </motion.p>
+ 
+         {/* CTA Buttons */}
+-        <div className="flex flex-wrap gap-4 justify-center">
++        <motion.div
++          initial={{ opacity: 0, y: 12 }}
++          animate={{ opacity: 1, y: 0 }}
++          transition={{ duration: 0.5, delay: 1.65 }}
++          className="flex flex-wrap gap-4 justify-center"
++        >
+           <Button
+             variant="default"
+             size="lg"
+@@ -82,19 +143,19 @@ const Hero = () => {
+             variant="outline"
+             size="lg"
+             className="border-primary/50 text-foreground hover:bg-primary/10 transition-all hover:border-primary"
+-            asChild 
++            asChild
+           >
+-            <a 
+-                href="Tomas_Raspo_Analista_Funcional.pdf" 
+-                download="Tomas_Raspo_CV.pdf" 
+-                target="_blank" 
++            <a
++                href="Tomas_Raspo_Analista_Funcional.pdf"
++                download="Tomas_Raspo_CV.pdf"
++                target="_blank"
+             >
+               <FileDown className="mr-2 h-5 w-5" />
+               {t("hero.downloadCv", "Download CV")}
+             </a>
+           </Button>
+-        </div>
+-      </div>
++        </motion.div>
++      </motion.div>
+     </section>
+   );
+ };
+diff --git a/src/hooks/use-typewriter.ts b/src/hooks/use-typewriter.ts
+new file mode 100644
+index 0000000..74b3394
+--- /dev/null
++++ b/src/hooks/use-typewriter.ts
+@@ -0,0 +1,38 @@
++import { useEffect, useState } from "react";
++
++/**
++ * Simula un efecto de "escritura" tipo terminal para un texto dado.
++ * Se reinicia automaticamente si el texto de entrada cambia (por ejemplo,
++ * al cambiar de idioma).
++ */
++export function useTypewriter(text: string, speedMs = 40, startDelayMs = 300) {
++  const [displayedText, setDisplayedText] = useState("");
++  const [isDone, setIsDone] = useState(false);
++
++  useEffect(() => {
++    setDisplayedText("");
++    setIsDone(false);
++
++    let currentIndex = 0;
++    let intervalId: ReturnType<typeof setInterval>;
++
++    const startTimeout = setTimeout(() => {
++      intervalId = setInterval(() => {
++        currentIndex += 1;
++        setDisplayedText(text.slice(0, currentIndex));
++
++        if (currentIndex >= text.length) {
++          clearInterval(intervalId);
++          setIsDone(true);
++        }
++      }, speedMs);
++    }, startDelayMs);
++
++    return () => {
++      clearTimeout(startTimeout);
++      clearInterval(intervalId);
++    };
++  }, [text, speedMs, startDelayMs]);
++
++  return { displayedText, isDone };
++}
+-- 
+2.43.0
+

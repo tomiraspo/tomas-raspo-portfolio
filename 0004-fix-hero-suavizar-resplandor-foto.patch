@@ -1,0 +1,34 @@
+From d564a547407224e61d9beb97c2c28a75743c3551 Mon Sep 17 00:00:00 2001
+From: Tomas Juan Raspo <121737284+tomiraspo@users.noreply.github.com>
+Date: Sun, 30 Aug 2026 23:19:10 +0000
+Subject: [PATCH] fix(hero): suavizar resplandor detras de la foto de perfil
+
+El glow (blur-xl + pulse constante) quedaba muy pesado combinado
+con el nuevo grid de fondo. Se reduce el blur, la opacidad, se
+saca la animacion de pulso, y el borde pasa a fundirse con el
+fondo en vez de competir en color con el glow.
+---
+ src/components/Hero.tsx | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/src/components/Hero.tsx b/src/components/Hero.tsx
+index 3a952fb..8d4c8f4 100644
+--- a/src/components/Hero.tsx
++++ b/src/components/Hero.tsx
+@@ -55,11 +55,11 @@ const Hero = () => {
+         {/* Profile Image */}
+         <div className="mb-8 inline-block">
+           <div className="relative">
+-            <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-full blur-xl opacity-50 animate-pulse-glow" />
++            <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-full blur-md opacity-30 scale-105" />
+             <img
+               src={profileImage}
+               alt="Tomas Raspo"
+-              className="relative w-40 h-40 rounded-full object-cover border-4 border-primary/50 shadow-2xl"
++              className="relative w-40 h-40 rounded-full object-cover border-4 border-background shadow-xl"
+             />
+           </div>
+         </div>
+-- 
+2.43.0
+

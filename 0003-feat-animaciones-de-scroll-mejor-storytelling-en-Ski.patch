@@ -1,0 +1,586 @@
+From 22f9aa478ee0000a2c30aa19d7bd189813cf5b9f Mon Sep 17 00:00:00 2001
+From: Tomas Juan Raspo <121737284+tomiraspo@users.noreply.github.com>
+Date: Sun, 30 Aug 2026 22:53:21 +0000
+Subject: [PATCH 3/3] feat: animaciones de scroll + mejor storytelling en
+ Skills/Projects/About/Experience
+
+- About: cada parrafo hace fade-in + slide-up al entrar en viewport,
+  en cascada.
+- Skills: reemplaza badges planas por indicador de nivel de dominio
+  (puntos llenos 1-5) por tecnologia, agrupado por categoria, mas
+  animacion de entrada por card.
+- Projects: cada card ahora incluye una linea de 'Impacto' que
+  explica el resultado/valor real del proyecto (no solo el stack
+  usado), clave para un perfil de Analista Funcional. Se agrego
+  scroll-reveal y un leve lift al hacer hover.
+- Experience: cada item de la timeline entra con fade-in + slide-up
+  al hacer scroll, reemplazando la animacion generica anterior.
+- i18n: se agregaron las claves projects.impactLabel y
+  projects.items.*.impact en ES y EN.
+- Se elimino codigo muerto (rama 'demo' con 'as any' que nunca se
+  usaba) que generaba errores de lint.
+
+Build y lint verificados sin errores.
+---
+ src/components/About.tsx      |  47 +++++----
+ src/components/Experience.tsx |  23 ++++-
+ src/components/Projects.tsx   | 139 ++++++++++++++------------
+ src/components/Skills.tsx     | 182 ++++++++++++++++++----------------
+ src/i18n.ts                   |   6 ++
+ 5 files changed, 225 insertions(+), 172 deletions(-)
+
+diff --git a/src/components/About.tsx b/src/components/About.tsx
+index acf7330..b0e642b 100644
+--- a/src/components/About.tsx
++++ b/src/components/About.tsx
+@@ -1,31 +1,42 @@
+ import { useTranslation } from "react-i18next";
++import { motion } from "framer-motion";
+ 
+ const About = () => {
+   const { t } = useTranslation();
+ 
++  const paragraphs = [
++    <>{t("about.p1_1")}<strong>{t("about.p1_bold")}</strong>{t("about.p1_2")}<strong>{t("about.p1_bold2")}</strong>{t("about.p1_3")}</>,
++    <>{t("about.p2_1")}<strong>{t("about.p2_bold")}</strong>{t("about.p2_2")}</>,
++    <>{t("about.p3_1")}<strong>{t("about.p3_bold")}</strong>{t("about.p3_2")}</>,
++    <>{t("about.p4")}</>,
++  ];
++
+   return (
+     <section id="about" className="py-20 px-4 md:px-8 bg-card/30">
+       <div className="max-w-6xl mx-auto">
+-        <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
++        <motion.h2
++          initial={{ opacity: 0, y: 16 }}
++          whileInView={{ opacity: 1, y: 0 }}
++          viewport={{ once: true, amount: 0.4 }}
++          transition={{ duration: 0.5 }}
++          className="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
++        >
+           {t("about.title")}
+-        </h2>
+-        
+-        <div className="prose prose-invert max-w-none">
+-          <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+-            {t("about.p1_1")}<strong>{t("about.p1_bold")}</strong>{t("about.p1_2")}<strong>{t("about.p1_bold2")}</strong>{t("about.p1_3")}
+-          </p>
+-          
+-          <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+-            {t("about.p2_1")}<strong>{t("about.p2_bold")}</strong>{t("about.p2_2")}
+-          </p>
++        </motion.h2>
+ 
+-          <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+-            {t("about.p3_1")}<strong>{t("about.p3_bold")}</strong>{t("about.p3_2")}
+-          </p>
+-          
+-          <p className="text-lg text-muted-foreground leading-relaxed">
+-            {t("about.p4")}
+-          </p>
++        <div className="prose prose-invert max-w-none">
++          {paragraphs.map((p, i) => (
++            <motion.p
++              key={i}
++              initial={{ opacity: 0, y: 16 }}
++              whileInView={{ opacity: 1, y: 0 }}
++              viewport={{ once: true, amount: 0.5 }}
++              transition={{ duration: 0.45, delay: i * 0.08 }}
++              className="text-lg text-muted-foreground leading-relaxed mb-6 last:mb-0"
++            >
++              {p}
++            </motion.p>
++          ))}
+         </div>
+       </div>
+     </section>
+diff --git a/src/components/Experience.tsx b/src/components/Experience.tsx
+index 51a9725..5617e7b 100644
+--- a/src/components/Experience.tsx
++++ b/src/components/Experience.tsx
+@@ -1,5 +1,6 @@
+ import { useTranslation } from "react-i18next";
+ import { Building2, ExternalLink, FileText } from "lucide-react";
++import { motion } from "framer-motion";
+ import { Card } from "./ui/card";
+ 
+ interface ExperienceItem {
+@@ -68,21 +69,32 @@ const Experience = () => {
+   return (
+     <section id="experiencia" className="py-20 bg-background">
+       <div className="container mx-auto px-4">
+-        <div className="text-center mb-12"> 
++        <motion.div
++          initial={{ opacity: 0, y: 16 }}
++          whileInView={{ opacity: 1, y: 0 }}
++          viewport={{ once: true, amount: 0.4 }}
++          transition={{ duration: 0.5 }}
++          className="text-center mb-12"
++        >
+           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+             {t("experience.title")}
+           </h2>
+           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+             {t("experience.subtitle")}
+           </p>
+-        </div>
++        </motion.div>
+ 
+         <div className="space-y-6">
+           {experiences.map((exp, index) => (
+-            <Card
++            <motion.div
+               key={index}
+-              className="p-6 hover:shadow-lg transition-all duration-300 group animate-fade-in"
+-              style={{ animationDelay: `${index * 0.1}s` }}
++              initial={{ opacity: 0, y: 24 }}
++              whileInView={{ opacity: 1, y: 0 }}
++              viewport={{ once: true, amount: 0.2 }}
++              transition={{ duration: 0.45, delay: Math.min(index, 3) * 0.08 }}
++            >
++            <Card
++              className="p-6 hover:shadow-lg transition-all duration-300 group"
+             >
+               <div className="flex flex-col md:flex-row md:items-start gap-4">
+                 <div className="flex-1">
+@@ -148,6 +160,7 @@ const Experience = () => {
+                 </div>
+               </div>
+             </Card>
++            </motion.div>
+           ))}
+         </div>
+       </div>
+diff --git a/src/components/Projects.tsx b/src/components/Projects.tsx
+index ce610b8..aec9c30 100644
+--- a/src/components/Projects.tsx
++++ b/src/components/Projects.tsx
+@@ -1,8 +1,9 @@
+ import { useTranslation } from "react-i18next";
++import { motion } from "framer-motion";
+ import { Badge } from "@/components/ui/badge";
+ import { Button } from "@/components/ui/button";
+ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+-import { ExternalLink, Github, Linkedin } from "lucide-react";
++import { Github, Linkedin } from "lucide-react";
+ 
+ const Projects = () => {
+   const { t } = useTranslation();
+@@ -11,7 +12,8 @@ const Projects = () => {
+     {
+       titleKey: "projects.items.turnos.title",
+       descKey: "projects.items.turnos.description",
+-      technologies: ["ASP.NET Core", "Blazor", "SQL Server", "Azure"],
++      impactKey: "projects.items.turnos.impact",
++      technologies: ["ASP.NET Core", "Blazor", "SQL Server", "Azure", "Clean Architecture"],
+       statusKey: "projects.statusCompleted",
+       github: "https://github.com/tomiraspo/Sistema-Turnos",
+       linkedin: "https://www.linkedin.com/feed/update/urn:li:activity:7384221305383936000/",
+@@ -19,6 +21,7 @@ const Projects = () => {
+     {
+       titleKey: "projects.items.clarvision.title",
+       descKey: "projects.items.clarvision.description",
++      impactKey: "projects.items.clarvision.impact",
+       technologies: ["MySQL", "Power BI", "n8n", "Slack", "Excel", "Git"],
+       statusKey: "projects.statusCompleted",
+       github: "https://github.com/tomiraspo/ClarVision-BI",
+@@ -29,80 +32,90 @@ const Projects = () => {
+   return (
+     <section id="projects" className="py-20 px-4 md:px-8 bg-card/30">
+       <div className="max-w-6xl mx-auto">
+-        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-center bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
++        <motion.h2
++          initial={{ opacity: 0, y: 16 }}
++          whileInView={{ opacity: 1, y: 0 }}
++          viewport={{ once: true, amount: 0.4 }}
++          transition={{ duration: 0.5 }}
++          className="text-4xl md:text-5xl font-bold mb-6 text-center bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
++        >
+           {t("projects.title")}
+-        </h2>
+-        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
++        </motion.h2>
++        <motion.p
++          initial={{ opacity: 0 }}
++          whileInView={{ opacity: 1 }}
++          viewport={{ once: true, amount: 0.4 }}
++          transition={{ duration: 0.5, delay: 0.1 }}
++          className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto"
++        >
+           {t("projects.subtitle")}
+-        </p>
++        </motion.p>
+ 
+-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
++        <div className="grid md:grid-cols-2 gap-6">
+           {projectsData.map((project, index) => (
+-            <Card
++            <motion.div
+               key={index}
+-              className="bg-card/50 border-primary/20 hover:border-primary/50 transition-all hover:shadow-[0_0_20px_hsl(180,80%,50%,0.2)] flex flex-col"
++              initial={{ opacity: 0, y: 28 }}
++              whileInView={{ opacity: 1, y: 0 }}
++              viewport={{ once: true, amount: 0.2 }}
++              transition={{ duration: 0.5, delay: index * 0.1 }}
++              whileHover={{ y: -4 }}
+             >
+-              <CardHeader>
+-                <CardTitle className="text-foreground">{t(project.titleKey)}</CardTitle>
+-                <CardDescription className="text-muted-foreground">
+-                  {t(project.descKey)}
+-                </CardDescription>
+-              </CardHeader>
+-              <CardContent className="flex-grow">
+-                <div className="flex flex-wrap gap-2 mb-4">
+-                  {project.technologies.map((tech) => (
+-                    <Badge key={tech} variant="secondary" className="bg-secondary/50 text-xs">
+-                      {tech}
++              <Card className="h-full bg-card/50 border-primary/20 hover:border-primary/50 transition-all hover:shadow-[0_0_25px_hsl(180,80%,50%,0.25)] flex flex-col">
++                <CardHeader>
++                  <div className="flex items-center justify-between gap-2 mb-1">
++                    <CardTitle className="text-foreground text-xl">{t(project.titleKey)}</CardTitle>
++                    <Badge variant="default" className="bg-primary/80 shrink-0">
++                      {t(project.statusKey)}
+                     </Badge>
+-                  ))}
+-                </div>
+-                <Badge
+-                  variant="default"
+-                  className="bg-primary/80"
+-                >
+-                  {t(project.statusKey)}
+-                </Badge>
+-              </CardContent>
+-              <CardFooter className="gap-2">
+-                <Button
+-                  variant="outline"
+-                  size="sm"
+-                  className="border-primary/50 hover:bg-primary/10"
+-                  asChild
+-                >
+-                  <a href={project.github} target="_blank" rel="noopener noreferrer">
+-                    <Github className="mr-2 h-4 w-4" />
+-                    GitHub
+-                  </a>
+-                </Button>
+-                {project.linkedin && (
++                  </div>
++                  <CardDescription className="text-muted-foreground">
++                    {t(project.descKey)}
++                  </CardDescription>
++                </CardHeader>
++                <CardContent className="flex-grow flex flex-col gap-4">
++                  <div className="flex flex-wrap gap-2">
++                    {project.technologies.map((tech) => (
++                      <Badge key={tech} variant="secondary" className="bg-secondary/50 text-xs font-mono">
++                        {tech}
++                      </Badge>
++                    ))}
++                  </div>
++                  <div className="border-l-2 border-primary/40 pl-3">
++                    <p className="text-sm text-foreground/90 leading-relaxed">
++                      <span className="font-semibold text-primary">{t("projects.impactLabel")}: </span>
++                      {t(project.impactKey)}
++                    </p>
++                  </div>
++                </CardContent>
++                <CardFooter className="gap-2">
+                   <Button
+-                    variant="default"
++                    variant="outline"
+                     size="sm"
+-                    className="bg-primary/90 hover:bg-primary"
++                    className="border-primary/50 hover:bg-primary/10"
+                     asChild
+                   >
+-                    <a href={project.linkedin} target="_blank" rel="noopener noreferrer">
+-                      <Linkedin className="mr-2 h-4 w-4" />
+-                      {t("projects.viewDemo")}
++                    <a href={project.github} target="_blank" rel="noopener noreferrer">
++                      <Github className="mr-2 h-4 w-4" />
++                      GitHub
+                     </a>
+                   </Button>
+-                )}
+-                {(project as any).demo && (
+-                  <Button
+-                    variant="default"
+-                    size="sm"
+-                    className="bg-primary hover:bg-primary/90"
+-                    asChild
+-                  >
+-                    <a href={(project as any).demo} target="_blank" rel="noopener noreferrer">
+-                      <ExternalLink className="mr-2 h-4 w-4" />
+-                      Demo
+-                    </a>
+-                  </Button>
+-                )}
+-              </CardFooter>
+-            </Card>
++                  {project.linkedin && (
++                    <Button
++                      variant="default"
++                      size="sm"
++                      className="bg-primary/90 hover:bg-primary"
++                      asChild
++                    >
++                      <a href={project.linkedin} target="_blank" rel="noopener noreferrer">
++                        <Linkedin className="mr-2 h-4 w-4" />
++                        {t("projects.viewDemo")}
++                      </a>
++                    </Button>
++                  )}
++                </CardFooter>
++              </Card>
++            </motion.div>
+           ))}
+         </div>
+       </div>
+diff --git a/src/components/Skills.tsx b/src/components/Skills.tsx
+index 727944d..f2a3d12 100644
+--- a/src/components/Skills.tsx
++++ b/src/components/Skills.tsx
+@@ -1,104 +1,114 @@
+ import { useTranslation } from "react-i18next";
+-import { Badge } from "@/components/ui/badge";
++import { motion } from "framer-motion";
+ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+ 
++// Nivel de dominio del 1 al 5, estimado por antiguedad/uso segun tu experiencia.
++// Ajustalo libremente vos mismo despues si algo no te representa.
+ const skillsData = {
+-  languages: ["C#", "SQL", "JavaScript", "TypeScript", "HTML/CSS", "Java"],
+-  frameworks: ["ASP.NET Core", "Blazor", "Entity Framework", ".NET MAUI", "Bootstrap"],
+-  databases: ["SQL Server", "MySQL", "PostgreSQL", "Azure SQL"],
+-  cloud: ["Azure", "Azure DevOps", "Azure Functions", "Azure App Service"],
+-  tools: ["Visual Studio", "VS Code", "Docker", "Git", "Kubernetes"],
+-  versionControl: ["Git", "GitHub", "Azure Repos", "CI/CD"],
++  languages: [
++    { name: "C#", level: 5 },
++    { name: "SQL", level: 5 },
++    { name: "TypeScript", level: 4 },
++    { name: "JavaScript", level: 4 },
++    { name: "HTML/CSS", level: 4 },
++    { name: "Java", level: 3 },
++  ],
++  frameworks: [
++    { name: "ASP.NET Core", level: 5 },
++    { name: "Entity Framework", level: 4 },
++    { name: "Blazor", level: 4 },
++    { name: ".NET MAUI", level: 3 },
++    { name: "Bootstrap", level: 3 },
++  ],
++  databases: [
++    { name: "SQL Server", level: 5 },
++    { name: "MySQL", level: 4 },
++    { name: "Azure SQL", level: 3 },
++    { name: "PostgreSQL", level: 3 },
++  ],
++  cloud: [
++    { name: "Azure DevOps", level: 4 },
++    { name: "Azure", level: 3 },
++    { name: "Azure Functions", level: 3 },
++    { name: "Azure App Service", level: 3 },
++  ],
++  tools: [
++    { name: "Git", level: 5 },
++    { name: "Visual Studio", level: 5 },
++    { name: "VS Code", level: 5 },
++    { name: "Docker", level: 3 },
++    { name: "Kubernetes", level: 2 },
++  ],
++  versionControl: [
++    { name: "GitHub", level: 5 },
++    { name: "Git", level: 5 },
++    { name: "CI/CD", level: 4 },
++    { name: "Azure Repos", level: 3 },
++  ],
+ };
+ 
++const DomainDots = ({ level }: { level: number }) => (
++  <div className="flex gap-1" aria-label={`Nivel ${level} de 5`}>
++    {Array.from({ length: 5 }).map((_, i) => (
++      <span
++        key={i}
++        className={`h-1.5 w-1.5 rounded-full ${i < level ? "bg-primary" : "bg-muted"}`}
++      />
++    ))}
++  </div>
++);
++
++const categories: Array<{ key: keyof typeof skillsData; titleKey: string }> = [
++  { key: "languages", titleKey: "skills.languages" },
++  { key: "frameworks", titleKey: "skills.frameworks" },
++  { key: "databases", titleKey: "skills.databases" },
++  { key: "cloud", titleKey: "skills.cloud" },
++  { key: "tools", titleKey: "skills.tools" },
++  { key: "versionControl", titleKey: "skills.versionControl" },
++];
++
+ const Skills = () => {
+   const { t } = useTranslation();
+ 
+   return (
+     <section id="skills" className="py-20 px-4 md:px-8">
+       <div className="max-w-6xl mx-auto">
+-        <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
++        <motion.h2
++          initial={{ opacity: 0, y: 16 }}
++          whileInView={{ opacity: 1, y: 0 }}
++          viewport={{ once: true, amount: 0.4 }}
++          transition={{ duration: 0.5 }}
++          className="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
++        >
+           {t("skills.title")}
+-        </h2>
++        </motion.h2>
+ 
+         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+-          <Card className="bg-card/50 border-primary/20 hover:border-primary/50 transition-all hover:shadow-[0_0_20px_hsl(180,80%,50%,0.2)]">
+-            <CardHeader>
+-              <CardTitle className="text-primary">{t("skills.languages")}</CardTitle>
+-            </CardHeader>
+-            <CardContent className="flex flex-wrap gap-2">
+-              {skillsData.languages.map((skill) => (
+-                <Badge key={skill} variant="secondary" className="bg-secondary/50">
+-                  {skill}
+-                </Badge>
+-              ))}
+-            </CardContent>
+-          </Card>
+-
+-          <Card className="bg-card/50 border-primary/20 hover:border-primary/50 transition-all hover:shadow-[0_0_20px_hsl(180,80%,50%,0.2)]">
+-            <CardHeader>
+-              <CardTitle className="text-primary">{t("skills.frameworks")}</CardTitle>
+-            </CardHeader>
+-            <CardContent className="flex flex-wrap gap-2">
+-              {skillsData.frameworks.map((skill) => (
+-                <Badge key={skill} variant="secondary" className="bg-secondary/50">
+-                  {skill}
+-                </Badge>
+-              ))}
+-            </CardContent>
+-          </Card>
+-
+-          <Card className="bg-card/50 border-primary/20 hover:border-primary/50 transition-all hover:shadow-[0_0_20px_hsl(180,80%,50%,0.2)]">
+-            <CardHeader>
+-              <CardTitle className="text-primary">{t("skills.databases")}</CardTitle>
+-            </CardHeader>
+-            <CardContent className="flex flex-wrap gap-2">
+-              {skillsData.databases.map((skill) => (
+-                <Badge key={skill} variant="secondary" className="bg-secondary/50">
+-                  {skill}
+-                </Badge>
+-              ))}
+-            </CardContent>
+-          </Card>
+-
+-          <Card className="bg-card/50 border-primary/20 hover:border-primary/50 transition-all hover:shadow-[0_0_20px_hsl(180,80%,50%,0.2)]">
+-            <CardHeader>
+-              <CardTitle className="text-primary">{t("skills.cloud")}</CardTitle>
+-            </CardHeader>
+-            <CardContent className="flex flex-wrap gap-2">
+-              {skillsData.cloud.map((skill) => (
+-                <Badge key={skill} variant="secondary" className="bg-secondary/50">
+-                  {skill}
+-                </Badge>
+-              ))}
+-            </CardContent>
+-          </Card>
+-
+-          <Card className="bg-card/50 border-primary/20 hover:border-primary/50 transition-all hover:shadow-[0_0_20px_hsl(180,80%,50%,0.2)]">
+-            <CardHeader>
+-              <CardTitle className="text-primary">{t("skills.tools")}</CardTitle>
+-            </CardHeader>
+-            <CardContent className="flex flex-wrap gap-2">
+-              {skillsData.tools.map((skill) => (
+-                <Badge key={skill} variant="secondary" className="bg-secondary/50">
+-                  {skill}
+-                </Badge>
+-              ))}
+-            </CardContent>
+-          </Card>
+-
+-          <Card className="bg-card/50 border-primary/20 hover:border-primary/50 transition-all hover:shadow-[0_0_20px_hsl(180,80%,50%,0.2)]">
+-            <CardHeader>
+-              <CardTitle className="text-primary">{t("skills.versionControl")}</CardTitle>
+-            </CardHeader>
+-            <CardContent className="flex flex-wrap gap-2">
+-              {skillsData.versionControl.map((skill) => (
+-                <Badge key={skill} variant="secondary" className="bg-secondary/50">
+-                  {skill}
+-                </Badge>
+-              ))}
+-            </CardContent>
+-          </Card>
++          {categories.map(({ key, titleKey }, index) => (
++            <motion.div
++              key={key}
++              initial={{ opacity: 0, y: 24 }}
++              whileInView={{ opacity: 1, y: 0 }}
++              viewport={{ once: true, amount: 0.3 }}
++              transition={{ duration: 0.45, delay: (index % 3) * 0.08 }}
++            >
++              <Card className="h-full bg-card/50 border-primary/20 hover:border-primary/50 transition-all hover:shadow-[0_0_20px_hsl(180,80%,50%,0.2)]">
++                <CardHeader>
++                  <CardTitle className="text-primary font-mono text-base">
++                    {t(titleKey)}
++                  </CardTitle>
++                </CardHeader>
++                <CardContent className="flex flex-col gap-3">
++                  {skillsData[key].map((skill) => (
++                    <div key={skill.name} className="flex items-center justify-between gap-3">
++                      <span className="text-sm text-foreground">{skill.name}</span>
++                      <DomainDots level={skill.level} />
++                    </div>
++                  ))}
++                </CardContent>
++              </Card>
++            </motion.div>
++          ))}
+         </div>
+       </div>
+     </section>
+diff --git a/src/i18n.ts b/src/i18n.ts
+index 4bdbb6a..bdff303 100644
+--- a/src/i18n.ts
++++ b/src/i18n.ts
+@@ -49,14 +49,17 @@ const resources = {
+         subtitle: "Algunos de los trabajos más relevantes que he desarrollado",
+         statusCompleted: "Completado",
+         viewDemo: "Ver Demo (Video)",
++        impactLabel: "Impacto",
+         items: {
+           turnos: {
+             title: "Sistema de Turnos Virtual",
+             description: "Agendamiento Oftalmológico Flexible con ASP.NET Core y Blazor.",
++            impact: "Migración completa de Blazor Server a arquitectura Web API + React, preservando cada etapa en ramas separadas como evidencia técnica del proceso.",
+           },
+           clarvision: {
+             title: "ClarVision BI",
+             description: "Sistema de inteligencia operacional para clínica oftalmológica. Pipeline completo de datos con alertas automáticas de ausentismo crítico y reportes semanales vía Slack.",
++            impact: "Automatización que redujo el seguimiento manual de ausentismo, entregando reportes semanales listos para decisiones sin intervención humana.",
+           },
+         },
+       },
+@@ -167,14 +170,17 @@ const resources = {
+         subtitle: "Some of the most relevant projects I've built",
+         statusCompleted: "Completed",
+         viewDemo: "Watch Demo (Video)",
++        impactLabel: "Impact",
+         items: {
+           turnos: {
+             title: "Virtual Appointment System",
+             description: "Flexible Ophthalmological Scheduling with ASP.NET Core and Blazor.",
++            impact: "Full migration from Blazor Server to a Web API + React architecture, preserving each stage in separate branches as technical evidence of the process.",
+           },
+           clarvision: {
+             title: "ClarVision BI",
+             description: "Operational intelligence system for ophthalmology clinic. Full data pipeline with automatic alerts for critical absenteeism and weekly reports via Slack.",
++            impact: "Automation that removed manual absenteeism tracking, delivering decision-ready weekly reports with no human intervention.",
+           },
+         },
+       },
+-- 
+2.43.0
+
