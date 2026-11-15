@@ -6,9 +6,9 @@ const skillsData = {
   businessBI: ["Power BI", "Excel", "Odoo", "n8n"],
   databases: ["MySQL", "SQL Server", "PostgreSQL"],
   languages: ["SQL", "C#", "TypeScript", "JavaScript", "Java", "HTML/CSS"],
-  frameworks: ["ASP.NET Core", "Blazor", "React", "Entity Framework", "Bootstrap"],
-  cloud: ["Azure", "Azure DevOps", "Azure Functions", "Azure App Service", "DigitalOcean", "Docker"],
-  tools: ["Visual Studio", "VS Code", "Git"],
+  frameworks: ["ASP.NET Core", "Blazor", "React", "Bootstrap"],
+  cloud: ["DigitalOcean", "Docker"],
+  tools: ["Jira", "Confluence", "Trello", "draw.io", "Git", "Visual Studio", "VS Code"],
 };
 
 const Skills = () => {
