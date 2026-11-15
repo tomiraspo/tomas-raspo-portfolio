@@ -8,8 +8,8 @@ const Hero = () => {
 
   const lang = i18n.language?.slice(0, 2) === "es" ? "es" : "en";
   const valueProp = {
-    es: "Conecto la operación del negocio con la tecnología: analizo procesos, automatizo tareas y construyo sistemas y dashboards que ayudan a decidir mejor.",
-    en: "I connect business operations with technology: I analyze processes, automate tasks and build systems and dashboards that support better decisions.",
+    es: "Conecto la operación con la tecnología: documento requisitos, organizo datos en dashboards y automatizo alertas.",
+    en: "I connect operations with technology: I document requirements, organize data into dashboards and automate alerts.",
   }[lang];
 
   return (
@@ -40,7 +40,7 @@ const Hero = () => {
 
         {/* Title */}
         <p className="text-xl md:text-2xl text-foreground/90 font-semibold mb-3">
-          {t("hero.role", "Functional Analyst & Systems Developer")}
+          {t("hero.role", "Functional & BI Analyst")}
         </p>
 
         {/* Value proposition */}
@@ -62,7 +62,7 @@ const Hero = () => {
 
         {/* Subtitle / Location */}
         <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
-          {t("hero.location", "Remoto, Argentina")}
+          {t("hero.location", "Argentina")}
         </p>
 
         {/* CTA Buttons */}
