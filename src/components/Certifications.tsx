@@ -1,3 +1,36 @@
+import { useTranslation } from "react-i18next";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { ExternalLink } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+
+import EFCore from "@/assets/certificates/EF Core.png";
+import LeadershipPORTUGAL from "@/assets/certificates/LeadershipPORTUGAL.png";
+import LeadershipITALIA from "@/assets/certificates/LeadershipITALIA.png";
+import SpeakEnglish from "@/assets/certificates/SpeakEnglish.png";
+import ComunicacionLaboralXXI from "@/assets/certificates/ComunicacionLaboral.png";
+import InicioYPlanificacionProyectos from "@/assets/certificates/InicioYPlanificacionProyectos.png";
+import InglesEmpresarial from "@/assets/certificates/InglesEmpresarial.jpg";
+import HabilidadesHumanas from "@/assets/certificates/HabilidadesHumanas.png";
+import NegociosInternacionales from "@/assets/certificates/NegociosInternacionales.jpg";
+import TrabajarParaSerFeliz from "@/assets/certificates/TrabajarParaSerFeliz.png";
+import GoogleActivatex2 from "@/assets/certificates/GoogleActivatex2.png";
+import TrabajarInteligente from "@/assets/certificates/TrabajarInteligente.png";
+import MiPrimerEmpleo from "@/assets/certificates/MiPrimerEmpleo.png";
+import Italiano from "@/assets/certificates/Italiano.png";
+import AprendiendoAAprender from "@/assets/certificates/AprendiendoAAprender.png";
+import FinanzasPersonales from "@/assets/certificates/FinanzasPersonales.png";
+import educacionIT from "@/assets/certificates/Java.png";
+import ProgramacionPython from "@/assets/certificates/ProgramacionPython.png";
+
 const certifications = [
   {
     date: "July 2025",
@@ -126,3 +159,72 @@ const certifications = [
     image: TrabajarParaSerFeliz,
   },
 ];
+
+const Certifications = () => {
+  const { t } = useTranslation();
+
+  return (
+    <section id="certifications" className="py-20 px-4 md:px-8">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-4xl md:text-5xl font-bold mb-6 pb-2 text-center bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+          {t("certifications.title")}
+        </h2>
+        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+          {t("certifications.subtitle")}
+        </p>
+
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          plugins={[
+            Autoplay({
+              delay: 6000,
+            }),
+          ]}
+          className="w-full max-w-5xl mx-auto"
+        >
+          <CarouselContent>
+            {certifications.map((cert, index) => (
+              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                <Card className="bg-card/50 border-primary/20 hover:border-primary/50 transition-all hover:shadow-[0_0_20px_hsl(180,80%,50%,0.2)] h-full">
+                  <CardHeader className="pb-3">
+                    <div className="aspect-video mb-3 rounded-md overflow-hidden bg-muted">
+                      <img
+                        src={cert.image}
+                        alt={cert.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <Badge variant="secondary" className="w-fit mb-2 bg-secondary/50">
+                      {cert.date}
+                    </Badge>
+                    <CardTitle className="text-lg text-foreground">{cert.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="flex items-center justify-between">
+                    <p className="text-muted-foreground text-sm">{cert.organization}</p>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="text-primary hover:text-primary hover:bg-primary/10"
+                      asChild
+                    >
+                      <a href={cert.link} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="h-4 w-4" />
+                      </a>
+                    </Button>
+                  </CardContent>
+                </Card>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
+      </div>
+    </section>
+  );
+};
+
+export default Certifications;
