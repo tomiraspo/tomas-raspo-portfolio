@@ -1,36 +1,3 @@
-import { useTranslation } from "react-i18next";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ExternalLink } from "lucide-react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
-
-import EFCore from "@/assets/certificates/EF Core.png";
-import LeadershipPORTUGAL from "@/assets/certificates/LeadershipPORTUGAL.png";
-import LeadershipITALIA from "@/assets/certificates/LeadershipITALIA.png";
-import SpeakEnglish from "@/assets/certificates/SpeakEnglish.png";
-import ComunicacionLaboralXXI from "@/assets/certificates/ComunicacionLaboral.png";
-import InicioYPlanificacionProyectos from "@/assets/certificates/InicioYPlanificacionProyectos.png";
-import InglesEmpresarial from "@/assets/certificates/InglesEmpresarial.jpg";
-import HabilidadesHumanas from "@/assets/certificates/HabilidadesHumanas.png";
-import NegociosInternacionales from "@/assets/certificates/NegociosInternacionales.jpg";
-import TrabajarParaSerFeliz from "@/assets/certificates/TrabajarParaSerFeliz.png";
-import GoogleActivatex2 from "@/assets/certificates/GoogleActivatex2.png";
-import TrabajarInteligente from "@/assets/certificates/TrabajarInteligente.png";
-import MiPrimerEmpleo from "@/assets/certificates/MiPrimerEmpleo.png";
-import Italiano from "@/assets/certificates/Italiano.png";
-import AprendiendoAAprender from "@/assets/certificates/AprendiendoAAprender.png";
-import FinanzasPersonales from "@/assets/certificates/FinanzasPersonales.png";
-import educacionIT from "@/assets/certificates/Java.png";
-import ProgramacionPython from "@/assets/certificates/ProgramacionPython.png";
-
 const certifications = [
   {
     date: "July 2025",
@@ -38,6 +5,13 @@ const certifications = [
     organization: "EF SET",
     link: "https://drive.google.com/file/d/1SGRniIEP56btSBC6vCl6nom5nxwxoVEU/view?usp=sharing",
     image: EFCore,
+  },
+  {
+    date: "May 2024",
+    title: "Leadership Development Portugal",
+    organization: "AIESEC",
+    link: "https://drive.google.com/file/d/1Of84sTg-LWigKpQpynb8h4-Gf6OFHtHE/view?usp=sharing",
+    image: LeadershipPORTUGAL,
   },
   {
     date: "June 2025",
@@ -54,11 +28,11 @@ const certifications = [
     image: Italiano,
   },
   {
-    date: "May 2024",
-    title: "Leadership Development Portugal",
-    organization: "AIESEC",
-    link: "https://drive.google.com/file/d/1Of84sTg-LWigKpQpynb8h4-Gf6OFHtHE/view?usp=sharing",
-    image: LeadershipPORTUGAL,
+    date: "January 2021",
+    title: "Iniciación y Planificación de Proyectos",
+    organization: "Coursera",
+    link: "https://drive.google.com/file/d/1cGes4AjKdGoXNpWjnNajwgsWqcTxeaSF/view?usp=sharing",
+    image: InicioYPlanificacionProyectos,
   },
   {
     date: "April 2023",
@@ -75,20 +49,6 @@ const certifications = [
     image: educacionIT,
   },
   {
-    date: "January 2022",
-    title: "Fundamentos de Marketing Digital",
-    organization: "Google Actívate",
-    link: "https://drive.google.com/file/d/1nTG7Ya8bvNz-cH0uQuOdatmq8qvoEcwq/view?usp=sharing",
-    image: GoogleActivatex2,
-  },
-  {
-    date: "January 2021",
-    title: "Aprendiendo a aprender: Poderosas herramientas mentales con las que podrás dominar temas difíciles (Learning How to Learn)",
-    organization: "Coursera",
-    link: "https://drive.google.com/file/d/1ju00NAV-kqoOiO3_plFRYHWd6FZ4_SI2/view?usp=sharing",
-    image: AprendiendoAAprender,
-  },
-  {
     date: "January 2021",
     title: "Speak English Professionally: In Person, Online and on the Phone",
     organization: "Coursera",
@@ -96,18 +56,11 @@ const certifications = [
     image: SpeakEnglish,
   },
   {
-    date: "January 2021",
-    title: "La comunicación laboral en el siglo XXI",
+    date: "November 2020",
+    title: "Inglés Empresarial: Gestión y Liderazgo",
     organization: "Coursera",
-    link: "https://drive.google.com/file/d/1GXcw6mjqRLdUzz7Zzjavv24HdLt4zCfi/view?usp=sharing",
-    image: ComunicacionLaboralXXI,
-  },
-  {
-    date: "January 2021",
-    title: "Iniciación y Planificación de Proyectos",
-    organization: "Coursera",
-    link: "https://drive.google.com/file/d/1cGes4AjKdGoXNpWjnNajwgsWqcTxeaSF/view?usp=sharing",
-    image: InicioYPlanificacionProyectos,
+    link: "https://drive.google.com/file/d/1cRPNqxg_BFMSjx8GwzCJCtIG_dewdqPX/view?usp=sharing",
+    image: InglesEmpresarial,
   },
   {
     date: "January 2021",
@@ -118,10 +71,38 @@ const certifications = [
   },
   {
     date: "January 2021",
+    title: "La comunicación laboral en el siglo XXI",
+    organization: "Coursera",
+    link: "https://drive.google.com/file/d/1GXcw6mjqRLdUzz7Zzjavv24HdLt4zCfi/view?usp=sharing",
+    image: ComunicacionLaboralXXI,
+  },
+  {
+    date: "November 2020",
+    title: "Negocios Internacionales I",
+    organization: "Coursera",
+    link: "https://drive.google.com/file/d/1413d4Rg2gEvgQWjAosvWKKrenncuJw7G/view?usp=sharing",
+    image: NegociosInternacionales,
+  },
+  {
+    date: "January 2022",
+    title: "Fundamentos de Marketing Digital",
+    organization: "Google Actívate",
+    link: "https://drive.google.com/file/d/1nTG7Ya8bvNz-cH0uQuOdatmq8qvoEcwq/view?usp=sharing",
+    image: GoogleActivatex2,
+  },
+  {
+    date: "January 2021",
     title: "Trabaja inteligentemente, no más duro: Gestión del tiempo para la productividad personal y profesional",
     organization: "Coursera",
     link: "https://drive.google.com/file/d/1Vf2aIA16VfcRQVgzAmvwTzDAoBYms5UB/view?usp=sharing",
     image: TrabajarInteligente,
+  },
+  {
+    date: "January 2021",
+    title: "Aprendiendo a aprender: Poderosas herramientas mentales con las que podrás dominar temas difíciles (Learning How to Learn)",
+    organization: "Coursera",
+    link: "https://drive.google.com/file/d/1ju00NAV-kqoOiO3_plFRYHWd6FZ4_SI2/view?usp=sharing",
+    image: AprendiendoAAprender,
   },
   {
     date: "January 2021",
@@ -139,92 +120,9 @@ const certifications = [
   },
   {
     date: "November 2020",
-    title: "Negocios Internacionales I",
-    organization: "Coursera",
-    link: "https://drive.google.com/file/d/1413d4Rg2gEvgQWjAosvWKKrenncuJw7G/view?usp=sharing",
-    image: NegociosInternacionales,
-  },
-  {
-    date: "November 2020",
-    title: "Inglés Empresarial: Gestión y Liderazgo",
-    organization: "Coursera",
-    link: "https://drive.google.com/file/d/1cRPNqxg_BFMSjx8GwzCJCtIG_dewdqPX/view?usp=sharing",
-    image: InglesEmpresarial,
-  },
-  {
-    date: "November 2020",
     title: "Trabajar para ser feliz",
     organization: "Coursera",
     link: "https://drive.google.com/file/d/1mveVxhyMTTa5sZJ66AZvLrNRjMCrv-R8/view?usp=sharing",
     image: TrabajarParaSerFeliz,
   },
 ];
-
-const Certifications = () => {
-  const { t } = useTranslation();
-
-  return (
-    <section id="certifications" className="py-20 px-4 md:px-8">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold mb-6 pb-2 text-center bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-          {t("certifications.title")}
-        </h2>
-        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          {t("certifications.subtitle")}
-        </p>
-
-        <Carousel
-          opts={{
-            align: "start",
-            loop: true,
-          }}
-          plugins={[
-            Autoplay({
-              delay: 6000,
-            }),
-          ]}
-          className="w-full max-w-5xl mx-auto"
-        >
-          <CarouselContent>
-            {certifications.map((cert, index) => (
-              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                <Card className="bg-card/50 border-primary/20 hover:border-primary/50 transition-all hover:shadow-[0_0_20px_hsl(180,80%,50%,0.2)] h-full">
-                  <CardHeader className="pb-3">
-                    <div className="aspect-video mb-3 rounded-md overflow-hidden bg-muted">
-                      <img
-                        src={cert.image}
-                        alt={cert.title}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <Badge variant="secondary" className="w-fit mb-2 bg-secondary/50">
-                      {cert.date}
-                    </Badge>
-                    <CardTitle className="text-lg text-foreground">{cert.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="flex items-center justify-between">
-                    <p className="text-muted-foreground text-sm">{cert.organization}</p>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      className="text-primary hover:text-primary hover:bg-primary/10"
-                      asChild
-                    >
-                      <a href={cert.link} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="h-4 w-4" />
-                      </a>
-                    </Button>
-                  </CardContent>
-                </Card>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
-      </div>
-    </section>
-  );
-};
-
-export default Certifications;
