@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000" role="img" aria-label="Financial Control Tower dashboard preview">
+  <title>Financial Control Tower</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B1220"/>
+      <stop offset="1" stop-color="#112340"/>
+    </linearGradient>
+    <radialGradient id="glowTeal" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#2DD4BF" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#2DD4BF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowBlue" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#3B82F6" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="#3B82F6" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gTeal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5EEAD4"/>
+      <stop offset="1" stop-color="#0F9D8E"/>
+    </linearGradient>
+    <linearGradient id="gBlue" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#93C5FD"/>
+      <stop offset="1" stop-color="#2563EB"/>
+    </linearGradient>
+    <linearGradient id="gAmber" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FDE68A"/>
+      <stop offset="1" stop-color="#D97706"/>
+    </linearGradient>
+    <linearGradient id="gRed" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FCA5A5"/>
+      <stop offset="1" stop-color="#DC2626"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    .bar { transform-box: fill-box; transform-origin: 50% 100%; animation: grow 12s ease-out infinite both; }
+    @keyframes grow {
+      0% { transform: scaleY(0); opacity: 1; }
+      10% { transform: scaleY(1); opacity: 1; }
+      90% { transform: scaleY(1); opacity: 1; }
+      97% { transform: scaleY(1); opacity: 0; }
+      100% { transform: scaleY(0); opacity: 0; }
+    }
+    .pulse { animation: pulse 2s ease-in-out infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+  </style>
+
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <circle cx="1500" cy="80" r="520" fill="url(#glowTeal)"/>
+  <circle cx="80" cy="960" r="620" fill="url(#glowBlue)"/>
+
+  <g font-family="Inter, 'Segoe UI', Arial, sans-serif">
+    <!-- Header -->
+    <text x="60" y="100" font-size="56" font-weight="700" fill="#F1F5F9">Financial Control Tower</text>
+    <rect x="1050" y="52" width="490" height="64" rx="32" fill="#14243B" stroke="#24395A" stroke-width="2"/>
+    <circle class="pulse" cx="1090" cy="84" r="9" fill="#34D399"/>
+    <text x="1116" y="95" font-size="30" fill="#CBD5E1">Daily Slack alert · 9:00</text>
+
+    <!-- KPI cards -->
+    <rect x="60" y="150" width="340" height="180" rx="24" fill="#12223A" stroke="#223A5E" stroke-width="2"/>
+    <circle cx="360" cy="200" r="10" fill="#2DD4BF"/>
+    <text x="88" y="212" font-size="32" fill="#94A3B8">Total AR</text>
+    <text x="88" y="295" font-size="84" font-weight="700" fill="#F1F5F9">3.45M</text>
+
+    <rect x="440" y="150" width="340" height="180" rx="24" fill="#12223A" stroke="#223A5E" stroke-width="2"/>
+    <circle cx="740" cy="200" r="10" fill="#F87171"/>
+    <text x="468" y="212" font-size="32" fill="#94A3B8">Overdue AR</text>
+    <text x="468" y="295" font-size="84" font-weight="700" fill="#F87171">1.40M</text>
+
+    <rect x="820" y="150" width="340" height="180" rx="24" fill="#12223A" stroke="#223A5E" stroke-width="2"/>
+    <circle cx="1120" cy="200" r="10" fill="#FBBF24"/>
+    <text x="848" y="212" font-size="32" fill="#94A3B8">% Overdue</text>
+    <text x="848" y="295" font-size="84" font-weight="700" fill="#FBBF24">40.65%</text>
+
+    <rect x="1200" y="150" width="340" height="180" rx="24" fill="#12223A" stroke="#223A5E" stroke-width="2"/>
+    <circle cx="1500" cy="200" r="10" fill="#34D399"/>
+    <text x="1228" y="212" font-size="32" fill="#94A3B8">Net cash</text>
+    <text x="1228" y="295" font-size="84" font-weight="700" fill="#34D399">2.25M</text>
+
+    <!-- Panel: aging -->
+    <rect x="60" y="370" width="900" height="570" rx="28" fill="#12223A" stroke="#223A5E" stroke-width="2"/>
+    <text x="96" y="440" font-size="40" font-weight="700" fill="#F1F5F9">Overdue debt by age (days)</text>
+    <line x1="96" y1="880" x2="924" y2="880" stroke="#24395A" stroke-width="3"/>
+    <rect class="bar" x="135" y="693" width="130" height="187" rx="14" fill="url(#gTeal)" style="animation-delay:0.1s"/>
+    <rect class="bar" x="342" y="687" width="130" height="193" rx="14" fill="url(#gBlue)" style="animation-delay:0.25s"/>
+    <rect class="bar" x="549" y="673" width="130" height="207" rx="14" fill="url(#gAmber)" style="animation-delay:0.4s"/>
+    <rect class="bar" x="756" y="500" width="130" height="380" rx="14" fill="url(#gRed)" style="animation-delay:0.55s"/>
+    <g font-size="32" fill="#94A3B8" text-anchor="middle">
+      <text x="200" y="925">1–30</text>
+      <text x="407" y="925">31–60</text>
+      <text x="614" y="925">61–90</text>
+      <text x="821" y="925">90+</text>
+    </g>
+
+    <!-- Panel: customer risk -->
+    <rect x="990" y="370" width="550" height="270" rx="28" fill="#12223A" stroke="#223A5E" stroke-width="2"/>
+    <text x="1018" y="436" font-size="40" font-weight="700" fill="#F1F5F9">Customer risk</text>
+    <g transform="rotate(-90 1150 550)" fill="none" stroke-width="30">
+      <circle cx="1150" cy="550" r="62" stroke="#1B2E4A"/>
+      <circle cx="1150" cy="550" r="62" stroke="#F87171" stroke-dasharray="231 389.6"/>
+      <circle cx="1150" cy="550" r="62" stroke="#FBBF24" stroke-dasharray="114 389.6" stroke-dashoffset="-235"/>
+      <circle cx="1150" cy="550" r="62" stroke="#34D399" stroke-dasharray="35 389.6" stroke-dashoffset="-353"/>
+    </g>
+    <text x="1150" y="568" font-size="52" font-weight="700" fill="#F1F5F9" text-anchor="middle">10</text>
+    <g font-size="32" fill="#CBD5E1">
+      <circle cx="1300" cy="520" r="10" fill="#F87171"/>
+      <text x="1326" y="531">High</text>
+      <circle cx="1300" cy="565" r="10" fill="#FBBF24"/>
+      <text x="1326" y="576">Medium</text>
+      <circle cx="1300" cy="610" r="10" fill="#34D399"/>
+      <text x="1326" y="621">Low</text>
+    </g>
+
+    <!-- Panel: cash flow -->
+    <rect x="990" y="670" width="550" height="270" rx="28" fill="#12223A" stroke="#223A5E" stroke-width="2"/>
+    <text x="1018" y="736" font-size="40" font-weight="700" fill="#F1F5F9">Cash flow</text>
+    <circle cx="1350" cy="724" r="9" fill="#2DD4BF"/>
+    <text x="1370" y="736" font-size="30" fill="#CBD5E1">In</text>
+    <circle cx="1430" cy="724" r="9" fill="#F59E0B"/>
+    <text x="1450" y="736" font-size="30" fill="#CBD5E1">Out</text>
+    <line x1="1020" y1="900" x2="1520" y2="900" stroke="#24395A" stroke-width="3"/>
+    <g>
+      <rect class="bar" x="1030" y="830" width="40" height="70" rx="8" fill="url(#gTeal)" style="animation-delay:0.2s"/>
+      <rect class="bar" x="1078" y="860" width="40" height="40" rx="8" fill="url(#gAmber)" style="animation-delay:0.3s"/>
+      <rect class="bar" x="1155" y="805" width="40" height="95" rx="8" fill="url(#gTeal)" style="animation-delay:0.4s"/>
+      <rect class="bar" x="1203" y="845" width="40" height="55" rx="8" fill="url(#gAmber)" style="animation-delay:0.5s"/>
+      <rect class="bar" x="1280" y="840" width="40" height="60" rx="8" fill="url(#gTeal)" style="animation-delay:0.6s"/>
+      <rect class="bar" x="1328" y="865" width="40" height="35" rx="8" fill="url(#gAmber)" style="animation-delay:0.7s"/>
+      <rect class="bar" x="1405" y="790" width="40" height="110" rx="8" fill="url(#gTeal)" style="animation-delay:0.8s"/>
+      <rect class="bar" x="1453" y="835" width="40" height="65" rx="8" fill="url(#gAmber)" style="animation-delay:0.9s"/>
+    </g>
+  </g>
+</svg>
