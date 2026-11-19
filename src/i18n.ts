@@ -60,6 +60,10 @@ const resources = {
             title: "ClarVision BI",
             description: "Sistema de inteligencia operacional para una clínica oftalmológica (proyecto demo con datos de ejemplo). Dashboard en Power BI, alertas automáticas de ausentismo crítico y reporte semanal por Slack con n8n.",
           },
+          financial: {
+            title: "Financial Control Tower",
+            description: "Control de cuentas por cobrar y por pagar para una empresa (proyecto demo con datos de ejemplo, basado en el proceso de SAP S/4HANA FI). Dashboard en Power BI con antigüedad de deuda, riesgo por cliente y flujo de caja, y un resumen diario de alertas por Slack con n8n.",
+          },
         },
       },
       experience: {
@@ -179,6 +183,10 @@ const resources = {
           clarvision: {
             title: "ClarVision BI",
             description: "Operational intelligence system for an ophthalmology clinic (demo project with sample data). Power BI dashboard, automatic alerts for critical absenteeism and a weekly Slack report with n8n.",
+          },
+          financial: {
+            title: "Financial Control Tower",
+            description: "Accounts receivable and payable control for a company (demo project with sample data, modeled on the SAP S/4HANA FI process). Power BI dashboard with debt aging, customer risk and cash flow, and a daily alert summary on Slack with n8n.",
           },
         },
       },
