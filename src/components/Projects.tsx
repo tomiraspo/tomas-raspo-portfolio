@@ -111,7 +111,7 @@ const Projects = () => {
       name: "Financial Control Tower",
       hint: copy.financialHint,
       href: "https://github.com/tomiraspo/financial-control-tower",
-      img: "/financial-tower.png",
+      img: "/financial-tower.svg",
     },
   ];
 
