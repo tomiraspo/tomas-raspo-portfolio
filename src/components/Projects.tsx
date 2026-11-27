@@ -22,6 +22,10 @@ const Projects = () => {
 
   const lang = i18n.language?.slice(0, 2) === "es" ? "es" : "en";
 
+  // Carrusel del bloque Sistema
+  const [systemSlide, setSystemSlide] = useState(0);
+  const [systemPaused, setSystemPaused] = useState(false);
+
   // Carrusel del bloque Métricas
   const [slide, setSlide] = useState(0);
   const [paused, setPaused] = useState(false);
@@ -82,6 +86,7 @@ const Projects = () => {
     es: {
       system: "Sistema",
       systemHint: "Sistema de turnos virtual funcionando en producción",
+      hotelHint: "MVP de reservas con demo interactiva en Vercel",
       metrics: "Métricas",
       metricsHint: "Indicadores y análisis de ClarVision BI",
       financialHint: "Antigüedad de deuda, riesgo y flujo de caja",
@@ -92,6 +97,7 @@ const Projects = () => {
     en: {
       system: "System",
       systemHint: "Virtual appointment system running in production",
+      hotelHint: "Booking MVP with interactive demo on Vercel",
       metrics: "Metrics",
       metricsHint: "KPIs and analytics from ClarVision BI",
       financialHint: "Debt aging, risk and cash flow",
@@ -101,16 +107,35 @@ const Projects = () => {
     },
   }[lang];
 
-  const showcase = [
+  const systemSlides = [
     {
-      title: copy.system,
+      name: "Sistema de Turnos Virtual",
       hint: copy.systemHint,
       href: "https://161-35-93-46.sslip.io",
       demo: "https://www.linkedin.com/feed/update/urn:li:activity:7384221305383936000/",
       img: "/turnos.png",
-      alt: copy.system,
+    },
+    {
+      name: "Hotel Reserva MVP",
+      hint: copy.hotelHint,
+      href: "https://hotel-reserva-mvp.vercel.app/",
+      demo: "",
+      img: "/hotel-reserva.png",
     },
   ];
+
+  const currentSystem = systemSlides[systemSlide];
+
+  const goSystemPrev = () => setSystemSlide((s) => (s - 1 + systemSlides.length) % systemSlides.length);
+  const goSystemNext = () => setSystemSlide((s) => (s + 1) % systemSlides.length);
+
+  useEffect(() => {
+    if (systemPaused) return;
+    const id = setInterval(() => {
+      setSystemSlide((s) => (s + 1) % systemSlides.length);
+    }, 6000);
+    return () => clearInterval(id);
+  }, [systemPaused, systemSlides.length]);
 
   const metricsSlides = [
     {
@@ -227,47 +252,93 @@ const Projects = () => {
 
         {/* Pantalla dividida en dos mitades iguales */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
-          {showcase.map((item) => (
-            <div
-              key={item.title}
-              className="group overflow-hidden rounded-xl border border-primary/20 bg-card/50 transition-all hover:border-primary/50 hover:shadow-[0_0_20px_hsl(180,80%,50%,0.2)]"
-            >
-              <div className="p-5 pb-3">
-                <h3 className="text-2xl font-bold text-foreground">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">{item.hint}</p>
-              </div>
-              <a
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative block aspect-[16/10] overflow-hidden bg-background/40"
+          {/* Sistema: carrusel con Sistema de Turnos Virtual y Hotel Reserva MVP */}
+          <div
+            className="group overflow-hidden rounded-xl border border-primary/20 bg-card/50 transition-all hover:border-primary/50 hover:shadow-[0_0_20px_hsl(180,80%,50%,0.2)]"
+            onMouseEnter={() => setSystemPaused(true)}
+            onMouseLeave={() => setSystemPaused(false)}
+          >
+            <div className="p-5 pb-3">
+              <h3 className="text-2xl font-bold text-foreground">{copy.system}</h3>
+              <p className="text-sm text-muted-foreground">{currentSystem.hint}</p>
+            </div>
+
+            <div className="relative aspect-[16/10] overflow-hidden bg-background/40">
+              {systemSlides.map((s, i) => (
+                <a
+                  key={s.name}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-hidden={i !== systemSlide}
+                  tabIndex={i === systemSlide ? 0 : -1}
+                  className={`absolute inset-0 block transition-opacity duration-700 ${
+                    i === systemSlide ? "opacity-100" : "pointer-events-none opacity-0"
+                  }`}
+                >
+                  <img
+                    src={s.img}
+                    alt={s.name}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
+                  <span className="absolute bottom-3 left-3 rounded-full border border-primary/30 bg-background/80 px-3 py-1 text-xs font-medium text-foreground backdrop-blur">
+                    {s.name}
+                  </span>
+                </a>
+              ))}
+
+              <button
+                type="button"
+                onClick={goSystemPrev}
+                aria-label={copy.prev}
+                className="absolute left-3 top-1/2 z-10 -translate-y-1/2 rounded-full border border-primary/30 bg-background/70 p-2 text-foreground opacity-0 backdrop-blur transition-opacity hover:bg-background group-hover:opacity-100 focus-visible:opacity-100"
               >
-                <img
-                  src={item.img}
-                  alt={item.alt}
-                  loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
-              </a>
-              <div className="flex flex-wrap gap-3 p-4">
+                <ChevronLeft className="h-5 w-5" />
+              </button>
+              <button
+                type="button"
+                onClick={goSystemNext}
+                aria-label={copy.next}
+                className="absolute right-3 top-1/2 z-10 -translate-y-1/2 rounded-full border border-primary/30 bg-background/70 p-2 text-foreground opacity-0 backdrop-blur transition-opacity hover:bg-background group-hover:opacity-100 focus-visible:opacity-100"
+              >
+                <ChevronRight className="h-5 w-5" />
+              </button>
+            </div>
+
+            <div className="flex flex-wrap items-center justify-between gap-3 p-4">
+              <div className="flex flex-wrap gap-3">
                 <Button size="sm" className="bg-primary hover:bg-primary/90" asChild>
-                  <a href={item.href} target="_blank" rel="noopener noreferrer">
+                  <a href={currentSystem.href} target="_blank" rel="noopener noreferrer">
                     <ExternalLink className="mr-2 h-4 w-4" />
                     {copy.cta}
                   </a>
                 </Button>
-                {item.demo && (
+                {currentSystem.demo && (
                   <Button size="sm" variant="outline" className="border-primary/50 hover:bg-primary/10" asChild>
-                    <a href={item.demo} target="_blank" rel="noopener noreferrer">
+                    <a href={currentSystem.demo} target="_blank" rel="noopener noreferrer">
                       <Linkedin className="mr-2 h-4 w-4" />
                       {t("projects.viewDemo")}
                     </a>
                   </Button>
                 )}
               </div>
+              <div className="flex items-center gap-2">
+                {systemSlides.map((s, i) => (
+                  <button
+                    key={s.name}
+                    type="button"
+                    onClick={() => setSystemSlide(i)}
+                    aria-label={s.name}
+                    className={`h-2 rounded-full transition-all duration-300 ${
+                      i === systemSlide ? "w-6 bg-primary" : "w-2 bg-primary/30 hover:bg-primary/60"
+                    }`}
+                  />
+                ))}
+              </div>
             </div>
-          ))}
+          </div>
 
           {/* Métricas: carrusel con ClarVision BI y Financial Control Tower */}
           <div
