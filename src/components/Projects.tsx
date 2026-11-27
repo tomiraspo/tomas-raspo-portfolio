@@ -63,6 +63,18 @@ const Projects = () => {
       linkedin: "",
       demo: "https://mochila-y-codigo.vercel.app/",
     },
+    {
+      title: "Hotel Reserva & Automatización MVP",
+      description: {
+        es: "MVP de reservas de alojamientos con React y Vite en el frontend, FastAPI y MySQL en el backend, y modo demo interactivo con localStorage en Vercel.",
+        en: "Accommodation booking MVP with React and Vite on the frontend, FastAPI and MySQL on the backend, and an interactive localStorage demo mode on Vercel.",
+      },
+      technologies: ["React", "Vite", "FastAPI", "MySQL", "n8n", "Vercel"],
+      statusKey: "projects.statusInProgress",
+      github: "https://github.com/tomiraspo/hotel-reserva-mvp",
+      linkedin: "",
+      demo: "https://hotel-reserva-mvp.vercel.app/",
+    },
   ];
 
   // Textos del bloque Sistema / Métricas (no toca tus archivos de traducción)
