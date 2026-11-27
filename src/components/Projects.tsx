@@ -120,7 +120,7 @@ const Projects = () => {
       hint: copy.hotelHint,
       href: "https://hotel-reserva-mvp.vercel.app/",
       demo: "",
-      img: "/hotel-reserva.png",
+      img: "/frontend.png",
     },
   ];
 
